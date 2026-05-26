@@ -1,0 +1,60 @@
+
+#root {
+  font-family: monospace;
+  font-size: 18px;
+}
+
+.input {
+  margin: 20px auto 20px auto;
+  width: 80%;
+  max-width: 400px;
+  display: block;
+}
+
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+nav {
+  font-family: Inter, sans-serif;
+  font-size: 40px;
+  margin: 75px 0 40px 0;
+  color: #000
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.calendar {
+  padding: 10px 50px 80px 50px;
+}
+
+button {
+  margin: 0px 0px 20px 0px;
+  height: 40px;
+  width: 100px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+.fc-daygrid-event {
+  height: 18px;
+  font-size: 12px;
+  text-align: left;
+}

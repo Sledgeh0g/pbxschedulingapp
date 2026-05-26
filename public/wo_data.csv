@@ -1,0 +1,500 @@
+﻿"id","customer","unit","serviceDate","todayAndNewer","dueDate","complaint","confirmed","completed","customerCalled","customerCalledBy","days","warranty","courtesyCar","isWaiting","created","createdBy","modified","modifiedBy","foreman","washBay","welding","bodyShop"
+"18155","W.L. Linke ","1981","5/25/2026","5/25/2026",,"Part ordered for tech / speedo   By Ed and Ray    truck done otherwise 
+120048","True","False","False",,"6","N/A","False","True","10/21/2025 7:50 AM","Kathy Watson","5/19/2026 6:25 AM","Wes Neufeld","James Fehr","False","False","False"
+"19161","Chad Mykula","kenworth W900 ","5/21/2026","5/21/2026",,"1 204 734 8687    Rear Part of Truck burnt    estimate repaires and report to customer MPI  possible     in james   shop  (scott )    welding shop rebuilding axle ","True","False","False",,"2","N/A","False","False","1/14/2026 7:09 AM","Ron Petkau","5/19/2026 5:49 PM","Wes Neufeld","Ron Harder","False","False","False"
+"19187","Canada Packers ","2513","5/21/2026","5/21/2026",,"MPI Repairs  Cab  /  hood and chassie at agcon as of Jan 15","True","False","False",,"2","N/A","False","False","1/15/2026 7:11 AM","Ron Petkau","5/19/2026 5:50 PM","Wes Neufeld","Ron Harder","False","False","False"
+"19404","christopher Stgermain","trailer Van ","5/21/2026","5/21/2026","3/27/2026 12:00 AM","Damaged right side frame and penal    1 289 200 0481  christopher     customer wants estimate   unit at the welding shop ","True","False","False",,"2","N/A","False","False","1/28/2026 3:41 PM","Ron Petkau","5/19/2026 5:50 PM","Wes Neufeld","Walter Wiens","False","True","False"
+"19548","Canada Packers ","1801","5/21/2026","5/21/2026",,"Mb Safety Inspection  and repairs  waiting For auth  from Canada Packers ","True","False","False",,"2","N/A","False","True","2/9/2026 7:52 AM","Ron Petkau","5/19/2026 5:50 PM","Wes Neufeld","James Fehr","False","False","False"
+"19682","Kool Express ","Freightliner ","5/21/2026","5/21/2026",,"Claim open with Body shop  Ron Harder ","True","False","False",,"2","N/A","False","True","2/19/2026 8:16 AM","Ron Petkau","5/19/2026 5:50 PM","Wes Neufeld","Ron Harder","False","False","False"
+"19734","Rick Bresky ","B train  Hoppers ","5/21/2026","5/21/2026",,"MPI  claim   wash units and report on findings   estimate  /  and report to MPI  claim ","True","False","False",,"2","N/A","False","True","2/23/2026 3:14 PM","Ron Petkau","5/19/2026 5:50 PM","Wes Neufeld","Walter Wiens","False","False","False"
+"19856","Canada Packers ","wash bay ","5/21/2026","5/21/2026",,"Service call to repair  air lines     waiting  for parts    Walter ordered   parts ,/  Hyd resiviour ","True","False","False",,"2","N/A","False","True","3/3/2026 3:15 PM","Ron Petkau","5/19/2026 5:54 PM","Wes Neufeld","Walter Wiens","False","False","False"
+"19866","Blumenort Hatchery","New truck ","5/12/2026","5/12/2026",,"Finish fuel stuff from last visit, parts here
+
+Customer wants controls for the lift gate in the cab. Driver will show what he is wanting when he drops off the truck. 
+
+
+Need back Monday AM dropping Thursday noon. 
+
+Finish work-Parts on back wall-See Gavin ","True","True","False",,"0","N/A","False","True","3/4/2026 12:23 PM","Gavin Koop","5/12/2026 7:15 AM","Wes Neufeld","David Reimer","False","False","False"
+"19884","Rick Brensky ","Tanker B train ","5/21/2026","5/21/2026",,"Wash  b train  tankers   and perform  Complete Safety on B train (tankers )    Note Customer Brought trailers here for a Structal  repairs A-z   lead Tanker Has a leak on top of 5th wheel structure   ","True","False","False",,"2","N/A","False","False","3/5/2026 6:31 AM","Ron Petkau","5/19/2026 5:51 PM","Wes Neufeld","Walter Wiens","False","False","False"
+"19980","Rick Bresky ","GR25A ","5/21/2026","5/21/2026","3/27/2026 12:00 AM","MPI REPAIRS 
+RO124719","True","False","False",,"2","N/A","False","False","3/12/2026 7:50 AM","Walter Wiens","5/19/2026 5:51 PM","Wes Neufeld","Walter Wiens","False","True","False"
+"19981","Rick Bresky ","GR25B","5/21/2026","5/21/2026","3/27/2026 12:00 AM","MPI REPAIRS ","True","False","False",,"2","N/A","False","False","3/12/2026 7:51 AM","Walter Wiens","5/19/2026 5:51 PM","Wes Neufeld","Walter Wiens","False","True","False"
+"19982","Rick Bresky ","235A","5/21/2026","5/21/2026","3/12/2026 12:00 AM","CAUTION, LIQUID NITROGEN TANKER
+- REPAIR LEAK IN TANK ABOVE 5TH WHEEL 
+- STRUCTURAL INSPECTION 
+Estimate-0003 Approved by rick","True","False","False",,"2","N/A","False","False","3/12/2026 7:52 AM","Walter Wiens","5/19/2026 5:51 PM","Wes Neufeld","Walter Wiens","False","True","False"
+"19983","Rick Bresky ","235B","5/21/2026","5/21/2026","3/12/2026 12:00 AM","CAUTION, LIQUID NITROGEN TANKER
+- STRUCTURAL INSPECTION ","True","False","False",,"2","N/A","False","False","3/12/2026 7:53 AM","Walter Wiens","5/19/2026 5:51 PM","Wes Neufeld","Walter Wiens","False","True","False"
+"20139","Straight A  Transfer ","Trailer ","5/21/2026","5/21/2026",,"MPI claim on trailer  / Albert will come in today to drop off trailer and calim and get it checked by the body shop and Waylon ","True","False","False",,"2","N/A","False","False","3/24/2026 7:40 AM","Ron Petkau","5/19/2026 5:52 PM","Wes Neufeld","Ron Harder","False","False","False"
+"20162","New Trucks",,"5/21/2026","5/21/2026",,"PDI Inspections   x 3     Ed   waylon ","True","True","False",,"1","N/A","False","True","3/25/2026 7:51 AM","Wes Neufeld","5/20/2026 11:03 AM","James Fehr","James Fehr","False","False","False"
+"20319","Brielmen Farmes ","Paccar ","5/15/2026","5/15/2026",,"Blown Engine   Paccar 510     ask Ron  get pricing ","True","True","False",,"1","N/A","False","True","4/6/2026 9:54 AM","Ron Petkau","5/14/2026 5:45 PM","Wes Neufeld","James Fehr","False","False","False"
+"20333","PBX Loader ","950 ","5/5/2026","5/5/2026",,"Swap Loader Bucket Lower blade     Repair Loader inter dash gauge lights and extior lights   grease laoder   check all fluid levels   /  check air sytem  / drain air tanks  / check brake cylinder fluid     Nick ","True","True","False",,"0","N/A","False","False","4/7/2026 5:54 AM","Ron Petkau","5/5/2026 6:01 AM","Wes Neufeld","James Fehr","False","False","False"
+"20335","pbx ","Engine stands   /  car tires ","5/21/2026","5/21/2026",,"Nick to Build  Engine stands       Nick ","True","True","False",,"1","N/A","False","False","4/7/2026 5:59 AM","Ron Petkau","5/20/2026 11:03 AM","James Fehr","James Fehr","False","False","False"
+"20349","BPPS","520","5/4/2026","5/4/2026",,"Engine fan staying on at all times    7 am   Todd ","True","True","False",,"0","N/A","False","True","4/7/2026 3:58 PM","Wes Neufeld","5/4/2026 2:18 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20357","Canada Packers ","2301 ","5/21/2026","5/21/2026",,"MPI  & Crawford Insurance   combined     Waylon  to  perform a complete inspection  and report to Ron Harder ","True","False","False",,"2","N/A","False","False","4/8/2026 1:41 PM","Ron Petkau","5/19/2026 5:52 PM","Wes Neufeld","Ron Harder","False","False","False"
+"20371","car-dale  ","Flat decks ","5/4/2026","5/4/2026",,"Glen and walter To estimate extensions on secks 2 feet   we have 2 weeks to finsh the Trailer ","True","True","False",,"0","N/A","False","False","4/9/2026 9:56 AM","Ron Petkau","5/4/2026 7:10 AM","Ron Petkau","Walter Wiens","False","False","False"
+"20398","Marcus Dueck","Grain truck","5/21/2026","5/21/2026",,"MPI claim 77212553 - mice in cab
+Brakes seized up
+No start","False","False","False",,"2","N/A","False","False","4/10/2026 4:12 PM","Ron Harder","5/19/2026 5:52 PM","Wes Neufeld","Ron Harder","False","False","False"
+"20420","South East Pallet","480-485","5/5/2026","5/5/2026",,"Safety
+
+S8381","True","True","False",,"0","N/A","False","True","4/13/2026 3:52 PM","Gavin Koop","5/5/2026 1:08 PM","Wes Neufeld","David Reimer","False","False","False"
+"20427","Ron Friesen ","New tandem pete ","5/14/2026","5/14/2026",,"Remove  one Leaf spring on each side of Truck to make it ride softer / 20000 lb axle on Steering   ask Ron   9 am  thursday ","True","True","False",,"0","N/A","False","True","4/14/2026 5:42 AM","Ron Petkau","5/14/2026 3:53 PM","Wes Neufeld","James Fehr","False","False","False"
+"20436","Ben Petkau",,"5/8/2026","5/8/2026",,"Oil leak Front structure leaking ","True","True","False",,"0","N/A","False","True","4/14/2026 11:56 AM","Wes Neufeld","5/8/2026 2:45 PM","Wes Neufeld","James Fehr","False","False","False"
+"20445","Vik landscaping ","87 2015 Pete ","5/21/2026","5/21/2026",,"Truck will Be towed in this coming weekend and had a fire /  lots of damage  / MPI is doing a inspection in winnipeg and will email pbx and  follow up   lost or saved ","True","False","False",,"2","N/A","False","False","4/15/2026 9:26 AM","Ron Petkau","5/19/2026 5:52 PM","Wes Neufeld","Ron Harder","False","False","False"
+"20449","Canada Packers ","skid steer ","5/21/2026","5/21/2026",,"Estimate on  skid steer  bucket pivot repairs ","True","False","False",,"2","N/A","False","False","4/15/2026 12:01 PM","Ron Petkau","5/19/2026 5:53 PM","Wes Neufeld","Walter Wiens","False","False","False"
+"20452","Canada Packers ","2005","5/21/2026","5/21/2026",,"Inspection --Roll over ","True","False","False",,"2","N/A","False","True","4/15/2026 5:11 PM","Wes Neufeld","5/19/2026 5:53 PM","Wes Neufeld",,"False","False","False"
+"20455","JNR Farms",,"5/11/2026","5/12/2026",,"Safety   at Norm's Shop ","True","True","False",,"-1","N/A","False","True","4/15/2026 6:10 PM","Wes Neufeld","5/12/2026 6:16 AM","Wes Neufeld","David Reimer","False","False","False"
+"20466","Bvt","H105 /H205","5/19/2026","5/19/2026",,"Have another set for you if you can look after the services?
+ 
+H105
+2022 Doepker
+VIN 2DEGBSE38N2043724
+ 
+H205
+2022 Doepker
+VIN 2DEGBSA23N2043725
+","False","True","False",,"7","N/A","False","False","4/16/2026 4:02 PM","Wes Neufeld","5/12/2026 6:00 AM","Wes Neufeld",,"False","False","False"
+"20490","Canada Packers ","1902","5/20/2026","5/20/2026",,"Need to rebook for more work -Waylon
+
+- driver side fuel tank cracked at top ports
+- suspension bushings worn
+- advise all drive brakes (could probably go another 2 months)
+- Engine oil leaks (pan gasket?)
+-Engine light on 
+-Mud flap bracket
+-Vibration at 70-80 km","True","False","False",,"0","N/A","False","True","4/18/2026 7:43 AM","Dave Reimer","5/20/2026 9:43 AM","Wes Neufeld","David Reimer","False","False","False"
+"20493","Lightway ","442","5/5/2026","5/5/2026",,"Check unit pumps-Customer has fault codes related to high side fuel compansation pressure. ","False","True","False",,"0","N/A","False","False","4/18/2026 10:48 AM","Gavin Koop","5/5/2026 1:09 PM","Wes Neufeld",,"False","False","False"
+"20513","Canada Packers ","201913","5/21/2026","5/21/2026",,"Floor damage  / gate Crunched   at Welding shop 
+Inspection done, ready for estimate ","True","False","False",,"2","N/A","False","True","4/20/2026 4:10 PM","Wes Neufeld","5/19/2026 5:54 PM","Wes Neufeld","Walter Wiens","False","True","False"
+"20536","Countryside Farms","CST18","5/20/2026","5/20/2026",,"Service / safety ","True","False","False",,"1","N/A","False","True","4/22/2026 9:53 AM","Wes Neufeld","5/19/2026 1:23 PM","Wes Neufeld","David Reimer","False","False","False"
+"20538","Winnipeg Home Building ","5 Ton ","5/14/2026","5/14/2026",,"204-798-6069-Fuel prime no start issue ","True","True","False",,"0","N/A","False","True","4/22/2026 10:48 AM","Gavin Koop","5/14/2026 3:53 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20545","Penner farm ","285-295","5/1/2026","5/1/2026",,"Safety","True","True","False",,"0","N/A","False","True","4/22/2026 1:39 PM","Gavin Koop","5/1/2026 12:59 PM","Wes Neufeld","David Reimer","False","False","False"
+"20548","South East Logging","FREIGHTLINER ","5/7/2026","5/8/2026",,"Oil leak --Oil pan ?    Front structure    Cracked ","True","True","False",,"-1","N/A","False","True","4/22/2026 4:26 PM","Wes Neufeld","5/8/2026 6:50 AM","Wes Neufeld","James Fehr","False","False","False"
+"20557","Eg Penner ","89","5/8/2026","5/8/2026",,"Loose Steering arm / joints ?? / A/C & Blower/Resistor Repair","True","True","False",,"1","N/A","False","True","4/22/2026 5:32 PM","Ron Petkau","5/7/2026 5:52 PM","Wes Neufeld","James Fehr","False","False","False"
+"20558","Canada Packers ","wash bay ","5/21/2026","5/21/2026",,"Service call to adjust oil pressure on wash bay hydraulic pump pressure regualtor / Not pressure is to High   Waylon / Tony ","False","False","False",,"2","N/A","False","False","4/23/2026 5:34 AM","Ron Petkau","5/19/2026 5:54 PM","Wes Neufeld",,"False","False","False"
+"20567","Richard","Lipset","5/1/2026","5/1/2026",,"Full service","False","True","False",,"0","N/A","False","False","4/23/2026 2:36 PM","Gavin Koop","5/1/2026 5:05 PM","Wes Neufeld",,"False","False","False"
+"20580","Pete Martins 204-371-1957","PMG invesments ","5/4/2026","5/4/2026",,"Lightway 292-Safety   204-371-1957
+
+
+On batteries
+
+Body shop, Rick and Waylon
+
+Just windshield left -parts coming at noon","True","True","False",,"0","N/A","False","True","4/24/2026 12:53 PM","Gavin Koop","5/4/2026 5:39 PM","Wes Neufeld","David Reimer","False","False","False"
+"20581","NLU ","Tandem Pete","5/4/2026","5/4/2026",,"Air in hydraulic system-Customer heres air gurgling in the hyd oil tank-QUOTE ONLY    6 am ","True","True","False",,"0","N/A","False","True","4/24/2026 1:05 PM","Gavin Koop","5/4/2026 2:23 PM","Wes Neufeld","James Fehr","False","False","False"
+"20586","PBX ","45","5/1/2026","5/1/2026",,"Exhaust manifold bolts missing / Air leak poss. brake pot 
+
+","True","True","False",,"0","N/A","False","True","4/24/2026 4:07 PM","Gavin Koop","5/1/2026 12:59 PM","Wes Neufeld","James Fehr","False","False","False"
+"20587","Jeff Penner ",,"5/1/2026","5/1/2026",,"Install ramps / wash fenders    Recheck and check over Steeringh Gear Box ","True","True","False",,"4","N/A","False","True","4/24/2026 4:08 PM","Wes Neufeld","4/27/2026 9:48 AM","Ron Petkau","David Reimer","False","False","False"
+"20594","Bvt","H101 / H201","5/7/2026","5/7/2026",,"H101/H201 - Tuesday April 28 (trailers are on our yard now)
+2023 Lode King
+H101 VIN: 2LDHG283XPF073189
+H201 VIN: 2LDHG3025PF073190
+","True","True","False",,"0","N/A","False","True","4/25/2026 7:10 AM","Wes Neufeld","5/7/2026 5:48 PM","Wes Neufeld","David Reimer","False","False","False"
+"20597","Daryle Smith","442?","5/23/2026","5/23/2026",,"DPF  filter on back order   warranty with paccar      Dustin ","True","False","False",,"8","N/A","False","False","4/25/2026 10:21 AM","Wes Neufeld","5/15/2026 5:14 PM","Wes Neufeld","David Reimer","False","False","False"
+"20598","Pearl ","40","5/2/2026","5/2/2026",,"Speedo issues / j-brake / wheel seal ??
+
+
+Bunk ESPAR
+CEL","True","True","False",,"1","N/A","False","True","4/25/2026 10:24 AM","Wes Neufeld","5/1/2026 6:16 PM","Ron Petkau","James Fehr","False","False","False"
+"20600","Steinbach Hatchery ","international /515","5/6/2026","5/6/2026",,"Check for Fule bleeding Back and engine sputtering when starting  engine ","True","True","False",,"0","N/A","False","True","4/27/2026 6:54 AM","Ron Petkau","5/6/2026 9:05 AM","Ron Petkau","James Fehr","False","False","False"
+"20605","Jnr Farms",,"5/11/2026","5/11/2026",,"Safety truck ","True","True","False",,"0","N/A","False","True","4/27/2026 8:12 AM","Wes Neufeld","5/11/2026 10:20 AM","Wes Neufeld","David Reimer","False","False","False"
+"20608","Delbert Koenelson","389 peterbilt  epa10","5/21/2026","5/21/2026","4/27/2026 12:00 AM","Replace leaking head gasket and possible Head   Wash all Rads /  check and test all Batteries  X 8   a/c  sleeper and cab   ask ron 
+P.O.O RAY ORDERED ON MONDAY may 4 eta 1 week
+Parts here may 8th.","True","False","False",,"1","N/A","False","True","4/27/2026 9:50 AM","Ron Petkau","5/20/2026 11:42 AM","Wes Neufeld","James Fehr","False","False","False"
+"20610","Krasniuk Construction  204-326-0335","2022 International ","5/13/2026","5/13/2026",,"Check auto idle shut down-Safety
+
+Richard
+
+Waiting for approval? Carter in Bay 6","True","True","False",,"0","N/A","False","True","4/27/2026 10:40 AM","Gavin Koop","5/13/2026 5:04 PM","Wes Neufeld","David Reimer","False","False","False"
+"20611","Trouw ","3119","5/1/2026","5/1/2026",,"Engine fan on at all times / engine light on / j-brake issues     Truck has no power intermittenly    ask Ron     Reg  1 204 999 1173","True","True","False",,"0","N/A","False","True","4/27/2026 11:04 AM","Wes Neufeld","5/1/2026 3:02 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20612","ernie friesen    Red Kenworth ","aution truck ","5/19/2026","5/19/2026",,"PIck up truck from alberta and Bring to PBX for safety unit  inspection  (R PLATE)     waiting for auth  on repairs     ernie will call ron ","True","True","False",,"0","N/A","False","True","4/27/2026 11:07 AM","Ron Petkau","5/19/2026 9:05 AM","Wes Neufeld","James Fehr","False","False","False"
+"20613","Centennial Gravel","98","5/4/2026","5/4/2026",,"Safety","True","True","False",,"0","N/A","False","True","4/27/2026 11:11 AM","Wes Neufeld","5/4/2026 1:17 PM","Wes Neufeld","David Reimer","False","False","False"
+"20614","Centennial Gravel","08","5/6/2026","5/6/2026",,"Safety ","True","True","False",,"0","N/A","False","True","4/27/2026 11:11 AM","Wes Neufeld","5/6/2026 2:35 PM","Wes Neufeld","David Reimer","False","False","False"
+"20615","Centennial Gravel","94","5/13/2026","5/13/2026",,"Safety","True","True","False",,"0","N/A","False","True","4/27/2026 11:12 AM","Wes Neufeld","5/13/2026 2:07 PM","Wes Neufeld","David Reimer","False","False","False"
+"20616","Darren Dupuis 204-296-0896","81","5/2/2026","5/2/2026",,"Check A/C    will Be here Noon on thursday     parts Ordered with Tommy and Ron 
+
+
+Check for fuel leak
+
+Check for air leak ","True","True","False",,"1","N/A","False","True","4/27/2026 12:37 PM","Gavin Koop","5/1/2026 6:16 PM","Ron Petkau","James Fehr","False","False","False"
+"20618","Tim Klassen",,"5/4/2026","5/4/2026",,"Valve set -- Ike as per  customer     order Sleeper Bracket for Right rear valve and stableizer mount   Brad in parts is ordering it as per Ron ","True","True","False",,"0","N/A","False","True","4/27/2026 1:28 PM","Wes Neufeld","5/4/2026 2:24 PM","Wes Neufeld","James Fehr","False","False","False"
+"20621","Robert Loewen","KW T660","5/5/2026","5/5/2026",,"Engine swap issues    electrical ","True","True","False",,"0","N/A","False","True","4/27/2026 3:22 PM","Wes Neufeld","5/5/2026 9:56 AM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20622","Andy 204-995-4272","285","5/16/2026","5/19/2026",,"2023 Pacccar-Replace fan hub  / Brake pot ","True","True","False",,"-3","N/A","False","True","4/27/2026 3:47 PM","Gavin Koop","5/19/2026 5:45 AM","Wes Neufeld","David Reimer","False","False","False"
+"20623","Niverville  Towing ","650","5/5/2026","5/5/2026",,"King pins worn-Steer tires worn-A/C disconnected. 
+
+
+
+King pins on order with Robyn-ETA Tuesday May 5th. ","True","True","False",,"0","N/A","False","True","4/27/2026 4:19 PM","Gavin Koop","5/5/2026 4:42 PM","Wes Neufeld","David Reimer","False","False","False"
+"20626","More Then Just Feeds","123 / 216","5/1/2026","5/1/2026",,"Service ","True","True","False",,"0","N/A","False","True","4/27/2026 4:43 PM","Wes Neufeld","5/1/2026 6:29 AM","Wes Neufeld","David Reimer","False","False","False"
+"20627","Fast Brothers ","LB302","5/2/2026","5/2/2026",,"Wash  nd Mb safety inspection 
+
+Done, need to deliver","True","True","False",,"0","N/A","False","False","4/27/2026 5:05 PM","Ron Petkau","5/2/2026 11:38 AM","Ron Petkau","David Reimer","False","False","False"
+"20631","Daryle Smith","454","5/5/2026","5/5/2026",,"Signal stat  faulty  / this should be a warranty job  / make sure we have a switch instock or ordered in      Pick up and D/L Truck ","True","True","False",,"0","N/A","False","False","4/28/2026 7:54 AM","Ron Petkau","5/5/2026 4:36 PM","Wes Neufeld","David Reimer","False","False","False"
+"20632","Lightway ",,"5/1/2026","5/1/2026",,"NEED CAR ","False","True","False",,"0","N/A","False","False","4/28/2026 8:51 AM","Wes Neufeld","5/1/2026 2:06 PM","Wes Neufeld",,"False","False","False"
+"20633","Mcmunn","302102","5/2/2026","5/4/2026",,"Safety  April sticker","True","True","False",,"-2","N/A","False","True","4/28/2026 10:55 AM","Wes Neufeld","5/4/2026 7:07 AM","Wes Neufeld","David Reimer","False","False","False"
+"20637","PRYM Andy 204-995-4272","233","5/7/2026","5/7/2026",,"2014 Pete- Engine miss fire-Engine fan erratic. ","True","True","False",,"1","N/A","False","True","4/28/2026 12:11 PM","Gavin Koop","5/6/2026 5:03 PM","Wes Neufeld","David Reimer","False","False","False"
+"20638","PRYM Andy 204-995-4272","2023 Cortel 234A","5/7/2026","5/7/2026",,"Safety","True","True","False",,"1","N/A","False","True","4/28/2026 12:12 PM","Gavin Koop","5/6/2026 5:03 PM","Wes Neufeld","David Reimer","False","False","False"
+"20641","Silvanus Tree Service ",,"5/14/2026","5/14/2026",,"Safety / Body Integrity ","True","True","False",,"0","N/A","False","True","4/28/2026 2:26 PM","Wes Neufeld","5/14/2026 3:53 PM","Wes Neufeld","James Fehr","False","False","False"
+"20643","Friesen Hauling ","SDS05","5/21/2026","5/21/2026","5/6/2026 12:00 AM","Tub and frame crossmember repairs as marked by customer  ","True","False","False",,"2","N/A","False","False","4/28/2026 3:02 PM","Walter Wiens","5/19/2026 5:58 PM","Wes Neufeld","Walter Wiens","False","True","False"
+"20644","Ed And Mia ",,"5/20/2026","5/20/2026",,"Check head 
+- may 14 - head in wpg but head gasket kit is in edmonton eta tuesday may 19.","True","False","False",,"1","N/A","False","True","4/28/2026 3:33 PM","Gavin Koop","5/19/2026 10:37 AM","Wes Neufeld","James Fehr","False","False","False"
+"20647","Countryside Farms","CST20","5/12/2026","5/12/2026",,"Lights / Rollers / Brakes ","True","True","False",,"0","N/A","False","True","4/28/2026 4:25 PM","Wes Neufeld","5/12/2026 5:31 PM","Wes Neufeld","David Reimer","False","False","False"
+"20648","Canada Packers ","1905","5/2/2026","5/2/2026",,"Engine codes / abs / traction light on / mirror / coolant pressurizing     waylons taking it to arborg 6.30 am 
+Done","True","True","False",,"0","N/A","False","True","4/29/2026 6:45 AM","Wes Neufeld","5/2/2026 7:18 AM","Dave Reimer","James Fehr","False","False","False"
+"20649","Cardale  ","2448","5/21/2026","5/21/2026","5/4/2026 12:00 AM","Extend trailer 2' and the back end     Move Mudflap Forward and clean up all aluminum welds and deck  // rub rails  move angle ","True","False","False",,"1","N/A","False","False","4/29/2026 8:04 AM","Walter Wiens","5/20/2026 5:53 AM","Wes Neufeld","Walter Wiens","False","True","False"
+"20650","Canada Packers ","Kubota ","5/21/2026","5/21/2026","5/5/2026 12:00 AM","Refurbish quick attach","True","False","False",,"1","N/A","False","False","4/29/2026 8:05 AM","Walter Wiens","5/20/2026 5:53 AM","Wes Neufeld","Walter Wiens","False","True","False"
+"20652","Cardale  ","92","5/2/2026","5/2/2026",,"Check a/c and report to Stefhan ","True","True","False",,"1","N/A","False","False","4/29/2026 8:25 AM","Ron Petkau","5/1/2026 6:16 PM","Ron Petkau","James Fehr","False","False","False"
+"20654","C.N","274272","5/6/2026","5/6/2026",,"PMB 
+
+","True","True","False",,"0","N/A","False","True","4/29/2026 8:49 AM","Gavin Koop","5/6/2026 1:45 PM","Wes Neufeld","James Fehr","False","False","False"
+"20658","Blumenort Hatchery","Chick ","5/20/2026","5/20/2026",,"Needs truck Wednesday AM --Parts ordered 
+
+Safety 
+204-905-2426","False","False","False",,"1","N/A","False","False","4/29/2026 12:03 PM","Gavin Koop","5/19/2026 5:46 PM","James Fehr","David Reimer","False","False","False"
+"20659","D& W ","5363","5/4/2026","5/4/2026",,"Replace locking side tarp bar-Trailer at body shop   parts coming from welding shop","False","True","False",,"0","N/A","False","False","4/29/2026 1:28 PM","Gavin Koop","5/4/2026 10:46 AM","Wes Neufeld",,"False","False","False"
+"20661","Harv Friesen -204-791-1517",,"5/13/2026","5/13/2026",,"Full service","False","True","False",,"0","N/A","False","False","4/29/2026 2:56 PM","Gavin Koop","5/13/2026 5:04 PM","Wes Neufeld",,"False","False","False"
+"20662","Richard Hildebrandt-204-326-1523",,"5/14/2026","5/14/2026",,"Full service ","False","True","False",,"0","N/A","False","False","4/29/2026 2:59 PM","Gavin Koop","5/14/2026 3:03 PM","Wes Neufeld",,"False","False","False"
+"20664","Lanouett Ventures 204-371-7225","Load trail ","5/6/2026","5/6/2026",,"Safety on trailers-","True","True","False",,"0","N/A","False","True","4/30/2026 10:35 AM","Gavin Koop","5/6/2026 6:13 AM","Wes Neufeld","David Reimer","False","False","False"
+"20665","Trouw ","1251","5/1/2026","5/1/2026",,"Engien codes /abs codes ","True","True","False",,"0","External","False","True","4/30/2026 11:20 AM","Wes Neufeld","5/1/2026 12:58 PM","Wes Neufeld",,"False","False","False"
+"20666","Pearl ","1080","5/2/2026","5/2/2026",,"Air leak Axle slide leaking / Pre-Dot Inspection ","True","True","False",,"1","N/A","False","True","4/30/2026 1:03 PM","Wes Neufeld","5/1/2026 4:30 PM","Wes Neufeld","David Reimer","False","False","False"
+"20667","Pearl ","1020","5/5/2026","5/5/2026",,"Safety / Grease 
+
+In bay 3, waiting for brake rotor (eta Monday)","True","True","False",,"1","N/A","False","True","4/30/2026 1:04 PM","Wes Neufeld","5/4/2026 5:47 PM","Wes Neufeld","David Reimer","False","False","False"
+"20668","Canada Packers ","201908","5/2/2026","5/4/2026",,"Service / Hyd leak 
+
+In bay 4, Matthias","True","True","False",,"-2","N/A","False","True","4/30/2026 1:21 PM","Wes Neufeld","5/4/2026 6:43 AM","Ron Petkau","David Reimer","False","False","False"
+"20671","Jeff Penner ","KW","5/2/2026","5/2/2026",,"Steering box-Parts here ","True","True","False",,"1","N/A","False","True","4/30/2026 2:45 PM","Gavin Koop","5/1/2026 6:16 PM","Ron Petkau","David Reimer","False","False","False"
+"20672","David Friesen  204 384 0627 ","579 pete ","5/1/2026","5/1/2026",,"Check and repair for trans not engaging / note only check  / any work required is booked in For Monday ","False","True","False",,"0","N/A","False","False","4/30/2026 3:15 PM","Ron Petkau","5/1/2026 1:59 PM","Wes Neufeld","David Reimer","False","False","False"
+"20673","Canada Packers ","1904","5/14/2026","5/14/2026",,"Engine Knock    ask Ron dont start engine 
+cam and lifter damage engine is being pulled out for full cam inspection. pre auth is already done.","True","True","False",,"0","N/A","False","True","4/30/2026 3:21 PM","Ron Petkau","5/14/2026 11:31 AM","James Fehr","James Fehr","False","False","False"
+"20674","Windy -Vince ",,"5/1/2026","5/1/2026",,"Air cylinder --Customer has parts ","True","True","False",,"0","N/A","False","True","4/30/2026 3:29 PM","Wes Neufeld","5/1/2026 1:35 PM","Wes Neufeld","James Fehr","False","False","False"
+"20675","Steinbach Hatchery ","029","5/1/2026","5/1/2026",,"Replace pass side mirror  -Parts ordered with Tommy April 30/26","True","True","False",,"0","N/A","False","True","4/30/2026 4:05 PM","Wes Neufeld","5/1/2026 9:50 AM","Wes Neufeld","David Reimer","False","False","False"
+"20676","Serge",,"5/2/2026","5/2/2026",,"Coolant pipe --Part here ","True","True","False",,"1","N/A","False","True","4/30/2026 5:35 PM","Wes Neufeld","5/1/2026 2:00 PM","Wes Neufeld","David Reimer","False","False","False"
+"20677","Fast Brothers ","St210","5/13/2026","5/13/2026",,"Pick up Truck from Fast Brothers to perform a safety and report  to Harry    204 880 5434
+
+In bay 6, Carter","True","True","False",,"0","N/A","False","True","5/1/2026 5:50 AM","Ron Petkau","5/13/2026 8:45 AM","Ron Petkau","David Reimer","False","False","False"
+"20678","Abram Nuefeld ",,"5/2/2026","5/4/2026",,"A/C not working ","True","True","False",,"-2","N/A","False","True","5/1/2026 6:03 AM","Wes Neufeld","5/4/2026 6:43 AM","Ron Petkau","James Fehr","False","False","False"
+"20679","Friesen Hauling ","sd13","5/21/2026","5/21/2026","5/4/2026 12:00 AM","Repair cracks on tub and frame ","True","False","False",,"2","N/A","False","False","5/1/2026 8:09 AM","Walter Wiens","5/19/2026 5:59 PM","Wes Neufeld","Walter Wiens","False","True","False"
+"20680","Canada Packers ","2502","5/2/2026","5/4/2026",,"Service / lock issues 
+
+Done? need to deliver with 201908","True","True","False",,"-2","External","False","True","5/1/2026 9:24 AM","Wes Neufeld","5/4/2026 6:43 AM","Ron Petkau","James Fehr","False","False","False"
+"20681","Niverville  Towing ","international ","5/2/2026","5/2/2026",,"Check why Batteries Drain over night 
+
+Bay 7, Carter
+
+ Done","True","True","False",,"0","N/A","False","False","5/1/2026 9:35 AM","Ron Petkau","5/2/2026 10:44 AM","Dave Reimer","David Reimer","False","False","False"
+"20682","Steinbach Hatchery ","2001","5/20/2026","5/20/2026",,"Safety / Service ","True","False","False",,"1","N/A","False","True","5/1/2026 9:55 AM","Wes Neufeld","5/19/2026 1:23 PM","Wes Neufeld","David Reimer","False","False","False"
+"20684","Daryle Smith","440","5/2/2026","5/4/2026",,"Reflash ??  PICK UNIT UP FROM SHOP IN BLUMENORT 
+
+Outside bay 2, Dustin","True","True","False",,"-2","N/A","False","False","5/1/2026 11:35 AM","Wes Neufeld","5/4/2026 5:56 AM","Ron Petkau","David Reimer","False","False","False"
+"20685","Novid","711","5/15/2026","5/15/2026",,"Pro-heater leaking / Bunk rivets missing / Head-liner in bunk leaking / Exhaust stack bushings / Diff/ tranny service / Check transmission codes--seems to hang up in gear at times ? / Grease job ","True","True","False",,"0","N/A","False","True","5/1/2026 11:48 AM","Wes Neufeld","5/15/2026 2:41 PM","Wes Neufeld","Ron Harder","False","False","False"
+"20686","Canada Packers ","201907","5/5/2026","5/5/2026",,"Service /abs 
+
+Bay 3, Josh and Randy","True","True","False",,"0","N/A","False","True","5/1/2026 12:45 PM","Wes Neufeld","5/5/2026 4:32 PM","Wes Neufeld","David Reimer","False","False","False"
+"20687","D & W ","5301","5/6/2026","5/6/2026",,"Replace tarp-Parts in trailer 
+Slope at front of trailer rusted out-Welding shop
+Full service 
+Wash
+
+Is this the one Rick and Waylon finished?","True","True","False",,"0","N/A","False","True","5/1/2026 1:55 PM","Gavin Koop","5/6/2026 3:18 PM","Wes Neufeld","Ron Harder","False","False","False"
+"20688","Hylife","166","5/8/2026","5/8/2026",,"Customer reports turbo actuator has failed.","True","True","False",,"0","N/A","False","True","5/1/2026 1:55 PM","Gavin Koop","5/8/2026 2:27 PM","Wes Neufeld","James Fehr","False","False","False"
+"20690","Fast Brothers ","ST-205","5/15/2026","5/15/2026",,"Safety-Pick up from fast brothers ","True","True","False",,"1","N/A","False","True","5/1/2026 2:49 PM","Gavin Koop","5/14/2026 5:44 PM","Wes Neufeld","David Reimer","False","False","False"
+"20691","Eg Penner ","56","5/20/2026","5/20/2026",,"Safety / clarance light  po# 305215","True","False","False",,"1","N/A","False","True","5/1/2026 3:17 PM","Wes Neufeld","5/19/2026 4:08 PM","Wes Neufeld","David Reimer","False","False","False"
+"20692","Curt Plett / Leighlee Farms",,"5/4/2026","5/5/2026",,"Engine codes ","True","True","False",,"-1","N/A","False","True","5/1/2026 4:29 PM","Wes Neufeld","5/5/2026 9:55 AM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20693","Steinbach Hatchery ","029","5/5/2026","5/5/2026",,"Service ","True","True","False",,"0","N/A","False","True","5/1/2026 5:32 PM","Wes Neufeld","5/5/2026 3:25 PM","Wes Neufeld","David Reimer","False","False","False"
+"20694","Pearl ","5","5/16/2026","5/16/2026",,"APU
+
+Needs new oil pressure sensor, will order on monday
+
+Was in bay 2, Dustin","True","True","False",,"0","N/A","False","True","5/1/2026 5:53 PM","Gavin Koop","5/16/2026 8:30 AM","Wes Neufeld","David Reimer","False","False","False"
+"20696","Don Singbel",,"5/4/2026","5/4/2026",,"Trailer spare tire holder.    Charles    6 am ","True","True","False",,"0","N/A","False","True","5/2/2026 7:52 AM","Gavin Koop","5/4/2026 8:06 AM","Wes Neufeld","David Reimer","False","False","False"
+"20697","Brent 204-590-6975","107","5/21/2026","5/21/2026",,"Keys on dip stick.    Ike  F   7 am  keys on dipstick    Complete overhaul on engine  C15 Cat ","True","False","False",,"1","N/A","False","True","5/2/2026 10:22 AM","Gavin Koop","5/20/2026 2:06 PM","Wes Neufeld","James Fehr","False","False","False"
+"20698","Trappers","1012","5/13/2026","5/13/2026",,"Coolant pressurizing     Dustin ","True","True","False",,"0","N/A","False","True","5/4/2026 6:20 AM","Wes Neufeld","5/13/2026 5:56 AM","Ron Petkau","David Reimer","False","False","False"
+"20699","Cory Smith ","227","5/5/2026","5/5/2026",,"List    oil leaks  ","True","True","False",,"0","N/A","False","True","5/4/2026 6:22 AM","Wes Neufeld","5/5/2026 2:23 PM","Wes Neufeld","James Fehr","False","False","False"
+"20700","Bvt","H125 /H225","5/12/2026","5/12/2026",,"Good morning,
+
+Could we schedule this set of hoppers in with you for Monday, May 4? They should be here Monday morning but we'll confirm with you.
+
+Safety, service, alignment check, structural inspection
+
+H125
+2026 Lode King
+VIN 2LDAH2837TV080527
+
+H225
+2026 Lode King
+VIN 2LDAH3029TV080528
+","True","True","False",,"0","N/A","False","True","5/4/2026 6:44 AM","Wes Neufeld","5/12/2026 1:54 PM","Wes Neufeld","David Reimer","False","False","False"
+"20701","Ron Petkau","1985 Gold wing ","5/5/2026","5/5/2026",,"Wash and  clean Motor bike A-Z   and   also Clean  Bike Cover    /  all compartments    Note Key in my office     Helena ","True","True","False",,"0","N/A","False","True","5/4/2026 7:03 AM","Ron Petkau","5/5/2026 1:01 PM","Ron Harder","Ron Harder","False","False","False"
+"20702","Mc Munn ","Pete","5/4/2026","5/4/2026",,"Check and rteport on engine codes   and Repaort  to customer  ","True","True","False",,"0","N/A","False","True","5/4/2026 7:05 AM","Ron Petkau","5/4/2026 2:27 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20703","Countryside Farms","CSR23","5/5/2026","5/5/2026",,"Check codes --Refer shut down on the weekend 
+Air dump valve needs to be replaced ","True","True","False",,"0","N/A","False","True","5/4/2026 7:09 AM","Wes Neufeld","5/5/2026 2:23 PM","Wes Neufeld","David Reimer","False","False","False"
+"20704","Pro Action",,"5/11/2026","5/12/2026",,"Reinspect safety / Motor mounts / Hook up air for pintel hitch ","True","True","False",,"-1","N/A","False","True","5/4/2026 7:11 AM","Wes Neufeld","5/12/2026 6:17 AM","Wes Neufeld","James Fehr","False","False","False"
+"20705","Countryside Farms","CSU34","5/12/2026","5/12/2026",,"Safety  / Mud flaps / engine codes ","True","True","False",,"0","N/A","False","True","5/4/2026 7:41 AM","Wes Neufeld","5/12/2026 5:30 PM","Wes Neufeld","David Reimer","False","False","False"
+"20706","Anthony  Potvin","322","5/4/2026","5/4/2026",,"Air bag - RIght rear ","True","True","False",,"0","N/A","False","True","5/4/2026 7:59 AM","Wes Neufeld","5/4/2026 9:41 AM","Wes Neufeld","James Fehr","False","False","False"
+"20707","Canada Packers ","2501 / 202103","5/8/2026","5/8/2026",,"Grease truck and trialer 
+Lights on the trialer ","True","True","False",,"0","N/A","False","True","5/4/2026 8:00 AM","Wes Neufeld","5/8/2026 6:41 AM","Wes Neufeld","David Reimer","False","False","False"
+"20708","WM Dyck","106","5/20/2026","5/20/2026",,"Refinish cab & hood of unit to customer's specified color
+R/R deck      Waylon   and Rick   erik ","True","False","False",,"1","N/A","False","True","5/4/2026 9:32 AM","Ron Harder","5/19/2026 1:24 PM","Wes Neufeld","Ron Harder","False","False","False"
+"20709","Canada Packers ","2507 / 202101","5/5/2026","5/5/2026",,"Grease job ( Truck and Trailer )
+Abs on Truck
+pump --Customer supplied ","True","True","False",,"0","N/A","False","True","5/4/2026 9:47 AM","Wes Neufeld","5/5/2026 1:57 PM","Wes Neufeld","David Reimer","False","False","False"
+"20710","Pacman ","319","5/6/2026","5/6/2026",,"Driver reports truck dropped power. CEL came on a few min later-Light flashed on and off ","True","True","False",,"0","N/A","False","True","5/4/2026 10:13 AM","Gavin Koop","5/6/2026 4:02 PM","Wes Neufeld","James Fehr","False","False","False"
+"20711","Isaac Bergen ",,"5/8/2026","5/8/2026",,"Grease truck / Pre-Safety / Oil leak / Brake pot ","True","True","False",,"0","N/A","False","True","5/4/2026 10:16 AM","Wes Neufeld","5/8/2026 9:56 AM","Wes Neufeld","James Fehr","False","False","False"
+"20712","Pearl ","55","5/5/2026","5/5/2026",,"Speedo issues / Fuel filter gauge not working ","True","True","False",,"0","N/A","False","True","5/4/2026 10:18 AM","Wes Neufeld","5/5/2026 1:15 PM","Ron Petkau","James Fehr","False","False","False"
+"20713","Canada Packers ","201803","5/20/2026","5/20/2026",,"Bottom level gate weld broke, top floor bracket broken, pass side rope securement broken, some supports sticking 
+
+","True","False","False",,"1","N/A","False","True","5/4/2026 10:54 AM","Wes Neufeld","5/19/2026 1:24 PM","Wes Neufeld","Walter Wiens","False","True","False"
+"20714","Mc Munn ","301501","5/5/2026","5/6/2026",,"Fuel leak on left side of engine.
+could not find fuel leak but did find a coolant leak that was runnung down the left side of the transmission. also topped up the coolant.","True","True","False",,"-1","N/A","False","True","5/4/2026 10:55 AM","Wes Neufeld","5/6/2026 7:01 AM","Wes Neufeld","James Fehr","False","False","False"
+"20715","Mc Munn ","142302","5/13/2026","5/13/2026",,"B Service ","True","True","False",,"0","N/A","False","True","5/4/2026 11:07 AM","Wes Neufeld","5/13/2026 10:32 AM","Wes Neufeld","David Reimer","False","False","False"
+"20716","Canada Packers ","2504","5/6/2026","5/6/2026",,"full service, Door stop bolts breaking","True","True","False",,"0","External","False","True","5/4/2026 11:18 AM","Wes Neufeld","5/6/2026 11:37 AM","James Fehr","James Fehr","False","False","False"
+"20717","Canada Packers ","201916","5/7/2026","5/7/2026",,"Full Service, Safety, service all air cylinders, air leak on top supports control valve","True","True","False",,"1","N/A","False","True","5/4/2026 11:19 AM","Wes Neufeld","5/6/2026 4:52 PM","Wes Neufeld","David Reimer","False","False","False"
+"20718","Big Freight ","CV2477 ","5/8/2026","5/11/2026",," smart air sleeper heater that doesn’t work.","True","True","False",,"-3","N/A","False","True","5/4/2026 12:49 PM","Gavin Koop","5/11/2026 4:35 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20719","Building Products","175-694","5/5/2026","5/5/2026",,"Service
+
+PO# 50678","True","True","False",,"0","N/A","False","True","5/4/2026 3:16 PM","Wes Neufeld","5/5/2026 3:25 PM","Wes Neufeld","James Fehr","False","False","False"
+"20720","Tim Klassen",,"5/9/2026","5/9/2026",,"Finish bunk repair ","True","True","False",,"0","N/A","False","True","5/4/2026 3:29 PM","Wes Neufeld","5/9/2026 12:06 PM","Wes Neufeld","James Fehr","False","False","False"
+"20721","Frank Friesen ","2007 T600","5/6/2026","5/6/2026",,"Check power steering system and pump-Steering box P.O.O Tom ETA Tesday May 5th-Check relife valve for scoring 
+Check for air leak-Poss fan hub    11 am ","True","True","False",,"0","N/A","False","True","5/4/2026 4:31 PM","Gavin Koop","5/6/2026 11:36 AM","James Fehr","James Fehr","False","False","False"
+"20722","South East ","6-545","5/5/2026","5/5/2026",,"Scan ABS and report ","False","True","False",,"0","N/A","False","False","5/5/2026 8:21 AM","Gavin Koop","5/5/2026 10:45 AM","Wes Neufeld",,"False","False","False"
+"20723","Trouw ","2164","5/5/2026","5/5/2026",,"Hydraulic hose leaking ","True","True","False",,"0","N/A","False","True","5/5/2026 8:36 AM","Gavin Koop","5/5/2026 1:03 PM","Wes Neufeld","David Reimer","False","False","False"
+"20724","Jim Braun",,"5/9/2026","5/9/2026",,"A/C not working / wash rads / bug screen / wash truck ","True","True","False",,"0","N/A","False","True","5/5/2026 9:40 AM","Wes Neufeld","5/9/2026 11:11 AM","Wes Neufeld","James Fehr","False","False","False"
+"20725","Sunrise Chick","18","5/7/2026","5/7/2026",,"Unit 18 reefer that was giving a Bad fuse code on the display. My Maintenance guy diagnosed it and it sounds like the Starting relay solenoid is bad","True","True","False",,"0","N/A","False","True","5/5/2026 11:08 AM","Wes Neufeld","5/7/2026 1:25 PM","Wes Neufeld","David Reimer","False","False","False"
+"20726","Bristal-204-408-4267","2222","5/20/2026","5/20/2026",,"CEL 
+
+
+Called at 1pm May 5th-Found fuel return high-Advised customer. ","True","True","False",,"0","External","False","True","5/5/2026 1:08 PM","Gavin Koop","5/20/2026 10:51 AM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20727","Countryside Farms","CST25","5/20/2026","5/20/2026",,"Safety / Grease ","True","True","False",,"0","N/A","False","True","5/5/2026 2:23 PM","Wes Neufeld","5/20/2026 6:41 AM","Wes Neufeld","David Reimer","False","False","False"
+"20728","Trouw ","3209","5/20/2026","5/20/2026",,"Abs / traction / Engine codes ","True","False","False",,"1","N/A","False","True","5/5/2026 2:33 PM","Wes Neufeld","5/19/2026 1:24 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20729","Larry Plett ","truck  & trailer ","5/11/2026","5/11/2026",,"Mb safety  Truck and Trailer     list requested and givin to ron an Wes ","True","True","False",,"2","N/A","False","True","5/5/2026 3:09 PM","Ron Petkau","5/9/2026 9:58 AM","Wes Neufeld","David Reimer","False","False","False"
+"20730","Fast Brothers ","TD215","5/6/2026","5/6/2026",,"Electrical issues ","True","True","False",,"0","N/A","False","True","5/5/2026 4:39 PM","Wes Neufeld","5/6/2026 2:05 PM","Ron Petkau","David Reimer","False","False","False"
+"20731","ernie wiebe  ","Blue kw ","5/8/2026","5/8/2026",,"Replace Fuel restriction Gauge   Ron has the  Part ","True","True","False",,"0","N/A","False","True","5/6/2026 5:54 AM","Ron Petkau","5/8/2026 9:56 AM","Wes Neufeld","David Reimer","False","False","False"
+"20732","RoseRidge","522","5/11/2026","5/11/2026",,"Grease job / lights ","True","True","False",,"0","N/A","False","True","5/6/2026 6:04 AM","Wes Neufeld","5/11/2026 11:42 AM","Wes Neufeld","David Reimer","False","False","False"
+"20733","HERITAGE LANE FARMS","international  black ","5/13/2026","5/13/2026",,"Low oil pressure     parts for Oil filter base and regulator are being flown in  2 days away as ofr wednesday    Needs it  Monday Night ","True","True","False",,"0","N/A","False","True","5/6/2026 6:27 AM","Wes Neufeld","5/13/2026 2:48 PM","Wes Neufeld","James Fehr","False","False","False"
+"20734","Light way ","441","5/9/2026","5/9/2026",,"Air restiction  gauge issue and boost gauge all over the map when driving / possible dash cluster issue 
+
+dash Cluster   restriction  gauge  and boost gauge   irratic     ask  ron ","True","True","False",,"0","N/A","False","True","5/6/2026 7:20 AM","Ron Petkau","5/9/2026 11:11 AM","Wes Neufeld","James Fehr","False","False","False"
+"20735","Fast Brothers ","St217 ","5/23/2026","5/23/2026",,"Program Rear air suspension to 15 kph dump Mode in PVP     Drver says he can not spread gravel while driving  air suspsion will not dump  unless he stops ","True","False","False",,"7","N/A","False","False","5/6/2026 7:47 AM","Ron Petkau","5/16/2026 10:09 AM","Wes Neufeld",,"False","False","False"
+"20736","Fast Brothers ","ST218","5/9/2026","5/9/2026",,"Program PVP to 15 kph on rear suspesion air dump /  driver says he can not spread gravel while driving Now  ","True","True","False",,"0","N/A","False","False","5/6/2026 7:49 AM","Ron Petkau","5/9/2026 8:08 AM","Wes Neufeld",,"False","False","False"
+"20738","Reimark Farms ","GM ","5/14/2026","5/14/2026",,"Poor Brakes  talk to Ron ","True","True","False",,"0","N/A","False","True","5/6/2026 8:17 AM","Ron Petkau","5/14/2026 7:08 AM","Wes Neufeld","James Fehr","False","False","False"
+"20739","PBX  ","Unit 35 ","5/20/2026","5/20/2026",,"Go to Niverville Towing and remove ECM   from engine     waylon     ask Ron ","True","False","False",,"1","N/A","False","False","5/6/2026 8:19 AM","Ron Petkau","5/19/2026 7:34 AM","Ron Petkau",,"False","False","False"
+"20740","Pearl ","60","5/13/2026","5/13/2026",,"Safety ","True","True","False",,"0","N/A","False","True","5/6/2026 8:47 AM","Wes Neufeld","5/13/2026 10:31 AM","Wes Neufeld","James Fehr","False","False","False"
+"20742","Canada Packers ","201902","5/7/2026","5/7/2026",,"Service ","True","True","False",,"0","N/A","False","True","5/6/2026 9:02 AM","Wes Neufeld","5/7/2026 7:25 AM","Wes Neufeld","David Reimer","False","False","False"
+"20743","PKW","395","5/9/2026","5/9/2026",,"Grease job / Wiper blades ","True","True","False",,"0","N/A","False","True","5/6/2026 9:59 AM","Wes Neufeld","5/9/2026 11:11 AM","Wes Neufeld","David Reimer","False","False","False"
+"20744","Deadwood ",,"5/20/2026","5/20/2026",,"Safety ","False","False","False",,"1","N/A","False","False","5/6/2026 10:01 AM","Wes Neufeld","5/19/2026 1:24 PM","Wes Neufeld",,"False","False","False"
+"20745","Canada Packers ","2201 /201901","5/6/2026","5/7/2026",,"Grease job / truck and trailer / air leak by pto area / ball valve on tanks leaking ","True","True","False",,"-1","N/A","False","True","5/6/2026 11:06 AM","Wes Neufeld","5/7/2026 5:58 AM","Wes Neufeld","David Reimer","False","False","False"
+"20746","Trouw ","1252","5/11/2026","5/11/2026",,"Transmission codes ","True","True","False",,"0","N/A","False","True","5/6/2026 11:07 AM","Wes Neufeld","5/11/2026 11:41 AM","Wes Neufeld","David Reimer","False","False","False"
+"20747","Trouw ","3211","5/6/2026","5/6/2026",,"Engine codes ","True","True","False",,"0","N/A","False","True","5/6/2026 11:13 AM","Wes Neufeld","5/6/2026 11:14 AM","Wes Neufeld","David Reimer","False","False","False"
+"20748","Canada Packers ","2500","5/11/2026","5/11/2026",,"Polish rims and tanks ","True","True","False",,"0","N/A","False","True","5/6/2026 11:14 AM","Wes Neufeld","5/11/2026 2:36 PM","Wes Neufeld","Brooke Penney","False","False","False"
+"20749","Mcmunn","301109","5/11/2026","5/11/2026",,"Fuel drains off, won't start.","True","True","False",,"0","N/A","False","True","5/6/2026 11:18 AM","Wes Neufeld","5/11/2026 10:42 AM","Wes Neufeld","David Reimer","False","False","False"
+"20750","Hylife","140","5/11/2026","5/12/2026",,"Safety","True","True","False",,"-1","N/A","False","True","5/6/2026 11:19 AM","Wes Neufeld","5/12/2026 5:55 AM","Wes Neufeld","James Fehr","False","False","False"
+"20752","Fast Brothers ","st211 ","5/15/2026","5/15/2026",,"Service call to check engine smokeing    Todd ","True","True","False",,"7","N/A","False","False","5/6/2026 3:33 PM","Ron Petkau","5/8/2026 1:24 PM","Ron Petkau","Triage (Todd)","False","False","False"
+"20753","John Bartel","61","5/8/2026","5/8/2026",,"Full Service.","True","True","False",,"0","N/A","False","True","5/6/2026 4:04 PM","Gavin Koop","5/8/2026 2:06 PM","Wes Neufeld","David Reimer","False","False","False"
+"20754","Countryside Farms","CST29","5/7/2026","5/7/2026",,"Brake pot   LR ","True","True","False",,"0","N/A","False","True","5/6/2026 4:05 PM","Wes Neufeld","5/7/2026 11:06 AM","Wes Neufeld","David Reimer","False","False","False"
+"20755","Andy 204-995-4272","Cat ","5/11/2026","5/11/2026",,"1st service since rebuild-Check for oil leak near the oil filter","True","True","False",,"0","N/A","False","True","5/6/2026 4:21 PM","Gavin Koop","5/11/2026 5:39 PM","Wes Neufeld","James Fehr","False","False","False"
+"20756","Canada Packers ","2401 / 201702","5/7/2026","5/8/2026",,"Service truck and trailer / check all lights ","False","True","False",,"-1","N/A","False","False","5/6/2026 4:51 PM","Wes Neufeld","5/8/2026 5:51 AM","Wes Neufeld",,"False","False","False"
+"20757","AGI","F550 service truck","5/8/2026","5/8/2026",,"MPI repairs     1 ton Service truck   waylon ","True","True","False",,"0","N/A","False","True","5/6/2026 4:52 PM","Ron Harder","5/8/2026 1:26 PM","Ron Petkau","Ron Harder","False","False","False"
+"20758","Q line ","trailer ","5/7/2026","5/7/2026",,"Repair Trailer lights     charles ","True","True","False",,"0","N/A","False","True","5/7/2026 6:11 AM","Ron Petkau","5/7/2026 11:07 AM","Wes Neufeld","David Reimer","False","False","False"
+"20759","Fast Brothers ","DD13","5/8/2026","5/8/2026",,"Service Call to Fast brothers and  Diagnos Starting issues   on the DD13    Note Fast brothers Just rebuilt this engine and already have 2 sets of injectors installed     Todd ","True","True","False",,"0","N/A","False","True","5/7/2026 6:14 AM","Ron Petkau","5/8/2026 5:41 AM","Ron Petkau","Triage (Todd)","False","False","False"
+"20760","Daryle Smith","355","5/7/2026","5/7/2026",,"Check For Engine and aftertreatment Codes  /  report and repair    waylon  ","True","True","False",,"0","N/A","False","True","5/7/2026 6:16 AM","Ron Petkau","5/7/2026 3:59 PM","Ron Petkau","David Reimer","False","False","False"
+"20761","Mcmunn","301108","5/12/2026","5/12/2026",,"Check why Power steering oil  is bleeding back into reservoir and over flowing  when level is at proper level ","True","True","False",,"0","N/A","False","True","5/7/2026 7:54 AM","Ron Petkau","5/12/2026 10:23 AM","Ron Petkau","James Fehr","False","False","False"
+"20762","South East Pallet","540","5/7/2026","5/7/2026",,"windshield
+interior cleaning","False","True","False",,"0","N/A","False","False","5/7/2026 8:14 AM","Ron Harder","5/7/2026 5:02 PM","Ron Harder","Ron Harder","False","False","False"
+"20763","Larry Plett ","International","5/7/2026","5/7/2026",,"DS windshield
+Interior cleaning","True","True","False",,"0","N/A","False","True","5/7/2026 8:15 AM","Ron Harder","5/7/2026 5:02 PM","Ron Harder","Ron Harder","False","False","False"
+"20764","Tim Klassen",,"5/9/2026","5/9/2026",,"Safety trailer ","True","True","False",,"0","N/A","False","True","5/7/2026 9:03 AM","Wes Neufeld","5/9/2026 12:06 PM","Wes Neufeld","David Reimer","False","False","False"
+"20765","corey smith ","227","5/9/2026","5/9/2026",,"Charging issues  /   oil pan oil leak     retorque wheels ","True","True","False",,"0","N/A","False","True","5/7/2026 9:04 AM","Wes Neufeld","5/9/2026 12:07 PM","Wes Neufeld","David Reimer","False","False","False"
+"20766","CN Rail","172253","5/9/2026","5/9/2026",,"Water pump leaking for water tank ","True","True","False",,"0","N/A","False","True","5/7/2026 9:34 AM","Wes Neufeld","5/9/2026 8:50 AM","Wes Neufeld","James Fehr","False","False","False"
+"20767","PakMann","319","5/12/2026","5/12/2026",,"Stalling out / engine light on ","True","True","False",,"0","N/A","False","True","5/7/2026 11:04 AM","Wes Neufeld","5/12/2026 5:29 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20768","Building Products","175-664","5/21/2026","5/21/2026",,"Service / Safety 
+
+po# 50680","True","False","False",,"1","N/A","False","True","5/7/2026 11:05 AM","Wes Neufeld","5/20/2026 11:15 AM","Wes Neufeld","David Reimer","False","False","False"
+"20769","Best Level","Pete ","5/15/2026","5/15/2026",,"Safety ","True","True","False",,"1","N/A","False","True","5/7/2026 1:17 PM","Wes Neufeld","5/14/2026 5:13 PM","Wes Neufeld","David Reimer","False","False","False"
+"20770","Canada Packers ","2501 / 202103","5/7/2026","5/8/2026",,"Grease job","False","True","False",,"-1","N/A","False","False","5/7/2026 1:18 PM","Wes Neufeld","5/8/2026 5:51 AM","Wes Neufeld",,"False","False","False"
+"20771","Eg Penner ","89","5/7/2026","5/7/2026",,"Brake pot 
+
+po# 305709","True","True","False",,"0","N/A","False","True","5/7/2026 2:55 PM","Wes Neufeld","5/7/2026 5:40 PM","Wes Neufeld","David Reimer","False","False","False"
+"20773","Roseridge","515","5/8/2026","5/8/2026",,"Right rear axle brakes ?","True","True","False",,"0","N/A","False","True","5/7/2026 4:06 PM","Wes Neufeld","5/8/2026 9:56 AM","Wes Neufeld","David Reimer","False","False","False"
+"20774","Novid ","718","6/8/2026","6/8/2026",,"-HVAC controls: Driver reported that earlier this week he couldn't control the temp it was just always hot, and it seems like all the vents are blowing air. He could control fan speed. A day later he gained control of the temp to adjust but the vents still all blow air through them
+-Transmission clunks/grinds when shifting from low range to high range on the plunger. Another shop thought maybe the synchronizer was the issue, sounded like an expensive fix $5000, wanted your opinion on the matter. Did a K3341 Kit in December at Vimar
+-The stop engine light has come on a couple times over last 2 weeks, I don't see any codes/errors on the ELD system.
+-It also on occasion has flashed a ""parking brake on"" warning (Last time I had this issue it was a Throttle Position Sensor on a 388 pete so maybe?)
+-Safety 
+
+Planning on having you the truck around lunch on May11th, would like to pick up the truck Thursday May 14th. 
+","False","False","False",,"32","N/A","False","False","5/7/2026 4:32 PM","Gavin Koop","5/7/2026 4:32 PM","Gavin Koop",,"False","False","False"
+"20775","NorthSouth","9","5/9/2026","5/9/2026",,"Parts here / Service / Replace brake pots ","True","True","False",,"0","N/A","False","True","5/7/2026 4:43 PM","Wes Neufeld","5/9/2026 12:06 PM","Wes Neufeld","David Reimer","False","False","False"
+"20777","Anthony  Potvin","345  epa 10 ","5/12/2026","5/12/2026",,"Back Pressure Valve  piston  ,    main  fan belt   , check all idlers    and belts  ask Ron for Parts   ","True","True","False",,"1","N/A","False","True","5/7/2026 4:55 PM","Ron Petkau","5/11/2026 5:42 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20778","Canada Packers ","2016-01 /2011","5/11/2026","5/11/2026",,"Check and repair all brakes that need to get replaced / note left center wheel is lock up / had to do a service call to release brakes / tires blew up  / fenders blew up and broke off   mudflaps blew off   / complete service on trailer ","True","True","False",,"0","N/A","False","True","5/8/2026 5:40 AM","Ron Petkau","5/11/2026 4:35 PM","Wes Neufeld","David Reimer","False","False","False"
+"20779","hertige lane ","2001  kw ","5/8/2026","5/8/2026",,"Ron to go and pick up truck from  ile des chenes  #59   with Greg  9.30-10  am ","True","True","False",,"0","N/A","False","False","5/8/2026 5:49 AM","Ron Petkau","5/8/2026 9:57 AM","Wes Neufeld",,"False","False","False"
+"20780","Canada Packers ","1812","5/12/2026","5/12/2026",,"Full service, Differential locks only one functional, check engine light on.
+
+Windshield Appt at Fairway bodyshop","True","True","False",,"0","N/A","False","True","5/8/2026 9:10 AM","Wes Neufeld","5/12/2026 5:14 PM","Wes Neufeld","David Reimer","False","False","False"
+"20781","Canada Packers ","201905","5/13/2026","5/13/2026",,"Full service, service all air cylinders, Lic Plate light out","True","True","False",,"0","N/A","False","True","5/8/2026 9:13 AM","Wes Neufeld","5/13/2026 2:51 PM","Wes Neufeld","David Reimer","False","False","False"
+"20782","Canada Packers ","2406","5/9/2026","5/9/2026",,"Service ","True","True","False",,"0","N/A","False","True","5/8/2026 9:14 AM","Wes Neufeld","5/9/2026 11:09 AM","Wes Neufeld","David Reimer","False","False","False"
+"20783","Jim Braun",,"5/13/2026","5/13/2026",,"Brake caliper ? / engine codes / traction /abs light on ","True","True","False",,"0","N/A","False","True","5/8/2026 9:55 AM","Wes Neufeld","5/13/2026 2:51 PM","Wes Neufeld","David Reimer","False","False","False"
+"20784","Novid ","706","5/20/2026","5/20/2026",,"Check and report on head gasket.  / Safety      Kyle ","True","False","False",,"1","N/A","False","True","5/8/2026 10:36 AM","Gavin Koop","5/19/2026 1:30 PM","Wes Neufeld","James Fehr","False","False","False"
+"20785","Sollio","5 / W1","5/11/2026","5/11/2026",,"Grease truck / Trailer ","True","True","False",,"0","N/A","False","True","5/8/2026 11:55 AM","Wes Neufeld","5/11/2026 10:35 AM","Wes Neufeld","David Reimer","False","False","False"
+"20786","KK Penner","77","5/12/2026","5/12/2026",,"Safety ","True","True","False",,"0","N/A","False","True","5/8/2026 12:50 PM","Wes Neufeld","5/12/2026 10:22 AM","Ron Petkau","David Reimer","False","False","False"
+"20788","light way ","438","5/11/2026","5/11/2026",,"Check for engine running rough   possible injector #6    paccar Warranty     dustin ","True","True","False",,"0","External","False","True","5/8/2026 1:21 PM","Ron Petkau","5/11/2026 4:36 PM","Wes Neufeld","David Reimer","False","False","False"
+"20789","Lightway ","284","5/11/2026","5/11/2026",,"Check starter-Replaced 2 weeks ago cust reports dead spot-Found corroded relays 
+Check for squeeling when pulling 
+Check and repair bunk heat-Seek service light on 
+Check for plugged cabin air filter","False","True","False",,"0","N/A","False","False","5/8/2026 1:57 PM","Gavin Koop","5/11/2026 4:36 PM","Wes Neufeld",,"False","False","False"
+"20791","Cottonwood","1912","5/12/2026","5/12/2026",,"At times no acceleration ","True","True","False",,"0","N/A","False","True","5/8/2026 2:58 PM","Wes Neufeld","5/12/2026 11:29 AM","Wes Neufeld","James Fehr","False","False","False"
+"20792","Roseridge","D223","5/20/2026","5/20/2026",,"Complete brake inspection / tires ","False","False","False",,"1","N/A","False","False","5/8/2026 3:05 PM","Wes Neufeld","5/19/2026 1:25 PM","Wes Neufeld",,"False","False","False"
+"20793","Countryside Farms","27","5/9/2026","5/9/2026",,"Check tranny oil leaking ","True","True","False",,"0","N/A","False","True","5/8/2026 4:21 PM","Gavin Koop","5/9/2026 11:09 AM","Wes Neufeld","James Fehr","False","False","False"
+"20794","Daryle Smith","259","5/16/2026","5/16/2026",,"Thighten air compressor mounting bolts   / pre dot inspection       List of Repair not done previous sat /  tune up and ect  /  fuel pump","True","True","False",,"0","N/A","False","True","5/8/2026 5:41 PM","Ron Petkau","5/16/2026 10:08 AM","Wes Neufeld","James Fehr","False","False","False"
+"20796","Pearl ","35","5/12/2026","5/12/2026",,"Lack of power / traction / abs light on / check transmission  ? road test ron    egr leaks   back pressure valve leaks ","True","True","False",,"0","N/A","False","True","5/9/2026 6:49 AM","Wes Neufeld","5/12/2026 5:39 AM","Ron Petkau","Triage (Todd)","False","False","False"
+"20797","Dennis Muller 204-371-0979 /Roswitha Farms ","Chilawack cattle sales ","5/14/2026","5/14/2026",,"Pre-trip Inspection 
+
+
+Black 389","True","True","False",,"0","N/A","False","True","5/9/2026 7:11 AM","Wes Neufeld","5/14/2026 7:08 AM","Wes Neufeld","David Reimer","False","False","False"
+"20798","Countryside Farms","CST 35 / CSR35","5/12/2026","5/12/2026",,"Safety / Service / Service Reefer / Wash trialer in and out ","True","True","False",,"0","N/A","False","True","5/11/2026 8:03 AM","Wes Neufeld","5/12/2026 5:04 PM","Wes Neufeld","David Reimer","False","False","False"
+"20799","brian  kornelsen ",,"5/12/2026","5/12/2026",,"complete tune up on engine  check  for codes ","True","True","False",,"0","N/A","False","True","5/11/2026 8:15 AM","Ron Petkau","5/12/2026 5:39 AM","Ron Petkau","James Fehr","False","False","False"
+"20800","Fast Brothers ","ST206","5/19/2026","5/19/2026",,"Check why engine fan is not coming on -   Mb safety inspection    // Check why engine brakes  don't work 
+
+Josh, bay 7","True","True","False",,"3","N/A","False","True","5/11/2026 8:29 AM","Wes Neufeld","5/16/2026 9:34 AM","Dave Reimer","David Reimer","False","False","False"
+"20801","CATELLIER BROS INC.","FL","5/13/2026","5/13/2026",,"Air leak in dash. ","True","True","False",,"0","N/A","False","True","5/11/2026 9:07 AM","Gavin Koop","5/13/2026 2:46 PM","Wes Neufeld","James Fehr","False","False","False"
+"20803","Leonard Kehler+204-381-8856",,"5/22/2026","5/22/2026",,"Safety/CEL/DEF system foze-579 pb","False","False","False",,"11","N/A","False","False","5/11/2026 9:32 AM","Gavin Koop","5/11/2026 9:32 AM","Gavin Koop",,"False","False","False"
+"20804","Novid","714","5/20/2026","5/20/2026",,"-HVAC controls: Driver reported that earlier this week he couldn't control the temp it was just always hot, and it seems like all the vents are blowing air. He could control fan speed. A day later he gained control of the temp to adjust but the vents still all blow air through them
+-Transmission clunks/grinds when shifting from low range to high range on the plunger. Another shop thought maybe the synchronizer was the issue, sounded like an expensive fix $5000, wanted your opinion on the matter. Did a K3341 Kit in December at Vimar
+-The stop engine light has come on a couple times over last 2 weeks, I don't see any codes/errors on the ELD system.
+-It also on occasion has flashed a ""parking brake on"" warning (Last time I had this issue it was a Throttle Position Sensor on a 388 pete so maybe?)
+-Safety 
+Turbo leaking oil
+RRO drive tire flat ","True","False","False",,"1","N/A","False","True","5/11/2026 10:29 AM","Gavin Koop","5/19/2026 4:08 PM","Wes Neufeld","James Fehr","False","False","False"
+"20805","Mcmunn","601","5/15/2026","5/15/2026",,"Coolant leak       install fan shroud  ordered  1 year ago ","True","True","False",,"0","N/A","False","True","5/11/2026 10:34 AM","Gavin Koop","5/15/2026 7:38 AM","Ron Petkau","David Reimer","False","False","False"
+"20806","SMS","1872","5/21/2026","5/21/2026",,"Service / Wobble / shake at hwy speeds 
+
+Friday 8:20 AM Terry called-Approved pins and bushings-Approved steer tires, Requestes michelin steers. Approved wheel alingment 
+
+Request a safety inspection as its due in June ","True","False","False",,"1","N/A","False","True","5/11/2026 11:56 AM","Wes Neufeld","5/20/2026 3:13 PM","Wes Neufeld","David Reimer","False","False","False"
+"20807","Niverville  Towing ","650","5/20/2026","5/20/2026",,"King pins 
+Alignment booked for 1pm Thursday May 14th-Penner Preformance ","True","False","False",,"5","N/A","False","True","5/11/2026 12:14 PM","Gavin Koop","5/15/2026 7:45 AM","Wes Neufeld","James Fehr","False","False","False"
+"20808","Corey Smith ","227","5/19/2026","5/19/2026",,"fan issues   ask ron   fan comes on for no valid reason","False","True","False",,"0","N/A","False","False","5/11/2026 1:07 PM","Ron Petkau","5/19/2026 1:25 PM","Wes Neufeld",,"False","False","False"
+"20809","country  side  farms ","CSU36","5/16/2026","5/16/2026",,"Complete Service Chevron 10/30      mb  safety inspectiuon   no  sticker  ask ron ","True","True","False",,"0","N/A","False","True","5/11/2026 1:15 PM","Ron Petkau","5/16/2026 7:01 AM","Wes Neufeld","David Reimer","False","False","False"
+"20810","Pearl ","30","5/16/2026","5/16/2026",,"Diff issues  Ron To Road test unit   rear diff and axle shot  ","True","True","False",,"0","N/A","False","True","5/11/2026 1:21 PM","Ron Petkau","5/16/2026 11:43 AM","Wes Neufeld","James Fehr","False","False","False"
+"20811","Penner farm ",,"5/20/2026","5/20/2026",,"Deck boards","False","False","False",,"1","N/A","False","False","5/11/2026 2:30 PM","Gavin Koop","5/19/2026 1:25 PM","Wes Neufeld",,"False","False","False"
+"20814","TETRAULT TRANSPORT INC.","345","5/20/2026","5/20/2026",,"Safety","True","False","False",,"0","N/A","False","True","5/11/2026 3:53 PM","Wes Neufeld","5/20/2026 5:45 AM","Wes Neufeld","David Reimer","False","False","False"
+"20815","Vik Landscaping ","K/W","5/22/2026","5/22/2026",,"E.C.M programming  ??? See Ron ","True","False","False",,"2","N/A","False","True","5/11/2026 4:02 PM","Wes Neufeld","5/20/2026 11:41 AM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20816","Canada Packers ","2201","5/15/2026","5/15/2026",,"Hyd leaks 
+
+Recall Valve Spring Replacment ","True","True","False",,"0","External","False","True","5/11/2026 4:02 PM","Wes Neufeld","5/15/2026 11:52 AM","Wes Neufeld","David Reimer","False","False","False"
+"20817","Pbx ","45","5/12/2026","5/12/2026",,"Air bag leaking DF ?","True","True","False",,"0","N/A","False","True","5/11/2026 4:12 PM","Wes Neufeld","5/12/2026 11:14 AM","Wes Neufeld","David Reimer","False","False","False"
+"20818","Bvt","H104/H204","5/13/2026","5/13/2026",,"Service ","False","True","False",,"0","N/A","False","False","5/12/2026 6:00 AM","Wes Neufeld","5/13/2026 1:21 PM","Wes Neufeld",,"False","False","False"
+"20819","Tetrault Transport Inc.","352","5/19/2026","5/19/2026",,"Engine codes ","False","True","False",,"0","N/A","False","False","5/12/2026 6:01 AM","Wes Neufeld","5/19/2026 1:25 PM","Wes Neufeld",,"False","False","False"
+"20820","HEARTLAND POULTRY LTD",,"5/12/2026","5/12/2026",,"Service call for no start ","True","True","False",,"0","N/A","False","True","5/12/2026 7:42 AM","Wes Neufeld","5/12/2026 5:03 PM","Wes Neufeld",,"False","False","False"
+"20821","judas ","cat ","5/12/2026","5/12/2026",,"Change oil and filters  and check over engine job / note first oil change since rebuild ","True","True","False",,"0","N/A","False","False","5/12/2026 8:35 AM","Ron Petkau","5/12/2026 5:04 PM","Ron Petkau","David Reimer","False","False","False"
+"20822","Canada Packers ","1808","5/13/2026","5/13/2026",,"Fuel leak ?","True","True","False",,"0","N/A","False","True","5/12/2026 8:42 AM","Wes Neufeld","5/13/2026 2:51 PM","Wes Neufeld","David Reimer","False","False","False"
+"20823","Kk Penner","77  pete ","5/19/2026","5/19/2026",,"Replace Windshield   // not part of safety  ","False","True","False",,"0","N/A","False","False","5/12/2026 10:23 AM","Ron Petkau","5/19/2026 1:25 PM","Wes Neufeld","Ron Harder","False","False","False"
+"20824","No Limit Underground ",,"5/15/2026","5/15/2026",,"EGR ??    NO SHOW ","False","True","False",,"0","N/A","False","False","5/12/2026 11:00 AM","Wes Neufeld","5/15/2026 2:43 PM","Wes Neufeld",,"False","False","False"
+"20825","Trouw ","2253","5/15/2026","5/15/2026",,"Alignment Check for steer tires cupping bad       Need to Make an appointment 
+
+Appt at Penner Performance at 9:00 am  May 14/26","True","True","False",,"0","N/A","False","True","5/12/2026 12:31 PM","Gavin Koop","5/15/2026 10:25 AM","Wes Neufeld","James Fehr","False","False","False"
+"20826","Trouw ","2196","5/12/2026","5/12/2026",,"A/C not working / air leak ","True","True","False",,"0","N/A","False","True","5/12/2026 12:51 PM","Wes Neufeld","5/12/2026 3:22 PM","Wes Neufeld","David Reimer","False","False","False"
+"20827","Kanon Trucking ","214","5/20/2026","5/20/2026",,"Safety ","False","False","False",,"1","N/A","False","False","5/12/2026 1:25 PM","Wes Neufeld","5/19/2026 1:25 PM","Wes Neufeld",,"False","False","False"
+"20828","KTM","16","5/16/2026","5/16/2026",,"A/C parts here 
+
+Dustin, Bay 3","True","True","False",,"0","N/A","False","True","5/12/2026 1:48 PM","Wes Neufeld","5/16/2026 10:38 AM","Dave Reimer","David Reimer","False","False","False"
+"20829","Canada Packers ","201906","5/14/2026","5/14/2026",,"Service ","True","True","False",,"0","N/A","False","True","5/12/2026 3:20 PM","Wes Neufeld","5/14/2026 1:05 PM","Wes Neufeld","David Reimer","False","False","False"
+"20830","Pbx ","45","5/14/2026","5/14/2026",,"Check for fuel issues / note truck engine looses and gains poower as he drives and sometimes it will shot down and sputter   / Driver turns key back on and waits a few seconds and can start again / says is better with full tank of fuel ","True","True","False",,"0","N/A","False","False","5/13/2026 5:50 AM","Ron Petkau","5/14/2026 3:11 PM","Ron Petkau",,"False","False","False"
+"20831","Trappers","1012","5/14/2026","5/14/2026",,"Mb Safety Inspection  and Report   ( charles )     Repairs approved  by Joe ","True","True","False",,"1","N/A","False","True","5/13/2026 5:56 AM","Ron Petkau","5/13/2026 5:05 PM","Wes Neufeld","David Reimer","False","False","False"
+"20832","eagle brook ","2018 pete ","5/14/2026","5/14/2026",,"Dustin to Check trans issues   stays in 18th gear every 15 and unit has to pull over and reset ign  and drives again for 15 and locks intyo 18th again   ask ron ","True","True","False",,"0","N/A","False","True","5/13/2026 6:23 AM","Ron Petkau","5/14/2026 3:11 PM","Ron Petkau","David Reimer","False","False","False"
+"20833","Countryside Farms","CSU30","5/15/2026","5/15/2026",,"Service / Check brakes / Swap rims ?","True","True","False",,"1","N/A","False","True","5/13/2026 8:19 AM","Wes Neufeld","5/14/2026 5:03 PM","Wes Neufeld","James Fehr","False","False","False"
+"20834","Fast Brothers ","st210","5/20/2026","5/20/2026",,"Hood Damaged    repair at Body shop ","True","False","False",,"1","N/A","False","False","5/13/2026 8:46 AM","Ron Petkau","5/19/2026 1:26 PM","Wes Neufeld","Ron Harder","False","False","False"
+"20836","Virgil ","Pete","5/23/2026","5/23/2026",,"Check and repair A/C-Clean evap core ","False","False","False",,"10","N/A","False","False","5/13/2026 9:46 AM","Gavin Koop","5/13/2026 9:46 AM","Gavin Koop",,"False","False","False"
+"20837","Blumenort Church",,"5/20/2026","5/20/2026",,"Safety Bus   Grease Job ","True","False","False",,"1","N/A","False","True","5/13/2026 10:02 AM","Wes Neufeld","5/19/2026 1:25 PM","Wes Neufeld","James Fehr","False","False","False"
+"20838","Mike Fehr  ","Blue Pete ","5/21/2026","5/21/2026",,"Replace Cylinder Head due to having fuel in coolant      parts order by Ray      also customer might do the Injectors  confrm with Ray 
+
+Service / Cooler    check for oil in coolant    and report to customer 
+Replace rear axle torque stableizer bars ","True","False","False",,"1","N/A","False","True","5/13/2026 10:02 AM","Ron Petkau","5/20/2026 11:15 AM","Wes Neufeld","James Fehr","False","False","False"
+"20839","Eg Penner ","86","5/20/2026","5/20/2026",,"Air leak ","False","False","False",,"1","N/A","False","False","5/13/2026 11:46 AM","Wes Neufeld","5/19/2026 3:02 PM","Wes Neufeld",,"False","False","False"
+"20840","Pearl ","25","5/20/2026","5/20/2026",,"Boost issues ","True","True","False",,"0","N/A","False","True","5/13/2026 1:08 PM","Wes Neufeld","5/20/2026 11:28 AM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20841","MARC LAROCHE","3136","5/16/2026","5/16/2026",,"Check for rear end bouncing around when driving-Road test and report-Cust suspects worn bushings in the rear of the unit. Just has steer tire replaced at kk penner before coming here, 
+
+Check for exhuast wooshing when driving
+
+Check for metal rinding when driving","True","True","False",,"0","N/A","False","True","5/13/2026 2:04 PM","Gavin Koop","5/16/2026 11:44 AM","Wes Neufeld","David Reimer","False","False","False"
+"20842","Centennial Gravel","063 / 94","5/21/2026","5/21/2026",,"Safety ","True","False","False",,"1","N/A","False","True","5/13/2026 5:41 PM","Wes Neufeld","5/20/2026 11:41 AM","Wes Neufeld","James Fehr","False","False","False"
+"20843","Canada Packers ","1809 /ST56","5/14/2026","5/14/2026",,"Safety truck 
+Grease truck and trailer
+A/c not working 
+engine codes ","True","True","False",,"0","N/A","False","True","5/13/2026 5:49 PM","Wes Neufeld","5/14/2026 4:11 PM","Wes Neufeld","David Reimer","False","False","False"
+"20844","Jonas Farms ",,"5/20/2026","5/20/2026",,"Check over / replace rear Diff with Full Lock up Diff / prep truck for walinga to Get the Feed Box installed at walinga ","False","False","False",,"1","N/A","False","False","5/13/2026 5:57 PM","Wes Neufeld","5/19/2026 7:33 AM","Ron Petkau",,"False","False","False"
+"20845","Car-Dale  ","128","5/15/2026","5/15/2026",,"Service Call to Emo to Replace faulty injector and perform a complete tune up 
+on the scond truck perform a complete tune tune up / both Cat C 15 engines    waylon to Deliver 106 and come back withg courtesy Car ","True","True","False",,"0","N/A","False","False","5/14/2026 5:28 AM","Ron Petkau","5/15/2026 7:36 AM","Ron Petkau","David Reimer","False","False","False"
+"20846","Sunny View","4","5/14/2026","5/14/2026",,"Right side signal not working ","True","True","False",,"0","N/A","False","True","5/14/2026 8:43 AM","Wes Neufeld","5/14/2026 10:13 AM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20847","greg penner ","chater ","5/14/2026","5/14/2026",,"Light and electrical issues    2 pm    Todd or Dustin ","True","True","False",,"0","N/A","False","False","5/14/2026 8:53 AM","Ron Petkau","5/14/2026 3:10 PM","Ron Petkau","Triage (Todd)","False","False","False"
+"20848","Sunrise Chick","20","5/15/2026","5/15/2026",,"Hey Wes, would you have time to check unit 20. There is a whistle coming from the turbo. Might be a pin hole or something like that. Do you have time to look at it tomorrow? We are not using the truck tomorrow but need it for early Sat Am....","True","True","False",,"0","N/A","False","True","5/14/2026 9:05 AM","Wes Neufeld","5/15/2026 1:33 PM","Wes Neufeld","James Fehr","False","False","False"
+"20849","Fast Brothers ","200","5/20/2026","5/20/2026",,"Abs light on   mb safety  /   repairs and sticker ","True","True","False",,"0","N/A","False","True","5/14/2026 10:20 AM","Wes Neufeld","5/20/2026 2:05 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20851","Steinbach Hatchery ","331","5/16/2026","5/16/2026",,"Service / purge valve ???/ Windsheild","True","True","False",,"0","N/A","False","True","5/14/2026 11:30 AM","Wes Neufeld","5/16/2026 10:09 AM","Wes Neufeld","David Reimer","False","False","False"
+"20852","Steinbach Hatchery ","599","5/20/2026","5/20/2026",,"Safety ","True","False","False",,"0","N/A","False","True","5/14/2026 11:33 AM","Wes Neufeld","5/20/2026 10:13 AM","Wes Neufeld","David Reimer","False","False","False"
+"20853","Shane Bates 204-573-3310","Blumenort Hatchey FL ","5/15/2026","5/15/2026",,"Go to Blumenort Hatchery and check for clutch seized ","True","True","False",,"0","N/A","False","True","5/14/2026 1:51 PM","Gavin Koop","5/15/2026 2:23 PM","Wes Neufeld","David Reimer","False","False","False"
+"20854","Isaac Neufeld",,"5/15/2026","5/15/2026",,"Check a/c ","True","True","False",,"0","N/A","False","True","5/14/2026 2:58 PM","Wes Neufeld","5/15/2026 11:32 AM","Wes Neufeld","James Fehr","False","False","False"
+"20855","Mcmunn","142480","5/22/2026","5/22/2026",,"Oil pressure reading high ","True","False","False",,"3","N/A","False","True","5/14/2026 3:02 PM","Wes Neufeld","5/19/2026 7:02 AM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20856","Lanouett Ventures 204-371-7225","Arnes End dump ","5/20/2026","5/20/2026",,"Safety-","True","False","False",,"0","N/A","False","True","5/14/2026 4:00 PM","Gavin Koop","5/20/2026 5:44 AM","Wes Neufeld","David Reimer","False","False","False"
+"20857","Curt Plett / Leighlee Farms",,"5/15/2026","5/15/2026",,"Runs poorly ? / Engine fan ","True","True","False",,"0","N/A","False","True","5/14/2026 4:03 PM","Wes Neufeld","5/15/2026 7:19 AM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20858","Canada Packers ","201915","5/16/2026","5/16/2026",,"Service / Service cylindes ","True","True","False",,"0","N/A","False","True","5/15/2026 8:18 AM","Wes Neufeld","5/16/2026 6:53 AM","Wes Neufeld","David Reimer","False","False","False"
+"20859","Canada Packers ","1816","5/16/2026","5/16/2026",,"Service /ac not working / check clutch ","True","True","False",,"0","N/A","False","True","5/15/2026 8:37 AM","Wes Neufeld","5/16/2026 6:53 AM","Wes Neufeld","David Reimer","False","False","False"
+"20860","Trappers","21","5/19/2026","5/19/2026",,"Service call to see why truck is not building air pressure -Waylon        also issues with right window switches ask ron 
+
+Charles, Bay 7","True","True","False",,"0","N/A","False","True","5/15/2026 8:44 AM","Wes Neufeld","5/19/2026 3:53 PM","Wes Neufeld","David Reimer","False","False","False"
+"20861","Canada Packers ","2203","5/15/2026","5/15/2026",,"Repairs as pre DOT Inspection form ","True","True","False",,"0","N/A","False","True","5/15/2026 9:26 AM","Wes Neufeld","5/15/2026 2:38 PM","Wes Neufeld","David Reimer","False","False","False"
+"20862","Canada Packers ","1805","5/20/2026","5/20/2026",,"Service call to Canada Packers Arborg to pick-up truck --Please bring Lap-top -Waylon
+
+Josh, Adrian, Bay 3","True","True","False",,"0","N/A","False","True","5/15/2026 9:27 AM","Wes Neufeld","5/20/2026 2:05 PM","Wes Neufeld","David Reimer","False","False","False"
+"20863","North 4D",,"5/16/2026","5/16/2026",,"Check charging system L9000","True","True","False",,"0","N/A","False","True","5/15/2026 9:46 AM","Wes Neufeld","5/16/2026 6:47 AM","Wes Neufeld","David Reimer","False","False","False"
+"20864","Canada Packers ","995","5/15/2026","5/15/2026",,"Hyd leak ","True","True","False",,"0","N/A","False","True","5/15/2026 10:51 AM","Wes Neufeld","5/15/2026 3:30 PM","Wes Neufeld",,"False","False","False"
+"20865","No Limit Underground ","T-16","5/20/2026","5/20/2026",,"PTO not turning on. ","True","True","False",,"0","N/A","False","True","5/15/2026 11:02 AM","Gavin Koop","5/20/2026 2:05 PM","Wes Neufeld","James Fehr","False","False","False"
+"20866","Daryle Smith","387","5/19/2026","5/19/2026",,"7 am   nox  sensor fault ?????   customer already got j bird to change out let nox sensor  ask ron  ","True","True","False",,"0","N/A","False","True","5/15/2026 1:16 PM","Ron Petkau","5/19/2026 4:42 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20867","Fast Brothers ","ED305","5/20/2026","5/20/2026",,"Safety / brakes 
+
+Randy, Matthias, Bay 5","True","False","False",,"1","N/A","False","True","5/15/2026 2:15 PM","Wes Neufeld","5/19/2026 3:46 PM","Wes Neufeld","David Reimer","False","False","False"
+"20868","Countryside Farms","CSU27","5/27/2026","5/27/2026",,"Inspect cross-members and give estimate only for today ","False","False","False",,"12","N/A","False","False","5/15/2026 3:51 PM","Wes Neufeld","5/15/2026 3:51 PM","Wes Neufeld",,"False","False","False"
+"20869","Vik Landscaping ","T800","5/16/2026","5/16/2026",,"Adjust clutch / Brake pot ","True","True","False",,"0","N/A","False","True","5/15/2026 5:13 PM","Wes Neufeld","5/16/2026 8:48 AM","Wes Neufeld","David Reimer","False","False","False"
+"20870","Peterbilt  Mb  ","579  ultaloft ","5/19/2026","5/19/2026",,"Install lower 5th wheel saddles   and bring the 5th wheel height down to 48 inches from 50 inches 
+
+204-295-6107  ","True","True","False",,"0","N/A","False","True","5/15/2026 6:07 PM","Ron Petkau","5/19/2026 3:09 PM","Wes Neufeld","David Reimer","False","False","False"
+"20871","Pearl ","95","5/19/2026","5/19/2026",,"Engine miss   #2  Injector ordered by Dusting and Ray    , perform a complete Tune up    Perform a dot inspection on truck ","True","True","False",,"0","N/A","False","True","5/16/2026 10:01 AM","Wes Neufeld","5/19/2026 3:43 PM","Wes Neufeld","David Reimer","False","False","False"
+"20872","Daryle Smith","259","5/25/2026","5/25/2026",,"Camshaft/ followers   Parts ordered with Ray","False","False","False",,"6","N/A","False","False","5/16/2026 11:00 AM","Wes Neufeld","5/19/2026 12:58 PM","Ron Petkau",,"False","False","False"
+"20873","Arthur Braun ",,"5/19/2026","5/19/2026",,"Diff seal leaking ","False","True","False",,"0","N/A","False","False","5/19/2026 6:40 AM","Wes Neufeld","5/19/2026 1:13 PM","James Fehr","James Fehr","False","False","False"
+"20874","Pearl ","30","5/20/2026","5/20/2026",,"Air leaks  / possible Engin Fan hub  ask Ron    safety sticker ","True","False","False",,"1","N/A","False","True","5/19/2026 6:40 AM","Ron Petkau","5/19/2026 5:07 PM","Wes Neufeld","James Fehr","False","False","False"
+"20875","Trouw ","1173","5/19/2026","5/19/2026",,"Vertical auger motor issues ","True","True","False",,"0","N/A","False","True","5/19/2026 6:54 AM","Wes Neufeld","5/19/2026 1:22 PM","Wes Neufeld","David Reimer","False","False","False"
+"20876","trouw","T3053","5/26/2026","5/26/2026",,"Pick up trailer and replace worn spider (axle spindal) ","True","False","False",,"6","N/A","False","True","5/19/2026 8:05 AM","Ron Petkau","5/20/2026 6:25 AM","Ron Petkau","Walter Wiens","False","True","False"
+"20877","Graham Bates","Blumenort Hatchery old FL ","5/20/2026","5/20/2026",,"The inspection expires end of sept, I want to have it licensed personal not commercial mpi , said I will need a new inspection and gvw reduced to do this. Can you get the truck in for an oil change , filter checks and do a safety inspection on it so i can insure it as personal not biz or commercial. Its still parked at the hatchery . 
+
+
+
+Graham Bates <batesta73@icloud.com>","True","False","False",,"0","N/A","False","True","5/19/2026 8:07 AM","Gavin Koop","5/20/2026 5:52 AM","Wes Neufeld","David Reimer","False","False","False"
+"20878","Canada Packers ","2407","5/19/2026","5/19/2026",,"Hyd cooling fans not working   /  Driver door stop / mud flap on hood by fuel tank loose / air hose by driver seat /  Grease truck and trailer 
+
+Need car ","True","True","False",,"0","N/A","False","True","5/19/2026 9:03 AM","Wes Neufeld","5/19/2026 5:06 PM","Wes Neufeld","David Reimer","False","False","False"
+"20879","Trouw-204-392-6368","3256","5/20/2026","5/20/2026",,"Check A/C- Cust reports it not blowing cold 
+
+
+Trailer valve leaking when axles are up. ","True","False","False",,"0","N/A","False","True","5/19/2026 9:53 AM","Gavin Koop","5/20/2026 5:44 AM","Wes Neufeld","David Reimer","False","False","False"
+"20880","Mcvicar ",,"5/21/2026","5/21/2026",,"Bars-Parts here","False","False","False",,"2","N/A","False","False","5/19/2026 9:53 AM","Gavin Koop","5/19/2026 9:53 AM","Gavin Koop",,"False","False","False"
+"20881","Countryside Farms","CSR15","5/20/2026","5/20/2026",,"Check no start ","True","False","False",,"0","N/A","False","True","5/19/2026 10:17 AM","Wes Neufeld","5/20/2026 5:43 AM","Wes Neufeld","David Reimer","False","False","False"
+"20882","Canada Packers ","2404","5/20/2026","5/20/2026",,"Waiting for email as of 10:28 am May 19
+
+Engine codes / light issue / Disinfectant spray not working","True","True","False",,"0","External","False","True","5/19/2026 10:28 AM","Wes Neufeld","5/20/2026 3:12 PM","Wes Neufeld","Triage (Todd)","False","False","False"
+"20883","Canada Packers ","201805","5/20/2026","5/20/2026",,"Waiting for email as of 10:28 am May 19","True","False","False",,"0","N/A","False","True","5/19/2026 10:29 AM","Wes Neufeld","5/20/2026 6:55 AM","Wes Neufeld","David Reimer","False","False","False"
+"20884","S/E Pallet","545-5790-5795","5/20/2026","5/20/2026",,"ABS in truck-Safety trailers ","True","False","False",,"0","N/A","False","True","5/19/2026 10:53 AM","Gavin Koop","5/20/2026 10:15 AM","Wes Neufeld","David Reimer","False","False","False"
+"20885","South East Pallet","510","5/20/2026","5/20/2026",,"Safety","False","False","False",,"1","N/A","False","False","5/19/2026 11:13 AM","Wes Neufeld","5/19/2026 11:13 AM","Wes Neufeld",,"False","False","False"
+"20886","PKW","441","5/21/2026","5/21/2026",,"Air restriction issues   gauge goes to 100 percent restriction whne unit get started up in the mornings   all over the map when driving        Check drive line viberation  grawl      tires rotated criss   cross  90 psi in all tires  list  ask ron     Check engine light  on/ off ","True","False","False",,"1","N/A","False","False","5/19/2026 11:51 AM","Ron Petkau","5/20/2026 1:16 PM","Ron Petkau","Triage (Todd)","False","False","False"
+"20887","Canada Packers ","1809 /ST56","5/20/2026","5/20/2026",,"Hyd leak--between truck and trailer --return line  leaking at crimp ?","True","True","False",,"0","N/A","False","True","5/19/2026 1:35 PM","Wes Neufeld","5/20/2026 1:39 PM","Wes Neufeld","David Reimer","False","False","False"
+"20888","DAVID BRAUN 5659818 MB LTD",,"5/21/2026","5/21/2026",,"Coolant top of pistons ","True","False","False",,"1","N/A","False","True","5/19/2026 3:11 PM","Wes Neufeld","5/20/2026 10:52 AM","Wes Neufeld","David Reimer","False","False","False"
+"20889","KTM ","16","5/21/2026","5/21/2026",,"Engine fan and A/C not turning on ","False","False","False",,"2","N/A","False","False","5/19/2026 3:46 PM","Gavin Koop","5/19/2026 3:46 PM","Gavin Koop",,"False","False","False"
+"20891","Steinbach Hatchery ","515","5/20/2026","5/20/2026",,"Boost gauge --Parts here ","True","True","False",,"0","N/A","False","True","5/19/2026 5:05 PM","Wes Neufeld","5/20/2026 3:12 PM","Wes Neufeld","David Reimer","False","False","False"
+"20892","Swift",,"5/20/2026","5/20/2026",,"Poss. service call  ISL CUMMINS -Front timing cover -cam gear ??","False","False","False",,"0","N/A","False","False","5/20/2026 5:49 AM","Wes Neufeld","5/20/2026 5:49 AM","Wes Neufeld",,"False","False","False"
+"20893","Jessi Tait ","N14 Cummins ","5/26/2026","5/26/2026",,"Rebuild N 14 cummins  Cel# 1 613 558 8248   jessi 
+cpl 2033
+ser#11854413","True","False","False",,"6","N/A","False","False","5/20/2026 6:27 AM","Ron Petkau","5/20/2026 6:27 AM","Ron Petkau",,"False","False","False"
+"20894","Novid ","714","5/20/2026","5/20/2026",,"Repair exhaust mounting to cab corners ","True","False","False",,"0","N/A","False","True","5/20/2026 6:31 AM","Ron Petkau","5/20/2026 10:14 AM","Wes Neufeld","Ron Harder","False","False","False"
+"20895","Mcmunn","301601","5/20/2026","5/20/2026",,"Engine light / driver seat / water in fuel light on / derated in power ","True","False","False",,"0","N/A","False","True","5/20/2026 9:49 AM","Wes Neufeld","5/20/2026 10:12 AM","Wes Neufeld","David Reimer","False","False","False"
+"20896","champion Towing ","New Pete ","5/20/2026","5/20/2026",,"Repair PTO oil leaks / Note warranty  a-z      supplier of pto  Fleet Brake ","True","False","False",,"0","External","False","False","5/20/2026 11:56 AM","Ron Petkau","5/20/2026 11:56 AM","Ron Petkau",,"False","False","False"
