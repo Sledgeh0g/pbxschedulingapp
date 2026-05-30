@@ -5,8 +5,12 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { supabase } from './supabaseClient';
 import AddTaskModal from './AddTaskModal';
 import EditDetailModal from './EditDetailModal';
+import SearchInput from './SearchInput';
+import DispatchToggle from './DispatchToggle';
+import DepartmentSelect from './DepartmentSelect';
 
-export default function Calendar({ events, setEvents }) {
+export default function Calendar({ events, setEvents, searchTerm, setSearchTerm, mapTaskToEvent, setDispatchMode, dispatchMode,
+    selectedDepartment, setSelectedDepartment}) {
     const [showModal, setShowModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [showDetailModal, setShowDetailModal] = useState(false);
@@ -28,11 +32,19 @@ export default function Calendar({ events, setEvents }) {
 
     return (
         <div className="calendar">
-            <AddTaskModal setEvents={setEvents} showModal={showModal} setShowModal={setShowModal} />
-            <EditDetailModal event={selectedEvent} setEvents={setEvents} showModal={showDetailModal} setShowModal={setShowDetailModal} />
+            <AddTaskModal setEvents={setEvents} showModal={showModal} setShowModal={setShowModal} mapTaskToEvent={mapTaskToEvent} />
+            <DispatchToggle dispatchMode={dispatchMode} setDispatchMode={setDispatchMode} />
+            <DepartmentSelect selectedDepartment={selectedDepartment} setSelectedDepartment={setSelectedDepartment} />
+            <EditDetailModal event={selectedEvent} showModal={showDetailModal} setShowModal={setShowDetailModal} />
+            <SearchInput 
+              searchTerm={searchTerm} 
+              setSearchTerm={setSearchTerm} 
+              placeholder="Search calendar..." 
+            />
             <FullCalendar
                 plugins={[dayGridPlugin, interactionPlugin]}
                 initialView="dayGridWeek"
+                eventOrder="created_at"
                 headerToolbar={{
                     left: 'prev,next addTask',
                     center: 'title',
