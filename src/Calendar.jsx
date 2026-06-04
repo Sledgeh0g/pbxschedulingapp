@@ -6,14 +6,14 @@ import { supabase } from './supabaseClient';
 import AddTaskModal from './AddTaskModal';
 import EditDetailModal from './EditDetailModal';
 import SearchInput from './SearchInput';
-import DispatchToggle from './DispatchToggle';
 import DepartmentSelect from './DepartmentSelect';
 
-export default function Calendar({ events, setEvents, searchTerm, setSearchTerm, mapTaskToEvent, setDispatchMode, dispatchMode,
-    selectedDepartment, setSelectedDepartment}) {
+export default function Calendar({ events, setEvents, searchTerm, setSearchTerm, mapTaskToEvent,
+    selectedDepartment, setSelectedDepartment,
+    formData, setFormData,
+    selectedEvent, setSelectedEvent,
+    showDetailModal, setShowDetailModal }) {
     const [showModal, setShowModal] = useState(false);
-    const [selectedEvent, setSelectedEvent] = useState(null);
-    const [showDetailModal, setShowDetailModal] = useState(false);
 
     async function handleEventDrop({ event }) {
         await supabase
@@ -33,13 +33,14 @@ export default function Calendar({ events, setEvents, searchTerm, setSearchTerm,
     return (
         <div className="calendar">
             <AddTaskModal setEvents={setEvents} showModal={showModal} setShowModal={setShowModal} mapTaskToEvent={mapTaskToEvent} />
-            <DispatchToggle dispatchMode={dispatchMode} setDispatchMode={setDispatchMode} />
-            <DepartmentSelect selectedDepartment={selectedDepartment} setSelectedDepartment={setSelectedDepartment} />
-            <EditDetailModal event={selectedEvent} showModal={showDetailModal} setShowModal={setShowDetailModal} />
-            <SearchInput 
-              searchTerm={searchTerm} 
-              setSearchTerm={setSearchTerm} 
-              placeholder="Search calendar..." 
+            <EditDetailModal 
+                event={selectedEvent} 
+                showModal={showDetailModal} 
+                setShowModal={setShowDetailModal}
+                formData={formData}
+                setFormData={setFormData}
+                setEvents={setEvents}
+                mapTaskToEvent={mapTaskToEvent}
             />
             <FullCalendar
                 plugins={[dayGridPlugin, interactionPlugin]}
