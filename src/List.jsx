@@ -3,6 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { supabase } from './supabaseClient';
+import { eventOrderComparator } from './mapTaskToEvent';
 import AddTaskModal from './AddTaskModal';
 import EditDetailModal from './EditDetailModal';
 import SearchInput from './SearchInput';
@@ -45,7 +46,7 @@ export default function List({ events, setEvents, searchTerm, setSearchTerm, map
             <FullCalendar
                 plugins={[listPlugin, interactionPlugin]}
                 initialView="listWeek"
-                eventOrder="created_at"
+                eventOrder={eventOrderComparator}
                 headerToolbar={{
                     left: 'prev,next addTask',
                     center: 'title',

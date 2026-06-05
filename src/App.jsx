@@ -3,14 +3,19 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import Calendar from './Calendar';
 import List from './List';
 import ContractCustomers from './ContractCustomers';
+import Reports from './Reports';
 import DepartmentSelect from './DepartmentSelect';
 import './app.css';
 import { supabase } from './supabaseClient';
 import { mapTaskToEvent } from './mapTaskToEvent';
 import SearchInput from './SearchInput';
+import LoginPage from './LoginPage';
 
 function App () {
 
+  const [session, setSession] = useState(null);
+  const [profile, setProfile] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [events, setEvents] = useState([]);
   const [selectedDepartment, setSelectedDepartment] = useState('All Departments');
@@ -19,7 +24,8 @@ function App () {
     unit: "",
     service_date: "",
     status: "",
-    department: ""
+    department: "",
+    complaint: ""
   });
 
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -34,6 +40,7 @@ function App () {
         service_date: selectedEvent.startStr || '',
         status: selectedEvent.extendedProps?.status || '',
         department: selectedEvent.extendedProps?.department || '',
+        complaint: selectedEvent.extendedProps?.complaint || '',
       });
     }
   }, [selectedEvent, setFormData]);
@@ -41,7 +48,7 @@ function App () {
   useEffect(() => {
     supabase
       .from('tasks')
-      .select('id, customer, unit, service_date, status, department, created_at')
+      .select('id, customer, unit, service_date, status, department, created_at, complaint')
       .order('created_at', { ascending: true })
       .then(({ data, error }) => {
         if (error) { console.error(error); return; }
@@ -49,10 +56,34 @@ function App () {
       });
   }, [])
 
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      if (session) fetchProfile(session.user.id);
+      setAuthLoading(false);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+      if (session) fetchProfile(session.user.id);
+      else setProfile(null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  async function fetchProfile(userId) {
+    const { data } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', userId)
+      .single();
+    setProfile(data);
+  }
+
   const deptFilteredEvents = events.filter(event => {
-    if (selectedDepartment === 'All Departments') {
-      return true;
-    }
+    if (event.extendedProps?.status === 'completed') return false;
+    if (selectedDepartment === 'All Departments') return true;
     const dept = event.extendedProps?.department;
     if (!dept) return false;
     return dept.toLowerCase() === selectedDepartment.toLowerCase();
@@ -69,6 +100,10 @@ function App () {
       created_at?.toLowerCase().includes(term)
     );
   });
+
+  if (authLoading) return <div>Loading...</div>;
+  if (!session) return <LoginPage />;
+  if (!profile) return <div>Your account is pending approval. Contact your manager.</div>;
 
   return (
     
@@ -88,6 +123,7 @@ function App () {
           <NavLink to="/calendar">Calendar</NavLink>
           <NavLink to="/list">List</NavLink>
           <NavLink to="/contractcustomers">Contract Customers</NavLink>
+          <NavLink to="/reports">Reports</NavLink>
           </div>
     </nav>
       <Routes>
@@ -130,6 +166,13 @@ function App () {
           showDetailModal={showDetailModal}
           setShowDetailModal={setShowDetailModal}
            />} />
+          <Route path="/reports" element={<Reports
+            searchTerm={searchTerm}
+            selectedDepartment={selectedDepartment}
+            formData={formData}
+            setFormData={setFormData}
+            appSetEvents={setEvents}
+          />} />
           <Route path="/contractcustomers" element={<ContractCustomers
             formData={formData}
             setFormData={setFormData}

@@ -9,8 +9,7 @@ import { supabase } from './supabaseClient'
 import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
 
-const CONTRACT_CUSTOMERS = ['canada packers', 'trouw nutrition']
-const STATUS_ORDER = { priority: 0, queued: 1, confirmed: 2, waiting: 3, completed: 4 }
+const DEPARTMENTS = ['warranty', 'wash bay', 'welding', 'body shop', 'old shop', 'new shop']
 
 const columns = [
   { accessorKey: 'customer', header: 'Customer' },
@@ -26,15 +25,13 @@ const columns = [
   },
 ]
 
-function sortByStatus(tasks) {
-  return [...tasks].sort((a, b) => {
-    const statusDiff = (STATUS_ORDER[a.status] ?? 99) - (STATUS_ORDER[b.status] ?? 99)
-    if (statusDiff !== 0) return statusDiff
-    return new Date(a.created_at) - new Date(b.created_at)
-  })
+function getDefaultMonth() {
+  const today = new Date()
+  return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}`
 }
 
-export default function ContractCustomers({ formData, setFormData, appSetEvents, searchTerm, selectedDepartment }) {
+export default function Reports({ searchTerm, selectedDepartment, formData, setFormData, appSetEvents }) {
+  const [selectedMonth, setSelectedMonth] = useState(getDefaultMonth)
   const [tasks, setTasks] = useState([])
   const [columnFilters, setColumnFilters] = useState([])
   const [selectedTask, setSelectedTask] = useState(null)
@@ -49,21 +46,23 @@ export default function ContractCustomers({ formData, setFormData, appSetEvents,
   }, [selectedDepartment])
 
   useEffect(() => {
+    const [year, month] = selectedMonth.split('-')
+    const startDate = `${year}-${month}-01`
+    const lastDay = new Date(Number(year), Number(month), 0).getDate()
+    const endDate = `${year}-${month}-${String(lastDay).padStart(2, '0')}`
+
     supabase
       .from('tasks')
       .select('id, customer, unit, service_date, status, department, created_at')
-      .order('created_at', { ascending: true })
+      .eq('status', 'completed')
+      .gte('service_date', startDate)
+      .lte('service_date', endDate)
+      .order('service_date', { ascending: true })
       .then(({ data, error }) => {
         if (error) { console.error(error); return }
-        const contractTasks = data.filter(task =>
-          task.status !== 'completed' &&
-          CONTRACT_CUSTOMERS.some(name =>
-            task.customer?.toLowerCase().includes(name)
-          )
-        )
-        setTasks(sortByStatus(contractTasks))
+        setTasks(data || [])
       })
-  }, [])
+  }, [selectedMonth])
 
   function handleRowClick(task) {
     setSelectedTask({ ...mapTaskToEvent(task), startStr: task.service_date })
@@ -79,14 +78,29 @@ export default function ContractCustomers({ formData, setFormData, appSetEvents,
 
   function handleSetEvents(updater) {
     appSetEvents(updater)
-    setTasks(prev => sortByStatus(
-      prev.map(task =>
-        String(task.id) === String(selectedTask?.id)
-          ? { ...task, ...formData }
-          : task
-      )
-    ))
+    const [year, month] = selectedMonth.split('-')
+    const startDate = `${year}-${month}-01`
+    const lastDay = new Date(Number(year), Number(month), 0).getDate()
+    const endDate = `${year}-${month}-${String(lastDay).padStart(2, '0')}`
+    setTasks(prev =>
+      prev
+        .map(task =>
+          String(task.id) === String(selectedTask?.id)
+            ? { ...task, ...formData }
+            : task
+        )
+        .filter(task =>
+          task.status === 'completed' &&
+          task.service_date >= startDate &&
+          task.service_date <= endDate
+        )
+    )
   }
+
+  const metrics = DEPARTMENTS.map(dept => ({
+    department: dept,
+    count: tasks.filter(t => t.department?.toLowerCase() === dept).length,
+  }))
 
   const table = useReactTable({
     data: tasks,
@@ -100,6 +114,29 @@ export default function ContractCustomers({ formData, setFormData, appSetEvents,
 
   return (
     <div className="contract-table-page">
+      <div className="reports-controls">
+        <h1>Completed Tasks Report</h1>
+        <input
+          type="month"
+          value={selectedMonth}
+          onChange={e => setSelectedMonth(e.target.value)}
+          className="reports-month-picker"
+        />
+      </div>
+
+      <div className="reports-metrics">
+        {metrics.map(({ department, count }) => (
+          <div key={department} className="reports-metric-card">
+            <div className="reports-metric-count">{count}</div>
+            <div className="reports-metric-label">{department}</div>
+          </div>
+        ))}
+        <div className="reports-metric-card reports-metric-card--total">
+          <div className="reports-metric-count">{tasks.length}</div>
+          <div className="reports-metric-label">Total</div>
+        </div>
+      </div>
+
       <div className="contract-table">
         <table className="contract-table-element">
           <thead className="contract-table-head">
@@ -120,7 +157,7 @@ export default function ContractCustomers({ formData, setFormData, appSetEvents,
               table.getRowModel().rows.map(row => (
                 <tr
                   key={row.id}
-                  className={`contract-table-row contract-table-row--${row.original.status}`}
+                  className="contract-table-row contract-table-row--completed"
                   onClick={() => handleRowClick(row.original)}
                 >
                   {row.getVisibleCells().map(cell => (
@@ -133,13 +170,14 @@ export default function ContractCustomers({ formData, setFormData, appSetEvents,
             ) : (
               <tr>
                 <td colSpan={columns.length} className="contract-table-empty">
-                  No results.
+                  No completed tasks for this period.
                 </td>
               </tr>
             )}
           </tbody>
         </table>
       </div>
+
       <EditDetailModal
         event={selectedTask}
         showModal={showModal}

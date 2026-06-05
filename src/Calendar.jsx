@@ -3,6 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { supabase } from './supabaseClient';
+import { eventOrderComparator } from './mapTaskToEvent';
 import AddTaskModal from './AddTaskModal';
 import EditDetailModal from './EditDetailModal';
 import SearchInput from './SearchInput';
@@ -45,7 +46,7 @@ export default function Calendar({ events, setEvents, searchTerm, setSearchTerm,
             <FullCalendar
                 plugins={[dayGridPlugin, interactionPlugin]}
                 initialView="dayGridWeek"
-                eventOrder="created_at"
+                eventOrder={eventOrderComparator}
                 headerToolbar={{
                     left: 'prev,next addTask',
                     center: 'title',

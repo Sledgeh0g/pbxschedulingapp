@@ -34,6 +34,7 @@ export default function EditDetailModal({
       service_date: event.startStr || '',
       status: props.status || '',
       department: props.department || '',
+      complaint: props.complaint || '',
     });
     setIsEditing(false);
   }
@@ -129,6 +130,10 @@ export default function EditDetailModal({
               <div className="task-detail-row">
                 <span className="task-detail-label">Department</span>
                 <span className="task-detail-value">{props.department}</span>
+              </div>
+              <div className="task-detail-row task-detail-row--complaint">
+                <span className="task-detail-label">Complaint</span>
+                <span className="task-detail-value task-detail-value--complaint">{props.complaint}</span>
               </div>
             </div>
           </div>

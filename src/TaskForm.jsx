@@ -33,6 +33,16 @@ export default function TaskForm({
         onChange={handleChange('service_date')}
         required
       />
+      <textarea
+        className="complaint-textarea"
+        placeholder="Complaint"
+        value={form.complaint || ''}
+        onChange={handleChange('complaint')}
+        onInput={e => {
+          e.target.style.height = 'auto';
+          e.target.style.height = e.target.scrollHeight + 'px';
+        }}
+      />
       <select
         value={form.status}
         onChange={handleChange('status')}
@@ -43,6 +53,7 @@ export default function TaskForm({
         <option value="confirmed">Confirmed</option>
         <option value="completed">Completed</option>
         <option value="waiting">Waiting</option>
+        <option value="priority">Priority</option>
       </select>
       <select
         value={form.department}
@@ -56,6 +67,7 @@ export default function TaskForm({
         <option value="body shop">Body Shop</option>
         <option value="old shop">Old Shop</option>
         <option value="new shop">New Shop</option>
+        <option value="triage">Triage</option>
       </select>
 
       <div

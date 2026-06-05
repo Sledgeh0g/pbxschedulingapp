@@ -40,7 +40,7 @@ nav {
 }
 
 .nav-right a:hover {
-  background-color: #045a8d;
+  background-color: #f40604;
   color: #fff;
 }
 
@@ -140,6 +140,9 @@ table, th, td {
   border-bottom: none;
 }
 
+.contract-table-row--priority { background-color: #ede9fe; }
+.contract-table-row--priority:hover { background-color: #ddd6fe; }
+
 .contract-table-row--queued { background-color: #fef3c7; }
 .contract-table-row--queued:hover { background-color: #fde68a; }
 
@@ -170,6 +173,58 @@ table, th, td {
   margin: 0;
 }
 
+.reports-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 50px;
+}
+
+.reports-month-picker {
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.reports-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 50px;
+  margin-bottom: 24px;
+}
+
+.reports-metric-card {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px 20px;
+  min-width: 110px;
+  text-align: center;
+}
+
+.reports-metric-card--total {
+  background-color: #dcfce7;
+  border-color: #bbf7d0;
+}
+
+.reports-metric-count {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.reports-metric-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: capitalize;
+}
+
 body {
   margin: 0;
 }
@@ -195,13 +250,29 @@ button {
   border: none;
 }
 
-.fc-toolbar-button {
-  background-color: #000;
+/* FullCalendar toolbar buttons */
+.fc .fc-button-primary {
+  background-color: #f40604;
+  border-color: #f40604;
+  border-radius: 2px;
   color: #fff;
-  border: none;
-  padding: 6px 12px;
-  font-size: 14px;
+  padding: 6px 8px;
+  font-size: 16px;
+  height: auto;
+  width: auto;
 }
+
+.fc .fc-button-primary:hover {
+  background-color: #c20503;
+  border-color: #c20503;
+}
+
+.fc .fc-button-primary:not(:disabled):active,
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  background-color: #c20503;
+  border-color: #c20503;
+}
+/* end FullCalendar toolbar buttons */
 
 .fc-daygrid-event {
   height: 18px;
@@ -253,8 +324,10 @@ button {
 /* Style form elements nicely inside the modal */
 .addModal input,
 .addModal select,
+.addModal textarea,
 .editModal input,
-.editModal select {
+.editModal select,
+.editModal textarea {
   display: block;
   width: 100%;
   margin-bottom: 12px;
@@ -349,6 +422,24 @@ button {
   border-color: #ef4444;
 }
 
+.complaint-textarea {
+  min-height: 152px;
+  overflow: hidden;
+  resize: none;
+  font-family: inherit;
+}
+
+.task-detail-row--complaint {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.task-detail-value--complaint {
+  text-transform: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 .task-detail-row {
   display: flex;
   justify-content: space-between;
@@ -369,4 +460,36 @@ button {
 .task-detail-value {
   color: #111;
   text-transform: capitalize;
+}
+
+/*  login page CSS */
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+.login-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.login-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 4px;
 }

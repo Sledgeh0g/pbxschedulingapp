@@ -10,6 +10,7 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
         service_date: '',
         status: '',
         department: '',
+        complaint: '',
     });
 
     async function handleSubmit(e) {
@@ -23,7 +24,7 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
         const newEvent = (mapTaskToEventProp || mapTaskToEvent)(t);
         setEvents(prev => [...prev, newEvent]);
         setShowModal(false);
-        setForm({ customer: '', unit: '', service_date: '', status: '', department: '' });
+        setForm({ customer: '', unit: '', service_date: '', status: '', department: '', complaint: '' });
     }
 
     return (
