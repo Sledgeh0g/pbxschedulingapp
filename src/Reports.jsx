@@ -8,6 +8,7 @@ import {
 import { supabase } from './supabaseClient'
 import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
+import { generateWorkOrderReport } from './generateWorkOrderReport'
 
 const DEPARTMENTS = ['warranty', 'wash bay', 'welding', 'body shop', 'old shop', 'new shop']
 
@@ -36,6 +37,9 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
   const [columnFilters, setColumnFilters] = useState([])
   const [selectedTask, setSelectedTask] = useState(null)
   const [showModal, setShowModal] = useState(false)
+  const [showExportDialog, setShowExportDialog] = useState(false)
+  const [exportTasks, setExportTasks] = useState([])
+  const [exportLoading, setExportLoading] = useState(false)
 
   useEffect(() => {
     if (!selectedDepartment || selectedDepartment === 'All Departments') {
@@ -63,6 +67,24 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
         setTasks(data || [])
       })
   }, [selectedMonth])
+
+  async function handleOpenExport() {
+    setExportLoading(true)
+    const { data, error } = await supabase
+      .from('tasks')
+      .select('id, customer, unit, service_date, complaint')
+      .neq('status', 'completed')
+      .order('service_date', { ascending: true })
+    if (error) { console.error(error); setExportLoading(false); return }
+    setExportTasks(data || [])
+    setExportLoading(false)
+    setShowExportDialog(true)
+  }
+
+  function handleDownloadReport() {
+    generateWorkOrderReport(exportTasks)
+    setShowExportDialog(false)
+  }
 
   function handleRowClick(task) {
     setSelectedTask({ ...mapTaskToEvent(task), startStr: task.service_date })
@@ -115,13 +137,10 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
   return (
     <div className="contract-table-page">
       <div className="reports-controls">
-        <h1>Completed Tasks Report</h1>
-        <input
-          type="month"
-          value={selectedMonth}
-          onChange={e => setSelectedMonth(e.target.value)}
-          className="reports-month-picker"
-        />
+        <h1>Completed Tasks</h1>
+        <button className="export-button" onClick={handleOpenExport} disabled={exportLoading}>
+          {exportLoading ? 'Loading...' : 'Export Data'}
+        </button>
       </div>
 
       <div className="reports-metrics">
@@ -131,10 +150,16 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
             <div className="reports-metric-label">{department}</div>
           </div>
         ))}
-        <div className="reports-metric-card reports-metric-card--total">
+         <div className="reports-metric-card reports-metric-card--total">
           <div className="reports-metric-count">{tasks.length}</div>
           <div className="reports-metric-label">Total</div>
         </div>
+         <input
+          type="month"
+          value={selectedMonth}
+          onChange={e => setSelectedMonth(e.target.value)}
+          className="reports-month-picker"
+        />
       </div>
 
       <div className="contract-table">
@@ -177,6 +202,37 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
           </tbody>
         </table>
       </div>
+
+      {showExportDialog && (
+        <div className="modal-backdrop" onClick={() => setShowExportDialog(false)}>
+          <div className="editModal" onClick={e => e.stopPropagation()}>
+            <span className="modal-close" onClick={() => setShowExportDialog(false)} aria-label="Close">×</span>
+            <div className="task-detail-view">
+              <div className="task-detail-header">
+                <h2>Export Work Order Report</h2>
+              </div>
+              <div className="task-detail-fields">
+                <div className="task-detail-row">
+                  <span className="task-detail-label">Tasks</span>
+                  <span className="task-detail-value">{exportTasks.length} active work orders</span>
+                </div>
+                <div className="task-detail-row">
+                  <span className="task-detail-label">Departments</span>
+                  <span className="task-detail-value">All</span>
+                </div>
+                <div className="task-detail-row">
+                  <span className="task-detail-label">Format</span>
+                  <span className="task-detail-value">PDF — Landscape</span>
+                </div>
+              </div>
+              <div className="modal-buttons" style={{ justifyContent: 'flex-end', marginTop: '16px' }}>
+                <button onClick={handleDownloadReport}>Download PDF</button>
+                <button type="button" onClick={() => setShowExportDialog(false)}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <EditDetailModal
         event={selectedTask}

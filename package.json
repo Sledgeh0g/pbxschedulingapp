@@ -18,6 +18,8 @@
     "@supabase/supabase-js": "^2.106.2",
     "@tailwindcss/vite": "^4.3.0",
     "@tanstack/react-table": "^8.21.3",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.8",
     "papaparse": "^5.5.3",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

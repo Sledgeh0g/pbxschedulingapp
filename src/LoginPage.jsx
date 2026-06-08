@@ -12,6 +12,11 @@ export default function LoginPage() {
     e.preventDefault();
     setLoading(true);
     setError(null);
+    if (!email.toLowerCase().endsWith('@pbxtruck.ca')) {
+      setError('Sorry, that email is not authorized.');
+      setLoading(false);
+      return;
+    }
     const { error } = await supabase.auth.signInWithOtp({ email });
     if (error) setError(error.message);
     else setStep('otp');

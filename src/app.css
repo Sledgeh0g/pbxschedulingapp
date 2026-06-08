@@ -22,6 +22,11 @@ nav {
   justify-content: flex-end;
 }
 
+.nav-right a:hover {
+  background-color: #DFF1F1;
+  color: #000;
+}
+
 .nav-center {
   flex: 1;
   display: flex;
@@ -37,11 +42,6 @@ nav {
   border-radius: 4px;
   margin-left: 8px;
   display: inline-block;
-}
-
-.nav-right a:hover {
-  background-color: #f40604;
-  color: #fff;
 }
 
 .nav-right a:active {
@@ -175,7 +175,7 @@ table, th, td {
 
 .reports-controls {
   display: flex;
-  align-items: center;
+  flex-direction: horizontal;
   justify-content: space-between;
   margin-bottom: 20px;
   padding: 0 50px;
@@ -225,6 +225,23 @@ table, th, td {
   text-transform: capitalize;
 }
 
+.export-button {
+  background-color: #DFF1F1;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  height: 40px;
+  width: 150px;
+  padding: 6px 6px 6px 6px;
+  cursor: pointer;
+}
+
+.export-button:hover {
+  background-color: #ff0000;
+  color: #000;
+}
+
 body {
   margin: 0;
 }
@@ -252,10 +269,10 @@ button {
 
 /* FullCalendar toolbar buttons */
 .fc .fc-button-primary {
-  background-color: #f40604;
-  border-color: #f40604;
-  border-radius: 2px;
-  color: #fff;
+  background-color: #DFF1F1;
+  border-radius: 6px;
+  color: #000;
+  border: none;
   padding: 6px 8px;
   font-size: 16px;
   height: auto;
@@ -263,14 +280,14 @@ button {
 }
 
 .fc .fc-button-primary:hover {
-  background-color: #c20503;
-  border-color: #c20503;
+  background-color: #ff0000;
+  color: #000
 }
 
 .fc .fc-button-primary:not(:disabled):active,
 .fc .fc-button-primary:not(:disabled).fc-button-active {
-  background-color: #c20503;
-  border-color: #c20503;
+  background-color: #ff0000;
+  color: #000
 }
 /* end FullCalendar toolbar buttons */
 
