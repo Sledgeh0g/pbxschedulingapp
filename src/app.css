@@ -186,6 +186,7 @@ table, th, td {
   border: 1px solid #d1d5db;
   border-radius: 6px;
   font-size: 0.875rem;
+  font-family: inherit;
   color: #374151;
 }
 
@@ -477,6 +478,15 @@ button {
 .task-detail-value {
   color: #111;
   text-transform: capitalize;
+}
+
+.task-detail-created-by {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: right;
 }
 
 /*  login page CSS */

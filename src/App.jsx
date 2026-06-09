@@ -48,7 +48,7 @@ function App () {
   useEffect(() => {
     supabase
       .from('tasks')
-      .select('id, customer, unit, service_date, status, department, created_at, complaint')
+      .select('id, customer, unit, service_date, status, department, created_at, complaint, created_by')
       .order('created_at', { ascending: true })
       .then(({ data, error }) => {
         if (error) { console.error(error); return; }

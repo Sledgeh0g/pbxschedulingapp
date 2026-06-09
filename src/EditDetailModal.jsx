@@ -136,6 +136,11 @@ export default function EditDetailModal({
                 <span className="task-detail-value task-detail-value--complaint">{props.complaint}</span>
               </div>
             </div>
+            {props.created_by && (
+              <div className="task-detail-created-by">
+                Created by {props.created_by}
+              </div>
+            )}
           </div>
         )}
       </div>

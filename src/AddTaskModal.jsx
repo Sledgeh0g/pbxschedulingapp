@@ -15,9 +15,10 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
 
     async function handleSubmit(e) {
         e.preventDefault();
+        const { data: { user } } = await supabase.auth.getUser();
         const { data, error } = await supabase
             .from('tasks')
-            .insert([form])
+            .insert([{ ...form, created_by: user?.email || '' }])
             .select();
         if (error) { console.error(error); return; }
         const t = data[0];
