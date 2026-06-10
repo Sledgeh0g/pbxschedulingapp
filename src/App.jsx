@@ -46,6 +46,7 @@ function App () {
   }, [selectedEvent, setFormData]);
 
   useEffect(() => {
+    if (!session) return;
     supabase
       .from('tasks')
       .select('id, customer, unit, service_date, status, department, created_at, complaint, created_by')
@@ -54,7 +55,7 @@ function App () {
         if (error) { console.error(error); return; }
         setEvents(data.map(mapTaskToEvent));
       });
-  }, [])
+  }, [session])
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
