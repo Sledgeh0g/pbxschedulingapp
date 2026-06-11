@@ -45,7 +45,7 @@ export default function LoginPage() {
           </form>
         ) : (
           <form className="login-form" onSubmit={handleVerifyOtp}>
-            <p>Check your email for a 6-digit code.</p>
+            <p>Check your email for a verification code.</p>
             <input className="login-input" placeholder="Enter the 6-digit code" type="text" id="otp" value={token} onChange={e => setToken(e.target.value)} required />
             <button className="login-btn" type="submit" disabled={loading}>
               {loading ? 'Verifying...' : 'Verify'}
