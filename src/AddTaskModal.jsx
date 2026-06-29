@@ -8,7 +8,7 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
         customer: '',
         unit: '',
         service_date: '',
-        status: '',
+        status: 'Queued',
         priority: 'scheduled',
         department: '',
         complaint: '',

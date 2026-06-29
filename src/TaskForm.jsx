@@ -46,13 +46,10 @@ export default function TaskForm({
       <select
         value={form.status}
         onChange={handleChange('status')}
-        required
       >
         <option value="">Select Status</option>
         <option value="queued">Queued</option>
-        <option value="confirmed">Confirmed</option>
         <option value="completed">Completed</option>
-        <option value="waiting">Waiting</option>
       </select>
       <select
         value={form.priority}

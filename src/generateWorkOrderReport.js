@@ -25,7 +25,7 @@ export function generateWorkOrderReport(tasks) {
   ])
 
   autoTable(doc, {
-    head: [['#', 'ServiceDate', 'TECH#', 'Customer', 'UNIT#', 'HERE', 'IN SHOP', 'DONE', 'CALLED', 'Complaint', 'L']],
+    head: [['#', 'ServiceDate', 'TECH#', 'Customer', 'UNIT#', 'HERE', 'IN SHOP', 'DONE', 'CALLED', 'Complaint']],
     body: rows,
     startY: 8,
     styles: {

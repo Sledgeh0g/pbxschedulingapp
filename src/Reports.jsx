@@ -70,11 +70,15 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
 
   async function handleOpenExport() {
     setExportLoading(true)
-    const { data, error } = await supabase
+    let query = supabase
       .from('tasks')
       .select('id, customer, unit, service_date, complaint')
       .neq('status', 'completed')
       .order('service_date', { ascending: true })
+    if (selectedDepartment && selectedDepartment !== 'All Departments') {
+      query = query.eq('department', selectedDepartment)
+    }
+    const { data, error } = await query
     if (error) { console.error(error); setExportLoading(false); return }
     setExportTasks(data || [])
     setExportLoading(false)
@@ -219,7 +223,7 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
                 </div>
                 <div className="task-detail-row">
                   <span className="task-detail-label">Departments</span>
-                  <span className="task-detail-value">All</span>
+                  <span className="task-detail-value">{(!selectedDepartment || selectedDepartment === 'All Departments') ? 'All' : selectedDepartment}</span>
                 </div>
                 <div className="task-detail-row">
                   <span className="task-detail-label">Format</span>
