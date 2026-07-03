@@ -4,6 +4,19 @@ const priorityColors = {
   'scheduled': '#16a34a',
 };
 
+const departmentColors = {
+  'warranty':   '#dc2626',
+  'wash bay':   '#06b6d4',
+  'body shop':  '#ea580c',
+  'welding':    '#92400e',
+  'triage':     '#ec4899',
+  'old shop':   '#1e3a5f',
+  'new shop':   '#eab308',
+};
+
+// keep old name as alias so existing imports don't break
+const departmentDotColors = departmentColors;
+
 const PRIORITY_ORDER = { urgent: 0, end_of_day: 1, scheduled: 2 };
 
 function clampToToday(dateStr) {
@@ -14,17 +27,22 @@ function clampToToday(dateStr) {
 
 export function mapTaskToEvent(t) {
   const displayDate = t.status === 'completed' ? t.service_date : clampToToday(t.service_date)
+  const departments = Array.isArray(t.department)
+    ? t.department
+    : (t.department ? [t.department] : []);
   return {
     id: String(t.id),
     title: `${t.customer} - ${t.unit}`,
     start: displayDate,
-    color: priorityColors[t.priority] || '#999',
+    backgroundColor: 'transparent',
+    borderColor: priorityColors[t.priority] || '#999',
+    textColor: priorityColors[t.priority] || '#999',
     extendedProps: {
       customer: t.customer,
       unit: t.unit,
       status: t.status,
       priority: t.priority || 'scheduled',
-      department: t.department,
+      department: departments,
       complaint: t.complaint,
       created_by: t.created_by || '',
       created_at: t.created_at || ''
@@ -32,7 +50,7 @@ export function mapTaskToEvent(t) {
   };
 }
 
-export { priorityColors };
+export { priorityColors, departmentColors, departmentDotColors };
 
 export function eventOrderComparator(a, b) {
   const aRank = PRIORITY_ORDER[a.extendedProps?.priority] ?? 99;

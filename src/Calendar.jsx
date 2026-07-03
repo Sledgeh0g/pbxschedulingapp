@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { supabase } from './supabaseClient';
-import { eventOrderComparator } from './mapTaskToEvent';
+import { eventOrderComparator, departmentDotColors } from './mapTaskToEvent';
 import AddTaskModal from './AddTaskModal';
 import EditDetailModal from './EditDetailModal';
 import SearchInput from './SearchInput';
@@ -62,6 +62,32 @@ export default function Calendar({ events, setEvents, searchTerm, setSearchTerm,
                 editable={true}
                 eventDrop={handleEventDrop}
                 eventClick={handleEventClick}
+                eventContent={(info) => {
+                    const departments = Array.isArray(info.event.extendedProps.department)
+                        ? info.event.extendedProps.department
+                        : [];
+                    return (
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', minWidth: 0, overflow: 'hidden', padding: '0 2px' }}>
+                            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>{info.event.title}</span>
+                            <div style={{ display: 'flex', gap: '2px', flexShrink: 0, marginLeft: '4px' }}>
+                                {departments.map(dept => {
+                                    const dotColor = departmentDotColors[dept];
+                                    return dotColor ? (
+                                        <span key={dept} style={{
+                                            display: 'block',
+                                            width: '8px',
+                                            height: '8px',
+                                            borderRadius: '50%',
+                                            border: '2px solid white',
+                                            backgroundColor: dotColor,
+                                            flexShrink: 0,
+                                        }} />
+                                    ) : null;
+                                })}
+                            </div>
+                        </div>
+                    );
+                }}
             />
         </div>
     )

@@ -31,11 +31,11 @@ Single-page React app (React 19 + Vite) backed by a Supabase `tasks` table. Stat
 - `Calendar` and `List` are two views of the same data — both render FullCalendar (dayGrid vs list plugins) with identical props and modal wiring.
 
 **Task data shape (Supabase `tasks` table):**
-`id, customer, unit, service_date, status, priority, department, created_at`
+`id, customer, unit, service_date, status, priority, department, created_at, complaint, created_by`
 
 **Status values:** `queued`, `confirmed`, `completed`, `waiting`  
 **Priority values:** `scheduled` (green), `end_of_day` (yellow), `urgent` (red) — colors act as a heat map for urgency, set by dispatch  
-**Department values:** `warranty`, `wash bay`, `welding`, `body shop`, `old shop`, `new shop`
+**Department values:** `warranty`, `wash bay`, `welding`, `body shop`, `old shop`, `new shop`, `triage`
 
 **Dispatch mode:** a boolean toggle that filters to show only `queued` tasks (for dispatchers) vs all non-queued tasks.
 

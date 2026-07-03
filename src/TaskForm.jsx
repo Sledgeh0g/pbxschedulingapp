@@ -1,3 +1,15 @@
+import { departmentColors } from './mapTaskToEvent';
+
+const DEPARTMENTS = [
+  { value: 'warranty',  label: 'Warranty' },
+  { value: 'wash bay',  label: 'Wash Bay' },
+  { value: 'welding',   label: 'Welding' },
+  { value: 'body shop', label: 'Body Shop' },
+  { value: 'old shop',  label: 'Old Shop' },
+  { value: 'new shop',  label: 'New Shop' },
+  { value: 'triage',    label: 'Triage' },
+];
+
 export default function TaskForm({
   form,
   setForm,
@@ -10,6 +22,17 @@ export default function TaskForm({
   const handleChange = (field) => (e) => {
     setForm({ ...form, [field]: e.target.value });
   };
+
+  const currentDepts = Array.isArray(form.department) ? form.department : [];
+
+  function toggleDept(value) {
+    setForm({
+      ...form,
+      department: currentDepts.includes(value)
+        ? currentDepts.filter(d => d !== value)
+        : [...currentDepts, value],
+    });
+  }
 
   return (
     <form onSubmit={onSubmit}>
@@ -61,20 +84,28 @@ export default function TaskForm({
         <option value="end_of_day">End of Day</option>
         <option value="urgent">Urgent</option>
       </select>
-      <select
-        value={form.department}
-        onChange={handleChange('department')}
-        required
-      >
-        <option value="">Select Department</option>
-        <option value="warranty">Warranty</option>
-        <option value="wash bay">Wash Bay</option>
-        <option value="welding">Welding</option>
-        <option value="body shop">Body Shop</option>
-        <option value="old shop">Old Shop</option>
-        <option value="new shop">New Shop</option>
-        <option value="triage">Triage</option>
-      </select>
+
+      <div className="dept-form-chips">
+        {DEPARTMENTS.map(({ value, label }) => {
+          const selected = currentDepts.includes(value);
+          const color = departmentColors[value];
+          return (
+            <button
+              key={value}
+              type="button"
+              className="dept-form-chip"
+              style={{
+                backgroundColor: selected ? color : 'transparent',
+                borderColor: color,
+                color: selected ? 'white' : color,
+              }}
+              onClick={() => toggleDept(value)}
+            >
+              {label}
+            </button>
+          );
+        })}
+      </div>
 
       <div
         className="modal-buttons"

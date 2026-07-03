@@ -10,13 +10,21 @@ import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
 import { generateWorkOrderReport } from './generateWorkOrderReport'
 
-const DEPARTMENTS = ['warranty', 'wash bay', 'welding', 'body shop', 'old shop', 'new shop']
+const DEPARTMENTS = ['warranty', 'wash bay', 'welding', 'body shop', 'old shop', 'new shop', 'triage']
 
 const columns = [
   { accessorKey: 'customer', header: 'Customer' },
   { accessorKey: 'unit', header: 'Unit' },
   { accessorKey: 'service_date', header: 'Service Date' },
-  { accessorKey: 'department', header: 'Department' },
+  {
+    accessorKey: 'department',
+    header: 'Department',
+    filterFn: 'arrIncludes',
+    cell: ({ row }) => {
+      const depts = row.getValue('department');
+      return (Array.isArray(depts) ? depts : []).join(', ');
+    },
+  },
   {
     accessorKey: 'status',
     header: 'Status',
@@ -76,7 +84,7 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
       .neq('status', 'completed')
       .order('service_date', { ascending: true })
     if (selectedDepartment && selectedDepartment !== 'All Departments') {
-      query = query.eq('department', selectedDepartment)
+      query = query.contains('department', [selectedDepartment])
     }
     const { data, error } = await query
     if (error) { console.error(error); setExportLoading(false); return }
@@ -126,7 +134,7 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
 
   const metrics = DEPARTMENTS.map(dept => ({
     department: dept,
-    count: tasks.filter(t => t.department?.toLowerCase() === dept).length,
+    count: tasks.filter(t => Array.isArray(t.department) && t.department.includes(dept)).length,
   }))
 
   const table = useReactTable({

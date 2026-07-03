@@ -11,6 +11,7 @@ import { mapTaskToEvent } from './mapTaskToEvent';
 import SearchInput from './SearchInput';
 import LoginPage from './LoginPage';
 import ColorLegend from './ColorLegend';
+import DepartmentLegend from './DepartmentLegend';
 
 function App () {
 
@@ -26,7 +27,7 @@ function App () {
     service_date: "",
     status: "",
     priority: "",
-    department: "",
+    department: [],
     complaint: ""
   });
 
@@ -42,7 +43,7 @@ function App () {
         service_date: selectedEvent.startStr || '',
         status: selectedEvent.extendedProps?.status || '',
         priority: selectedEvent.extendedProps?.priority || 'scheduled',
-        department: selectedEvent.extendedProps?.department || '',
+        department: selectedEvent.extendedProps?.department || [],
         complaint: selectedEvent.extendedProps?.complaint || '',
       });
     }
@@ -88,9 +89,8 @@ function App () {
   const deptFilteredEvents = events.filter(event => {
     if (event.extendedProps?.status === 'completed') return false;
     if (selectedDepartment === 'All Departments') return true;
-    const dept = event.extendedProps?.department;
-    if (!dept) return false;
-    return dept.toLowerCase() === selectedDepartment.toLowerCase();
+    const depts = event.extendedProps?.department;
+    return Array.isArray(depts) && depts.includes(selectedDepartment);
   });
 
   const filteredEvents = deptFilteredEvents.filter(event => {
@@ -100,7 +100,7 @@ function App () {
       customer?.toLowerCase().includes(term) ||
       unit?.toLowerCase().includes(term) ||
       status?.toLowerCase().includes(term) ||
-      department?.toLowerCase().includes(term) ||
+      (Array.isArray(department) ? department.join(' ') : '').toLowerCase().includes(term) ||
       created_at?.toLowerCase().includes(term)
     );
   });
@@ -130,7 +130,11 @@ function App () {
           <NavLink to="/reports">Reports</NavLink>
           </div>
     </nav>
-      <ColorLegend />
+      <div className="legend-row">
+        <div className="legend-left"></div>
+        <div className="legend-center"><DepartmentLegend /></div>
+        <div className="legend-right"><ColorLegend /></div>
+      </div>
       <Routes>
       <Route path="/" element={<Calendar 
           events={filteredEvents} 

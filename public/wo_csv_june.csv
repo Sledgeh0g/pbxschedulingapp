@@ -1,0 +1,811 @@
+﻿ListSchema={"schemaXmlList":["<Field ID=\"{fa564e0f-0c70-4ab9-b863-0177e6ddd247}\" Type=\"Text\" Name=\"Title\" DisplayName=\"Title\" Required=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Title\" FromBaseType=\"TRUE\" MaxLength=\"255\" />","<Field ID=\"{503f1caa-358e-4918-9094-4a2cdc4bc034}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"Edit\" Sortable=\"FALSE\" Filterable=\"FALSE\" DisplayName=\"Edit\" ClassInfo=\"Icon\" AuthoringInfo=\"(link to edit item)\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Edit\" FromBaseType=\"TRUE\"><DisplayPattern><IfHasRights><RightsChoices><RightsGroup PermEditListItems=\"required\" /></RightsChoices><Then><HTML><![CDATA[<a href=\"]]></HTML><URL Cmd=\"Edit\" /><HTML><![CDATA[\" onclick=\"EditLink(this, ]]></HTML><Counter Type=\"View\" /><HTML><![CDATA[);return false;\" target=\"_self\">]]></HTML><HTML><![CDATA[<img border=\"0\" alt=\"]]></HTML><HTML>Edit</HTML><HTML><![CDATA[\" src=\"/_layouts/15/images/edititem.gif?rev=47\"/>]]></HTML><HTML><![CDATA[</a>]]></HTML></Then><Else><HTML><![CDATA[&#160;]]></HTML></Else></IfHasRights></DisplayPattern></Field>","<Field Description=\"Customer unit number.\" DisplayName=\"Unit#\" Format=\"Dropdown\" IsModern=\"TRUE\" MaxLength=\"255\" Name=\"Unit_x0023_\" Title=\"Unit#\" Type=\"Text\" ID=\"{79a41dcc-55e3-4b3c-84d6-a2cc82d51173}\" StaticName=\"Unit_x0023_\" />","<Field Description=\"Date of service appointment.\" DisplayName=\"Service Date\" FriendlyDisplayFormat=\"Disabled\" Format=\"DateOnly\" IsModern=\"TRUE\" Name=\"ServiceDate\" Required=\"TRUE\" Title=\"Service Date\" Type=\"DateTime\" ID=\"{81ea3c9a-ac47-482c-846d-c7e43916c9f9}\" StaticName=\"ServiceDate\"><Default>[today]</Default></Field>","<Field AppendOnly=\"FALSE\" ClientSideComponentId=\"00000000-0000-0000-0000-000000000000\" Description=\"Complaints and notes regarding the unit.\" DisplayName=\"Complaint/notes\" Format=\"Dropdown\" IsolateStyles=\"FALSE\" Name=\"Complaint\" RichText=\"FALSE\" RichTextMode=\"Compatible\" Title=\"Complaint/notes\" Type=\"Note\" ID=\"{62f5d523-1626-46e2-946a-53415ecee2c3}\" StaticName=\"Complaint\" />","<Field CustomFormatter=\"{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;flex-wrap&quot;:&quot;wrap&quot;,&quot;display&quot;:&quot;flex&quot;},&quot;children&quot;:[{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;box-sizing&quot;:&quot;border-box&quot;,&quot;padding&quot;:&quot;4px 8px 5px 8px&quot;,&quot;display&quot;:&quot;flex&quot;,&quot;border-radius&quot;:&quot;16px&quot;,&quot;height&quot;:&quot;24px&quot;,&quot;align-items&quot;:&quot;center&quot;,&quot;white-space&quot;:&quot;nowrap&quot;,&quot;overflow&quot;:&quot;hidden&quot;,&quot;margin&quot;:&quot;4px 4px 4px 4px&quot;},&quot;attributes&quot;:{&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;N/A&quot;]},&quot;sp-css-backgroundColor-BgCornflowerBlue&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;External&quot;]},&quot;sp-css-backgroundColor-BgMintGreen&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Internal&quot;]},&quot;sp-css-backgroundColor-BgGold&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;&quot;]},&quot;&quot;,&quot;sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary&quot;]}]}]}]}},&quot;children&quot;:[{&quot;elmType&quot;:&quot;span&quot;,&quot;style&quot;:{&quot;line-height&quot;:&quot;16px&quot;,&quot;height&quot;:&quot;14px&quot;},&quot;attributes&quot;:{&quot;iconName&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;N/A&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;External&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Internal&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;&quot;]},&quot;&quot;,&quot;&quot;]}]}]}]},&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;N/A&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;External&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Internal&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;&quot;]},&quot;&quot;,&quot;&quot;]}]}]}]}}},{&quot;elmType&quot;:&quot;span&quot;,&quot;style&quot;:{&quot;overflow&quot;:&quot;hidden&quot;,&quot;text-overflow&quot;:&quot;ellipsis&quot;,&quot;padding&quot;:&quot;0 3px&quot;},&quot;txtContent&quot;:&quot;@currentField&quot;,&quot;attributes&quot;:{&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;N/A&quot;]},&quot;sp-field-fontSizeSmall sp-css-color-CornflowerBlueFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;External&quot;]},&quot;sp-field-fontSizeSmall sp-css-color-MintGreenFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Internal&quot;]},&quot;sp-field-fontSizeSmall sp-css-color-GoldFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;&quot;]},&quot;&quot;,&quot;&quot;]}]}]}]}}}]}],&quot;templateId&quot;:&quot;BgColorChoicePill&quot;}\" Description=\"Is this a warranty job?\" DisplayName=\"Warranty\" FillInChoice=\"FALSE\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"Warranty\" Title=\"Warranty\" Type=\"Choice\" ID=\"{8ad0a6e8-3a08-4247-a75b-882caf6c1631}\" StaticName=\"Warranty\"><CHOICES><CHOICE>N/A</CHOICE><CHOICE>External</CHOICE><CHOICE>Internal</CHOICE></CHOICES><Default>N/A</Default></Field>","<Field Description=\"Is the job completed?\" DisplayName=\"Completed\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"Completed\" Title=\"Completed\" Type=\"Boolean\" ID=\"{14c82a29-f23e-4aae-947e-08d176a03a2e}\" StaticName=\"Completed\"><Default>0</Default></Field>","<Field Description=\"Was the customer given a courtesy car?\" DisplayName=\"Courtesy Car\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"CourtesyCar\" Title=\"Courtesy Car\" Type=\"Boolean\" ID=\"{6a6cf1e8-7d2d-4494-96be-52f0d253c4b9}\" StaticName=\"CourtesyCar\"><Default>0</Default></Field>","<Field Description=\"Is the job waiting on parts or some other circumstance?\" DisplayName=\"Is Waiting\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"IsWaiting\" Title=\"Is Waiting\" Type=\"Boolean\" ID=\"{3e9eddaf-d9e5-4a8e-a8c4-6e5d683f3f4a}\" StaticName=\"IsWaiting\"><Default>0</Default></Field>","<Field Description=\"Is the job confirmed by management?\" DisplayName=\"Confirmed\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"Confirmed\" Title=\"Confirmed\" Type=\"Boolean\" ID=\"{ba87b37d-c917-4aa4-908c-e542fde8b04f}\" StaticName=\"Confirmed\"><Default>0</Default></Field>","<Field ClientSideComponentId=\"00000000-0000-0000-0000-000000000000\" CustomFormatter=\"{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;flex-wrap&quot;:&quot;wrap&quot;,&quot;display&quot;:&quot;flex&quot;},&quot;children&quot;:[{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;box-sizing&quot;:&quot;border-box&quot;,&quot;padding&quot;:&quot;4px 8px 5px 8px&quot;,&quot;overflow&quot;:&quot;hidden&quot;,&quot;text-overflow&quot;:&quot;ellipsis&quot;,&quot;display&quot;:&quot;flex&quot;,&quot;border-radius&quot;:&quot;16px&quot;,&quot;height&quot;:&quot;24px&quot;,&quot;align-items&quot;:&quot;center&quot;,&quot;white-space&quot;:&quot;nowrap&quot;,&quot;margin&quot;:&quot;4px 4px 4px 4px&quot;},&quot;attributes&quot;:{&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;James Fehr&quot;]},&quot;sp-css-backgroundColor-BgGray sp-css-borderColor-WhiteFont sp-css-color-WhiteFont sp-css-color-WhiteFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;David Reimer&quot;]},&quot;sp-css-backgroundColor-BgTeal sp-css-borderColor-WhiteFont sp-css-color-WhiteFont sp-css-color-WhiteFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;Triage (Todd)&quot;]},&quot;sp-css-backgroundColor-BgCoral sp-css-borderColor-CoralFont sp-css-color-CoralFont sp-css-color-CoralFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;Walter Wiens&quot;]},&quot;sp-css-backgroundColor-BgLightBlue sp-css-borderColor-LightBlueFont sp-css-color-LightBlueFont sp-css-color-LightBlueFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;Brooke Penney&quot;]},&quot;sp-css-backgroundColor-BgCyan sp-css-color-CyanFont sp-css-color-CyanFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;Kayla Dubell&quot;]},&quot;sp-css-backgroundColor-BgDarkPink sp-css-borderColor-WhiteFont sp-css-color-WhiteFont sp-css-color-WhiteFont&quot;,&quot;sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary&quot;]}]}]}]}]}]}]}},&quot;children&quot;:[{&quot;elmType&quot;:&quot;span&quot;,&quot;style&quot;:{&quot;overflow&quot;:&quot;hidden&quot;,&quot;text-overflow&quot;:&quot;ellipsis&quot;,&quot;padding&quot;:&quot;0 3px&quot;},&quot;txtContent&quot;:&quot;[$Foreman]&quot;,&quot;attributes&quot;:{&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;James Fehr&quot;]},&quot;sp-css-color-WhiteFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;David Reimer&quot;]},&quot;sp-css-color-WhiteFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;Triage (Todd)&quot;]},&quot;sp-css-color-CoralFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;Walter Wiens&quot;]},&quot;sp-css-color-LightBlueFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;Brooke Penney&quot;]},&quot;sp-css-color-CyanFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;[$Foreman]&quot;,&quot;Kayla Dubell&quot;]},&quot;sp-css-color-WhiteFont&quot;,&quot;&quot;]}]}]}]}]}]}]}}}]}],&quot;templateId&quot;:&quot;BgColorChoicePill&quot;}\" Description=\"Foreman assigned to the job.\" DisplayName=\"Foreman\" FillInChoice=\"FALSE\" Format=\"Dropdown\" Name=\"Foreman\" Title=\"Foreman\" Type=\"Choice\" ID=\"{ad1c3e5c-4238-4987-bd0f-08cde3acf4cb}\" StaticName=\"Foreman\"><CHOICES><CHOICE>James Fehr</CHOICE><CHOICE>David Reimer</CHOICE><CHOICE>Triage (Todd)</CHOICE><CHOICE>Walter Wiens</CHOICE><CHOICE>Brooke Penney</CHOICE><CHOICE>Kayla Dubell</CHOICE></CHOICES></Field>","<Field Description=\"Does the unit need a wash?\" DisplayName=\"Wash Bay\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"WashBay\" Title=\"Wash Bay\" Type=\"Boolean\" ID=\"{16617920-26fc-461b-9bd9-83c8c8989d38}\" StaticName=\"WashBay\"><Default>0</Default></Field>","<Field ClientSideComponentId=\"00000000-0000-0000-0000-000000000000\" Description=\"Priority date by which the truck service should be completed.\" DisplayName=\"Due By\" FriendlyDisplayFormat=\"Disabled\" Format=\"DateTime\" Name=\"DueBy\" Title=\"Due By\" Type=\"DateTime\" ID=\"{b3b6038d-618e-430f-ab85-d1eeabd73709}\" StaticName=\"DueBy\" />","<Field Description=\"Has the customer been contacted since the job has been completed?\" DisplayName=\"Customer Called\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"CustomerCalled\" Title=\"Customer Called\" Type=\"Boolean\" ID=\"{1841f7fa-9507-44b9-bf1e-11a815a0b2cf}\" StaticName=\"CustomerCalled\"><Default>0</Default></Field>","<Field Description=\"Records the name of the user that updates the 'Customer Called' field.\" DisplayName=\"Customer Called By\" Format=\"Dropdown\" IsModern=\"TRUE\" MaxLength=\"255\" Name=\"CustomerCalledBy\" Title=\"Customer Called By\" Type=\"Text\" ID=\"{ef17404c-8351-498b-abc4-3f72d9c43e22}\" StaticName=\"CustomerCalledBy\" />","<Field Description=\"Is this a welding job?\" DisplayName=\"Welding\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"Welding\" Title=\"Welding\" Type=\"Boolean\" ID=\"{a5b972e4-db49-4415-b903-7bc07684263e}\" StaticName=\"Welding\"><Default>0</Default></Field>","<Field Description=\"Body shop task.\" DisplayName=\"Body Shop\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"BodyShop\" Title=\"Body Shop\" Type=\"Boolean\" ID=\"{776fce2e-d7f8-4f56-b51c-8a109d428475}\" StaticName=\"BodyShop\"><Default>0</Default></Field>","<Field ID=\"{82642ec8-ef9b-478f-acf9-31f7d45fbc31}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"LinkTitle\" DisplayName=\"Customer\" DisplayNameSrcField=\"Title\" ClassInfo=\"Menu\" AuthoringInfo=\"(linked to item with edit menu)\" ListItemMenuAllowed=\"Required\" LinkToItemAllowed=\"Prohibited\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"LinkTitle\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"Title\" /><FieldRef Name=\"LinkTitleNoMenu\" /><FieldRef Name=\"_EditMenuTableStart2\" /><FieldRef Name=\"_EditMenuTableEnd\" /></FieldRefs><DisplayPattern><FieldSwitch><Expr><GetVar Name=\"FreeForm\" /></Expr><Case Value=\"TRUE\"><Field Name=\"LinkTitleNoMenu\" /></Case><Default><HTML><![CDATA[<div class=\"ms-vb itx\" onmouseover=\"OnItem(this)\" CTXName=\"ctx]]></HTML><Field Name=\"_EditMenuTableStart2\" /><HTML><![CDATA[\">]]></HTML><Field Name=\"LinkTitleNoMenu\" /><HTML><![CDATA[</div>]]></HTML><HTML><![CDATA[<div class=\"s4-ctx\" onmouseover=\"OnChildItem(this.parentNode); return false;\">]]></HTML><HTML><![CDATA[<span>&nbsp;</span>]]></HTML><HTML><![CDATA[<a onfocus=\"OnChildItem(this.parentNode.parentNode); return false;\" onclick=\"PopMenuFromChevron(event); return false;\" href=\"javascript:;\" title=\"Open Menu\"></a>]]></HTML><HTML><![CDATA[<span>&nbsp;</span>]]></HTML><HTML><![CDATA[</div>]]></HTML></Default></FieldSwitch></DisplayPattern></Field>","<Field ID=\"{b1f7969b-ea65-42e1-8b54-b588292635f2}\" ReadOnly=\"TRUE\" Type=\"Computed\" Sortable=\"FALSE\" Filterable=\"FALSE\" Name=\"SelectTitle\" Hidden=\"TRUE\" CanToggleHidden=\"TRUE\" DisplayName=\"Select\" Dir=\"\" AuthoringInfo=\"(web part connection)\" HeaderImage=\"blank.gif\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"SelectTitle\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern><IfEqual><Expr1><GetVar Name=\"SelectedID\" /></Expr1><Expr2><Column Name=\"ID\" /></Expr2><Then><HTML><![CDATA[<img border=\"0\" align=\"absmiddle\" style=\"cursor: pointer\" src=\"/_layouts/15/images/rbsel.gif?rev=47\" alt=\"]]></HTML><HTML>Selected</HTML><HTML><![CDATA[\"/>]]></HTML></Then><Else><HTML><![CDATA[<a href=\"javascript:SelectField(']]></HTML><GetVar Name=\"View\" /><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Column Name=\"ID\" /></ScriptQuote><HTML><![CDATA[');return false;\" onclick=\"javascript:SelectField(']]></HTML><GetVar Name=\"View\" /><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Column Name=\"ID\" /></ScriptQuote><HTML><![CDATA[');return false;\" target=\"_self\">]]></HTML><HTML><![CDATA[<img border=\"0\" align=\"absmiddle\" style=\"cursor: pointer\" src=\"/_layouts/15/images/rbunsel.gif?rev=47\"  alt=\"]]></HTML><HTML>Normal</HTML><HTML><![CDATA[\"/>]]></HTML><HTML><![CDATA[</a>]]></HTML></Else></IfEqual></DisplayPattern></Field>"]}
+"ID","Customer","Unit%23","Service Date","TodayAndNewer","Due By","Complaint/notes","Confirmed","Completed","Customer Called","Customer Called By","Days","Warranty","Courtesy Car","Is Waiting","Created","Created By","Modified","Modified By","Foreman","Wash Bay","Welding","Body Shop"
+"18155","W.L. Linke ","1981","2026-07-02T05:00:00Z",,,"Part ordered for tech / speedo   By Ed and Ray    truck done otherwise 
+120048","True","False","False",,"2","N/A","False","True","2025-10-21T12:50:17Z","kwatson@pbxtruck.ca","2026-06-30T13:06:07Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"19161","Chad Mykula","kenworth W900 ","2026-06-11T05:00:00Z",,,"1 204 734 8687    Rear Part of Truck burnt    estimate repaires and report to customer MPI  possible     in james   shop  (scott )    welding shop rebuilding axle ","True","True","False",,"0","N/A","False","True","2026-01-14T13:09:20Z","rpetkau@pbxtruck.ca","2026-06-11T16:48:42Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"19187","Canada Packers ","2513","2026-07-02T05:00:00Z",,,"MPI Repairs  Cab  /    Cab is here as of june 16/26 ","True","False","False",,"2","N/A","False","False","2026-01-15T13:11:03Z","rpetkau@pbxtruck.ca","2026-06-30T13:06:23Z","wneufeld@pbxtruck.ca","Kayla Dubell","False","False","False"
+"19404","christopher Stgermain","trailer Van ","2026-06-01T05:00:00Z",,"2026-03-27T05:00:00Z","Damaged right side frame and penal    1 289 200 0481  christopher     customer wants estimate   unit at the welding shop ","True","True","False",,"0","N/A","False","False","2026-01-28T21:41:21Z","rpetkau@pbxtruck.ca","2026-06-01T21:36:18Z","wwiens@pbxtruck.ca","Walter Wiens","False","True","False"
+"19682","Kool Express ","Freightliner ","2026-07-06T05:00:00Z",,,"Claim open with Body shop  Ron Harder ","True","False","False",,"7","N/A","False","True","2026-02-19T14:16:38Z","rpetkau@pbxtruck.ca","2026-06-29T11:13:05Z","wneufeld@pbxtruck.ca","Kayla Dubell","False","False","False"
+"19856","Canada Packers ","wash bay ","2026-06-12T05:00:00Z",,,"Service call to repair  air lines     waiting  for parts    Walter ordered   parts ,/  Hyd resiviour ","True","True","False",,"1","N/A","False","True","2026-03-03T21:15:04Z","rpetkau@pbxtruck.ca","2026-06-11T20:47:38Z","wneufeld@pbxtruck.ca","Walter Wiens","False","False","False"
+"19884","Rick Brensky ","Tanker B train ","2026-07-06T05:00:00Z",,,"Wash  b train  tankers   and perform  Complete Safety on B train (tankers )    Note Customer Brought trailers here for a Structal  repairs A-z   lead Tanker Has a leak on top of 5th wheel structure   
+
+
+DONE???","True","False","False",,"6","N/A","False","False","2026-03-05T12:31:26Z","rpetkau@pbxtruck.ca","2026-06-30T15:35:52Z","wpetkau@pbxtruck.ca","Walter Wiens","False","False","False"
+"19980","Rick Bresky ","GR25A ","2026-07-06T05:00:00Z",,"2026-07-31T05:00:00Z","MPI REPAIRS 
+RO124719
+Claim 77132646
+","True","False","False",,"6","N/A","False","False","2026-03-12T12:50:14Z","wwiens@pbxtruck.ca","2026-06-30T15:38:51Z","wpetkau@pbxtruck.ca","Walter Wiens","False","True","False"
+"19981","Rick Bresky ","GR25B","2026-07-06T05:00:00Z",,"2026-07-31T05:00:00Z","MPI REPAIRS 
+124729","True","False","False",,"6","N/A","False","False","2026-03-12T12:51:06Z","wwiens@pbxtruck.ca","2026-06-30T15:39:23Z","wpetkau@pbxtruck.ca","Walter Wiens","False","True","False"
+"19982","Rick Bresky ","235A","2026-06-01T05:00:00Z",,"2026-03-12T05:00:00Z","CAUTION, LIQUID NITROGEN TANKER
+- REPAIR LEAK IN TANK ABOVE 5TH WHEEL 
+- STRUCTURAL INSPECTION 
+Estimate-0003 Approved by rick","True","True","False",,"0","N/A","False","False","2026-03-12T12:52:57Z","wwiens@pbxtruck.ca","2026-06-01T21:36:04Z","wwiens@pbxtruck.ca","Walter Wiens","False","True","False"
+"19983","Rick Bresky ","235B","2026-06-01T05:00:00Z",,"2026-03-12T05:00:00Z","CAUTION, LIQUID NITROGEN TANKER
+- STRUCTURAL INSPECTION ","True","True","False",,"0","N/A","False","False","2026-03-12T12:53:37Z","wwiens@pbxtruck.ca","2026-06-01T21:35:52Z","wwiens@pbxtruck.ca","Walter Wiens","False","True","False"
+"20139","Straight A  Transfer ","Trailer ","2026-07-06T05:00:00Z",,,"MPI claim on trailer  / Albert will come in today to drop off trailer and calim and get it checked by the body shop and Waylon ","True","False","False",,"7","N/A","False","False","2026-03-24T12:40:47Z","rpetkau@pbxtruck.ca","2026-06-29T11:14:02Z","wneufeld@pbxtruck.ca","Kayla Dubell","False","False","False"
+"20357","Canada Packers ","2301 ","2026-07-06T05:00:00Z",,,"MPI  & Crawford Insurance   combined     Waylon  to  perform a complete inspection  and report to Ron Harder ","True","False","False",,"7","N/A","False","False","2026-04-08T18:41:17Z","rpetkau@pbxtruck.ca","2026-06-29T11:14:15Z","wneufeld@pbxtruck.ca","Ron Harder","False","False","False"
+"20398","Marcus Dueck","Grain truck","2026-07-02T05:00:00Z",,,"MPI claim 77212553 - mice in cab
+Brakes seized up
+No start","False","False","False",,"2","N/A","False","False","2026-04-10T21:12:08Z","rharder@pbxtruck.ca","2026-06-30T13:06:35Z","wneufeld@pbxtruck.ca","Ron Harder","False","False","False"
+"20513","Canada Packers ","201913","2026-06-15T05:00:00Z",,,"Floor damage  / gate Crunched   at Welding shop 
+Inspection done, ready for estimate 
+In progress 06/01/2026","True","True","False",,"3","N/A","False","True","2026-04-20T21:10:04Z","wneufeld@pbxtruck.ca","2026-06-12T18:35:59Z","wneufeld@pbxtruck.ca","Walter Wiens","False","True","False"
+"20597","Daryle Smith","442?","2026-06-01T05:00:00Z",,,"DPF  filter on back order   warranty with paccar      Dustin ","True","True","False",,"0","N/A","False","True","2026-04-25T15:21:44Z","wneufeld@pbxtruck.ca","2026-06-01T21:19:10Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"20643","Friesen Hauling ","SDS05","2026-06-01T05:00:00Z",,"2026-05-06T05:00:00Z","Tub and frame crossmember repairs as marked by customer  ","True","True","False",,"0","N/A","False","False","2026-04-28T20:02:08Z","wwiens@pbxtruck.ca","2026-06-01T21:33:11Z","wwiens@pbxtruck.ca","Walter Wiens","False","True","False"
+"20650","Canada Packers ","Kubota ","2026-06-01T05:00:00Z",,"2026-05-05T05:00:00Z","Refurbish quick attach","True","True","False",,"0","N/A","False","False","2026-04-29T13:05:58Z","wwiens@pbxtruck.ca","2026-06-01T21:34:04Z","wwiens@pbxtruck.ca","Walter Wiens","False","True","False"
+"20679","Friesen Hauling ","sd13","2026-06-01T05:00:00Z",,"2026-05-04T05:00:00Z","Repair cracks on tub and frame ","True","True","False",,"0","N/A","False","False","2026-05-01T13:09:05Z","wwiens@pbxtruck.ca","2026-06-01T21:33:23Z","wwiens@pbxtruck.ca","Walter Wiens","False","True","False"
+"20735","Fast Brothers ","St217 ","2026-06-06T05:00:00Z",,,"Program Rear air suspension to 15 kph dump Mode in PVP     Drver says he can not spread gravel while driving  air suspsion will not dump  unless he stops ","True","True","False",,"-2","N/A","False","False","2026-05-06T12:47:22Z","rpetkau@pbxtruck.ca","2026-06-08T10:56:54Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"20744","Deadwood ",,"2026-06-23T05:00:00Z",,,"Safety 
+
+","True","True","False",,"0","N/A","False","True","2026-05-06T15:01:11Z","wneufeld@pbxtruck.ca","2026-06-23T20:12:55Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20784","Novid ","706","2026-06-01T05:00:00Z",,,"Tie Rod ends finsh  Safety      Kyle ","True","True","False",,"0","N/A","False","True","2026-05-08T15:36:04Z","gkoop@pbxtruck.ca","2026-06-01T21:58:28Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20811","Penner farm ",,"2026-06-01T05:00:00Z",,,"Deck boards
+
+no show ","False","True","False",,"0","N/A","False","False","2026-05-11T19:30:55Z","gkoop@pbxtruck.ca","2026-06-01T21:31:27Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"20844","Jonas Farms ",,"2026-07-02T05:00:00Z",,,"Check over / replace rear Diff with Full Lock up Diff / prep truck for walinga to Get the Feed Box installed at walinga ","False","False","False",,"2","N/A","False","False","2026-05-13T22:57:33Z","wneufeld@pbxtruck.ca","2026-06-30T15:14:57Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"20872","Daryle Smith","259","2026-06-03T05:00:00Z",,,"Camshaft/ followers   Parts ordered with Ray      tech  Issac  ","True","True","False",,"0","N/A","False","True","2026-05-16T16:00:39Z","wneufeld@pbxtruck.ca","2026-06-03T21:23:40Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20877","Graham Bates","Blumenort Hatchery old FL ","2026-06-09T05:00:00Z",,,"The inspection expires end of sept, I want to have it licensed personal not commercial mpi , said I will need a new inspection and gvw reduced to do this. Can you get the truck in for an oil change , filter checks and do a safety inspection on it so i can insure it as personal not biz or commercial. Its still parked at the hatchery . 
+
+
+
+Graham Bates <batesta73@icloud.com>","True","True","False",,"0","N/A","False","True","2026-05-19T13:07:51Z","gkoop@pbxtruck.ca","2026-06-09T21:16:10Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20893","Jessi Tait ","N14 Cummins ","2026-06-30T05:00:00Z",,,"Rebuild N 14 cummins  Cel# 1 613 558 8248   jessi 
+cpl 2033
+ser#11854413
+Piclk up unit from Rainy river  ont  Waylon
+BLOCK SENT OUT TO MACHINE SHOP 
+GLEN ON THIS UNIT.
+---BLOCK IS BACK AND WE ARE CURRENTLY REASSEMBLING THE ENGINE.","True","False","False",,"1","N/A","False","True","2026-05-20T11:27:33Z","rpetkau@pbxtruck.ca","2026-06-29T19:00:53Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20896","champion Towing ","New Pete ","2026-06-08T05:00:00Z",,,"Repair PTO oil leaks / Note warranty  a-z      supplier of pto  Fleet Brake ","True","True","False",,"0","External","False","False","2026-05-20T16:56:37Z","rpetkau@pbxtruck.ca","2026-06-08T12:43:52Z","rpetkau@pbxtruck.ca",,"False","False","False"
+"20905","Feather 76 LTD 204-392-5481","KW and Grain trailer ","2026-06-03T05:00:00Z",,,"Safety on truck and trailer 
+
+Scott Goose 
+
+Replace 2 feet of rear steel  frame rails left and right side / Replace left rear air bag asemble","True","True","False",,"0","N/A","False","True","2026-05-21T15:34:22Z","gkoop@pbxtruck.ca","2026-06-03T15:42:13Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20911","Accurate HD","T408","2026-06-03T05:00:00Z",,,"Check for fuel injection faults. 
+
+Call Matt at 204-746-5734","True","True","False",,"0","N/A","False","True","2026-05-21T19:24:54Z","gkoop@pbxtruck.ca","2026-06-03T22:01:52Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"20926","E.g","MT10","2026-06-01T05:00:00Z",,,"Rad fan has been hardwired on, Complaint was fan is not coming on 
+
+Fuel shut off solonoid near Gavins PC
+\
+No show ","False","True","False",,"0","N/A","False","False","2026-05-22T21:35:17Z","gkoop@pbxtruck.ca","2026-06-01T21:31:11Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"20929","Brian  Kornelsen ","579  pete ","2026-06-05T05:00:00Z",,,"Remove Cylinder Head and check for damaged valves / Note engine miss fires and smokes a lot       parts estimated  to customer   Brad Rerimer     Tech   Matt ","True","True","False",,"0","N/A","False","True","2026-05-25T10:46:12Z","rpetkau@pbxtruck.ca","2026-06-05T22:12:23Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20933","Daryle Smith","454","2026-06-19T05:00:00Z",,,"Mount Fire extinguisher into Battery Box      estimate on install a steering axle air ride dump on Johnnys Truck   lower Driver side seat  ask ron ","False","True","False",,"0","N/A","False","False","2026-05-25T11:47:52Z","rpetkau@pbxtruck.ca","2026-06-19T20:55:33Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20938","Marcel Goosen",,"2026-06-05T05:00:00Z",,,"Service  / Safety 
+
+","True","True","False",,"0","N/A","False","True","2026-05-25T14:37:58Z","wneufeld@pbxtruck.ca","2026-06-05T22:52:25Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20944","Mcmunn","301109","2026-06-03T05:00:00Z",,,"Service / a/c / air leak ","True","True","False",,"0","N/A","False","True","2026-05-25T16:56:39Z","wneufeld@pbxtruck.ca","2026-06-03T13:55:01Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20946","Virgil ",,"2026-06-03T05:00:00Z",,,"Air ride-Adjust clutch","True","True","False",,"0","N/A","False","True","2026-05-25T18:24:27Z","gkoop@pbxtruck.ca","2026-06-03T21:23:30Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20949","Eg Penner ","56","2026-06-01T05:00:00Z",,,"Clutch / Inspect Transmission / Check ac / cab light 
+hvac controller is ordered eta is 3-5 days june 1st","True","True","False",,"0","N/A","False","True","2026-05-25T21:37:10Z","wneufeld@pbxtruck.ca","2026-06-01T20:23:23Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20950","Ernie wiebe ","Blue KW ","2026-06-22T05:00:00Z",,,"Fuel in coolant 
+Mb safety inspection 
+ED
+DAVIN
+MICHAEL WORKED ON THIS UNIT. WAITING FOR APPROVAL ON HIGH BEAM HEAD LIGHTS.","True","True","False",,"0","N/A","False","True","2026-05-25T23:17:40Z","rpetkau@pbxtruck.ca","2026-06-22T20:32:04Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20951","pearl ","55","2026-06-02T05:00:00Z",,,"Fuel restriction gauge  ask ron ","False","True","False",,"0","N/A","False","False","2026-05-25T23:21:12Z","rpetkau@pbxtruck.ca","2026-06-02T18:59:52Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"20960","Brad Brant 204-346-2115","hoist ","2026-06-05T05:00:00Z",,,"Hoist not going up or down. Box maxed out and lost all oil 
+Headlights 
+Running hot 
+
+","True","True","False",,"0","N/A","False","True","2026-05-26T15:09:40Z","gkoop@pbxtruck.ca","2026-06-05T18:55:12Z","rpetkau@pbxtruck.ca","David Reimer","False","False","False"
+"20976","Isaac Bergen ",,"2026-06-05T05:00:00Z",,,"Good Morning
+
+I need to come finish up the safety. 
+What's all left to do?
+I'll get the tires done. Rest I'll leave for you to do.
+
+Also do a full service. RH light on hood has no marker, signal only. LH side has no marker facing forward. 
+
+Check hanger bearings. Been having some shaking going on. Not sure if it's the truck or the trailer 
+
+I can have the truck there tomorrow noon/early afternoon. Can you let me know what works for you for timeline? 
+
+
+For Roseridge Trailer 522:
+Grease job
+Marker light out on RH side
+Ramp mount on the kick is broken. Needs welding back on. Please a few bolts through it as well. Same with the other side. Broken piece is in LH toolbox. 
+Bottom support broken on dunnage rack. 
+
+I think I'm pulling a different trailer next week, so this one is not too big a much 
+
+","True","True","False",,"0","N/A","False","True","2026-05-27T14:18:27Z","wneufeld@pbxtruck.ca","2026-06-05T18:17:18Z","gkoop@pbxtruck.ca","James Fehr","False","False","False"
+"20977","Tyson Dueck /  Harmont Gold Farms ",,"2026-06-04T05:00:00Z",,,"Safety Super B's 
+
+PLEASE DO NOT FIX UNTIL WE TALK TO CUSTOMER 
+
+204-381-2513
+
+Called customer / Waiting for authorization ","True","True","False",,"0","N/A","False","True","2026-05-27T14:30:44Z","wneufeld@pbxtruck.ca","2026-06-04T11:09:31Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20978","Heartland Poultry Ltd","9","2026-06-15T05:00:00Z",,,"Coolant leaks-Check A/C","True","True","False",,"0","N/A","False","True","2026-05-27T14:31:17Z","gkoop@pbxtruck.ca","2026-06-15T18:19:25Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20982","Building Products","520","2026-06-03T05:00:00Z",,,"Safety
+
+PO# 50682","True","True","False",,"0","N/A","False","True","2026-05-27T19:13:36Z","wneufeld@pbxtruck.ca","2026-06-03T15:42:00Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20983","Jim Braun","93","2026-06-06T05:00:00Z",,,"Service / Clean rads / Adjust 5th wheel / Install pump ( Customer supplied)-In warehouse 
+
+","True","True","False",,"-2","N/A","False","True","2026-05-27T20:06:03Z","wneufeld@pbxtruck.ca","2026-06-08T10:55:42Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20984","don singbel ","trailer ","2026-06-06T05:00:00Z",,,"Spare tire carrier ask ron  ","True","True","False",,"-2","N/A","False","True","2026-05-27T20:24:12Z","rpetkau@pbxtruck.ca","2026-06-08T10:55:48Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20985","fast brothers ","tandam ","2026-06-29T05:00:00Z",,,"paint door ","True","True","False",,"0","N/A","False","True","2026-05-27T21:21:22Z","rpetkau@pbxtruck.ca","2026-06-29T10:34:35Z","rpetkau@pbxtruck.ca","Ron Harder","False","False","False"
+"20986","eg penner ","92 ","2026-06-11T05:00:00Z",,,"Mb safety inspection   no trepair  keep a list of repairs needed on file  
+wash unit   engine and truck chassie   
+Clean interior cab   helena ","True","True","False",,"0","N/A","False","True","2026-05-27T21:33:59Z","rpetkau@pbxtruck.ca","2026-06-11T11:25:07Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20987","Phoenix Traction 204-381-0610","7283","2026-06-05T05:00:00Z",,,"Safety-Rear suspension bushings/rear engine mounts worn-Clutch adjustment-Grease-Leave 5th wheel alone. 
+
+","True","True","False",,"0","N/A","False","True","2026-05-27T21:41:30Z","gkoop@pbxtruck.ca","2026-06-05T20:28:26Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20988","Johann 204-381-8412","L15522 Vertex ","2026-06-02T05:00:00Z",,,"Valve set  x15-
+
+Volvo ","True","True","False",,"0","N/A","False","True","2026-05-27T22:18:52Z","wneufeld@pbxtruck.ca","2026-06-02T18:59:02Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20989","Isaac Neufeld","Stearling","2026-06-02T05:00:00Z",,,"Replace all cam follower Gaskets  / R&R   aux  drive   R&R  starter  &complete tune up  ask ron ","True","True","False",,"0","N/A","False","True","2026-05-28T10:40:35Z","rpetkau@pbxtruck.ca","2026-06-02T18:58:55Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20991","Jim Braun","90","2026-06-02T05:00:00Z",,"2026-06-03T05:00:00Z","Check transmission codes / Service 
+
+Randy and Waylon, Bay 3
+
+As per troubleshooting procedure, MTM needs to be removed to inspect.
+
+Also high engine temp codes, need to remove rads and wash out.","True","True","False",,"0","N/A","False","True","2026-05-28T12:44:14Z","wneufeld@pbxtruck.ca","2026-06-02T22:57:29Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20992","Countryside Farms","CST23","2026-06-02T05:00:00Z",,,"Air leak??","True","True","False",,"0","N/A","False","True","2026-05-28T12:45:42Z","wneufeld@pbxtruck.ca","2026-06-02T18:58:45Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20995","Brent 204-590-6975","379 pete ","2026-06-01T05:00:00Z",,,"Retorque exhaust manifold 
+Replace Faulty ECM oil pressure sensor  part is here was orderin last week 
+Check over complete engine 
+Customer will be here at 1 pm ","True","True","False",,"0","N/A","False","True","2026-05-28T13:26:55Z","rpetkau@pbxtruck.ca","2026-06-01T22:18:58Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"20996","Ridgeland Colony",,"2026-06-02T05:00:00Z",,,"Safety trailers ","True","True","False",,"0","N/A","False","True","2026-05-28T13:58:44Z","wneufeld@pbxtruck.ca","2026-06-02T18:58:37Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20997","No Limit Underground ","HV05","2026-06-02T05:00:00Z",,,"Front axle spring Bushings and Pins  possible all 6  ?? 
+Rear sus  U bolts Loose  check complete rear suspension A-Z 
+
+
+Charles, Bay 3","True","True","False",,"0","N/A","False","True","2026-05-28T14:04:11Z","rpetkau@pbxtruck.ca","2026-06-02T19:59:23Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"20998","Spruce Products ","23b","2026-07-02T05:00:00Z",,"2026-07-10T05:00:00Z","Rebuild chip trailer","True","False","False",,"2","N/A","False","False","2026-05-28T14:38:38Z","rpetkau@pbxtruck.ca","2026-06-30T14:58:49Z","wpetkau@pbxtruck.ca","Walter Wiens","False","True","False"
+"21000","Roseridge","324","2026-06-06T05:00:00Z",,,"Grease / Check over / check lights / Rub rail pass side damaged ","True","True","False",,"-2","N/A","False","True","2026-05-28T17:37:50Z","gkoop@pbxtruck.ca","2026-06-08T10:55:53Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21001","Canada Packers ","201805","2026-06-01T05:00:00Z",,,"Hyd leak / gate / Electrical box ","True","True","False",,"0","N/A","False","True","2026-05-28T18:00:38Z","wneufeld@pbxtruck.ca","2026-06-01T21:19:30Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21003","John Bartel",,"2026-06-12T05:00:00Z",,,"Door lock issue /Window issue ","True","True","False",,"0","N/A","False","True","2026-05-28T18:34:29Z","wneufeld@pbxtruck.ca","2026-06-12T22:22:15Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21005","Centennial Gravel","14","2026-06-08T05:00:00Z",,,"Safety 
+PTO leak
+Rick","True","True","False",,"0","N/A","False","True","2026-05-28T18:54:29Z","wneufeld@pbxtruck.ca","2026-06-08T15:38:23Z","wneufeld@pbxtruck.ca","Ron Harder","False","False","False"
+"21007","DW Forward","5344","2026-06-04T05:00:00Z",,,"Trailing arm bushings   at Norm's shop ","True","True","False",,"0","N/A","False","True","2026-05-28T19:26:43Z","wneufeld@pbxtruck.ca","2026-06-04T15:49:23Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21008","Cory Smith ","400","2026-06-01T05:00:00Z",,,"A/C not working properly   truck is here ","True","True","False",,"0","N/A","False","True","2026-05-28T20:15:24Z","rpetkau@pbxtruck.ca","2026-06-01T15:57:23Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21013","Pearl ","35","2026-06-01T05:00:00Z",,,"Pushing Coolant   verify  issue  ask  ron
+
+Carter, Bay 6
+
+Done ","True","True","False",,"0","N/A","False","True","2026-05-29T11:33:56Z","rpetkau@pbxtruck.ca","2026-06-01T22:19:22Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21014","La Broquerie lumber","2025 Pete ","2026-06-05T05:00:00Z",,,"CEL-Check A/C-Check for anything that woudl cause the rear axle to walk. 
+
+204-371-5321
+
+","True","True","False",,"0","N/A","False","True","2026-05-29T13:29:20Z","gkoop@pbxtruck.ca","2026-06-05T22:12:13Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21015","Countryside Farms","CST20","2026-06-04T05:00:00Z",,,"Safety ","True","True","False",,"0","N/A","False","True","2026-05-29T15:49:20Z","wneufeld@pbxtruck.ca","2026-06-04T22:15:43Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21017","Rod Dueck",,"2026-06-03T05:00:00Z",,,"Safety ","True","True","False",,"0","N/A","False","True","2026-05-29T17:42:52Z","wneufeld@pbxtruck.ca","2026-06-03T21:09:38Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21018","Trappers","1031","2026-06-02T05:00:00Z",,,"Transmission issues ","False","True","False",,"0","N/A","False","False","2026-05-29T18:02:05Z","wneufeld@pbxtruck.ca","2026-06-02T19:01:55Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21019","Barkman Catage","T77","2026-06-02T05:00:00Z",,,"Engine fan issues ","False","True","False",,"0","N/A","False","False","2026-05-29T19:18:14Z","wneufeld@pbxtruck.ca","2026-06-02T19:01:47Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21020","Henervic","Blue Truck ","2026-06-03T05:00:00Z",,,"A/C ","True","True","False",,"0","N/A","False","True","2026-05-29T20:48:48Z","gkoop@pbxtruck.ca","2026-06-03T16:15:04Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21022","Canada Packers ","201909","2026-06-02T05:00:00Z",,"2026-06-01T22:00:00Z","Service 
+
+Bay 5
+
+Charles/ Randy","True","True","False",,"0","N/A","False","True","2026-05-29T21:43:15Z","wneufeld@pbxtruck.ca","2026-06-02T18:58:19Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21023","Sunrise Chick","19","2026-06-04T05:00:00Z",,,"Code WT Sensor 
+
+Parts  (Marc) is to order new sensor on Monday June 1","True","True","False",,"-1","N/A","False","True","2026-05-29T22:54:40Z","wneufeld@pbxtruck.ca","2026-06-05T12:00:57Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21025","Richard Hildebrandt-204-326-1523","RV","2026-06-06T05:00:00Z",,,"Check A/C","True","True","False",,"1","N/A","False","True","2026-05-30T15:05:21Z","gkoop@pbxtruck.ca","2026-06-05T22:14:15Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21027","Norcal",,"2026-06-01T05:00:00Z",,,"Over heating ","True","True","False",,"0","N/A","False","True","2026-06-01T11:37:18Z","wneufeld@pbxtruck.ca","2026-06-01T15:15:07Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21028","Garuz Brothers",,"2026-06-01T05:00:00Z",,,"Service / fender / air leak ","True","True","False",,"0","N/A","False","True","2026-06-01T11:37:59Z","wneufeld@pbxtruck.ca","2026-06-01T19:35:36Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21029","David Braun 5659818 Mb Ltd",,"2026-06-01T05:00:00Z",,,"Check over engine work done / Check all coolant hoses ","True","True","False",,"0","N/A","False","True","2026-06-01T11:42:43Z","wneufeld@pbxtruck.ca","2026-06-01T18:20:06Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21030","Ronnie Doerksen",,"2026-06-01T05:00:00Z",,,"Engine codes","True","True","False",,"0","N/A","False","True","2026-06-01T11:53:20Z","wneufeld@pbxtruck.ca","2026-06-01T19:35:25Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21031","Canada Packers ","ST56","2026-06-01T05:00:00Z",,,"Air leak ","True","True","False",,"0","N/A","False","True","2026-06-01T12:31:24Z","wneufeld@pbxtruck.ca","2026-06-01T15:14:56Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21032","More Then Just Feeds","123","2026-06-01T05:00:00Z",,,"Air leak ","True","True","False",,"0","N/A","False","True","2026-06-01T13:16:29Z","wneufeld@pbxtruck.ca","2026-06-01T19:35:13Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21033","Pearl ","70","2026-06-05T05:00:00Z",,,"Air compressor oil leak / jake brakes not working","True","True","False",,"0","N/A","False","True","2026-06-01T13:17:55Z","wneufeld@pbxtruck.ca","2026-06-05T16:18:33Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21034","Pearl ","50","2026-06-02T05:00:00Z",,,"A/C not working / brakes ???","True","True","False",,"0","N/A","False","True","2026-06-01T13:23:59Z","wneufeld@pbxtruck.ca","2026-06-02T18:57:31Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21035","Landmark Transfer ","33","2026-06-03T05:00:00Z",,,"Safety and report to Jake. ","True","True","False",,"0","N/A","False","True","2026-06-01T13:34:51Z","gkoop@pbxtruck.ca","2026-06-03T20:49:51Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21036","South east ","490","2026-06-02T05:00:00Z",,,"Safety ","True","True","False",,"-1","N/A","False","True","2026-06-01T13:46:33Z","gkoop@pbxtruck.ca","2026-06-03T22:20:34Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21037","David Lee ","7390","2026-06-04T05:00:00Z",,,"Service ","True","True","False",,"0","N/A","False","True","2026-06-01T14:05:04Z","gkoop@pbxtruck.ca","2026-06-04T21:25:26Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21039","Best Level",,"2026-06-03T05:00:00Z",,,"Safety  ( Step Deck)","True","True","False",,"0","N/A","False","True","2026-06-01T14:35:02Z","wneufeld@pbxtruck.ca","2026-06-03T21:06:21Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21040","Pearl ","118","2026-06-11T05:00:00Z",,,"Front trap door ???","True","True","False",,"0","N/A","False","True","2026-06-01T14:47:16Z","wneufeld@pbxtruck.ca","2026-06-11T18:27:25Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21041","Pearl ","120","2026-06-05T05:00:00Z",,,"Safety / Grease 
+
+At Norms shop ","True","True","False",,"0","N/A","False","True","2026-06-01T14:49:20Z","wneufeld@pbxtruck.ca","2026-06-05T19:53:52Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21042","Canada Packers ","2501/2021-03","2026-06-01T05:00:00Z",,,"Grease job ","True","True","False",,"0","N/A","False","True","2026-06-01T14:50:36Z","wneufeld@pbxtruck.ca","2026-06-01T19:34:39Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21045","Canada Packers ","1909 / 995","2026-06-02T05:00:00Z",,,"Radio / Hyd leaks ","True","True","False",,"0","N/A","False","True","2026-06-01T18:23:11Z","wneufeld@pbxtruck.ca","2026-06-02T18:56:47Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21046","Wilam Giesbrecht ",,"2026-06-03T05:00:00Z",,,"Pre-Safety ","True","True","False",,"0","N/A","False","True","2026-06-01T18:27:04Z","wneufeld@pbxtruck.ca","2026-06-03T11:18:41Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21047","Sollio","8","2026-06-04T05:00:00Z",,,"Check for EGR pipe over pressurising. ","True","True","False",,"0","N/A","False","True","2026-06-01T18:59:28Z","gkoop@pbxtruck.ca","2026-06-04T21:42:43Z","gkoop@pbxtruck.ca","David Reimer","False","False","False"
+"21048","Chris Klassen 204-381-1470","34510","2026-06-03T05:00:00Z",,,"Tranny output seal leaking-Check warranty. ","True","True","False",,"0","N/A","False","True","2026-06-01T19:00:37Z","gkoop@pbxtruck.ca","2026-06-03T21:29:13Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21049","Northsouth","9","2026-06-02T05:00:00Z",,,"Check batteries ","True","True","False",,"0","N/A","False","True","2026-06-01T21:26:14Z","wneufeld@pbxtruck.ca","2026-06-02T11:21:38Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21050","Car-Dale  ","142","2026-06-02T05:00:00Z",,,"Set speed parameters as per customer request ??    cummins     8.15 am ","True","True","False",,"0","N/A","False","False","2026-06-02T10:46:42Z","rpetkau@pbxtruck.ca","2026-06-02T17:55:25Z","rpetkau@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21051","Bvt","BWW008","2026-06-30T05:00:00Z",,,"King pins --Customer supplied parts 
+need a new spindle and the axel is also worn out chance in parts is looking into it.
+RENE IS WORKING ON THIS UNIT.
+PARTS ARE ORDERED WITH CHANCE. ETA JUNE 29TH","True","False","False",,"1","N/A","False","True","2026-06-02T11:40:40Z","wneufeld@pbxtruck.ca","2026-06-29T16:20:22Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21052","Countryside Farms","CST 26","2026-06-03T05:00:00Z",,,"Safety / abs light on / check charging system ","True","True","False",,"0","N/A","False","True","2026-06-02T12:40:46Z","wneufeld@pbxtruck.ca","2026-06-03T21:11:25Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21054","Canada Packers ","1805","2026-06-15T05:00:00Z",,,"Engine codes ","True","True","False",,"0","N/A","False","True","2026-06-02T13:56:12Z","wneufeld@pbxtruck.ca","2026-06-15T15:10:55Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21055","Anthony  Potvin","399","2026-06-02T05:00:00Z",,,"Emission Codes   /  Note unit has amulator     1 pm ","True","True","False",,"0","N/A","False","True","2026-06-02T13:56:28Z","rpetkau@pbxtruck.ca","2026-06-02T21:44:33Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21056","Steinbach Hatchery ","599","2026-06-09T05:00:00Z",,,"Park brake not working  / Norm shop also ","True","True","False",,"0","N/A","False","True","2026-06-02T13:56:40Z","wneufeld@pbxtruck.ca","2026-06-09T13:29:00Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21057","Tim Klassen",,"2026-06-06T05:00:00Z",,,"Clutch job / tranny cooler 
+
+","True","True","False",,"-2","N/A","False","True","2026-06-02T13:58:28Z","wneufeld@pbxtruck.ca","2026-06-08T10:56:08Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21058","Frank Friesen ",,"2026-06-06T05:00:00Z",,,"   loose  front structure    faulty  alternator  /  broken shroud braces     at kk for tires ","True","True","False",,"-2","N/A","False","True","2026-06-02T14:52:27Z","wneufeld@pbxtruck.ca","2026-06-08T10:56:12Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21059","Diamond Construction","516","2026-06-03T05:00:00Z",,,"Engine codes ","True","True","False",,"0","External","False","True","2026-06-02T14:54:02Z","wneufeld@pbxtruck.ca","2026-06-03T20:48:02Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21060","Muskie Creek 204-381-9380","55","2026-06-30T05:00:00Z",,,"Check engine-Lots of blow by. Coolant mixing with oil. Over pressurising
+PARTS ORDERED WITH RAY 6/11/26
+GLEN IS ON THIS UNIT.
+-PARTS HERE JUNE 17!","True","False","False",,"1","N/A","False","True","2026-06-02T15:22:04Z","gkoop@pbxtruck.ca","2026-06-29T16:20:32Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21061","John Basa","2007 International ","2026-06-17T05:00:00Z",,,"204-371-5827
+
+Labas Holstines 
+
+
+Quote to get truck running","True","True","False",,"0","N/A","False","True","2026-06-02T17:36:47Z","gkoop@pbxtruck.ca","2026-06-17T19:17:58Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21062","Trouw ","1173","2026-06-02T05:00:00Z",,,"Leaking oil near the auger ","True","True","False",,"0","N/A","False","True","2026-06-02T17:38:53Z","gkoop@pbxtruck.ca","2026-06-02T22:42:15Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21063","Country side ","27","2026-06-02T05:00:00Z",,,"Low beam ","True","True","False",,"0","N/A","False","True","2026-06-02T17:44:42Z","gkoop@pbxtruck.ca","2026-06-02T20:35:26Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21064","Canada Packers ","2404","2026-06-04T05:00:00Z",,,"Hyd leak ","True","True","False",,"0","N/A","False","True","2026-06-02T17:51:19Z","wneufeld@pbxtruck.ca","2026-06-04T22:14:44Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21065","Canada Packers ","201918","2026-06-15T05:00:00Z",,,"Hyd leak    Main cyclinder leaking -- We sent it out for repairs --June 5/26","True","True","False",,"0","N/A","False","True","2026-06-02T17:53:29Z","wneufeld@pbxtruck.ca","2026-06-15T15:10:47Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21066","Canada Packers ","201922","2026-06-05T05:00:00Z",,,"Service / Service air cylinders / gates ","True","True","False",,"0","N/A","False","True","2026-06-02T17:54:32Z","wneufeld@pbxtruck.ca","2026-06-05T16:13:15Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21067","Canada Packers ","1906","2026-06-03T05:00:00Z",,,"a/c not working ","True","True","False",,"0","N/A","False","True","2026-06-02T18:20:48Z","wneufeld@pbxtruck.ca","2026-06-03T16:45:04Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21068","PETER FALK","3128","2026-06-09T05:00:00Z",,,"ALIGNMENT APPOINTMENT AT PENNER PERFORMANCE--8:00 AM.
+CUSTOMER WILL DROP OFF AT PBX             Mb  safety inspection ","True","True","False",,"0","N/A","False","True","2026-06-02T18:47:14Z","dkehler@pbxtruck.ca","2026-06-09T22:08:37Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21069","Novid","New truck ","2026-06-11T05:00:00Z",,,"First service-Headache rack doors loose-See if we can tighten- ","False","True","False",,"0","N/A","False","False","2026-06-02T19:34:58Z","gkoop@pbxtruck.ca","2026-06-11T18:24:25Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21070","KTM ","5303","2026-06-05T05:00:00Z",,,"Front axle air bags ","True","True","False",,"0","N/A","False","True","2026-06-02T21:45:45Z","gkoop@pbxtruck.ca","2026-06-05T18:17:38Z","gkoop@pbxtruck.ca","David Reimer","False","False","False"
+"21071","Green Mile Ent.","cascadia ","2026-06-11T05:00:00Z",,,"Check engine compression /  replace faulty cylinder head and Head gasket / full tune up and change engine oil and filters  / full service  15/40 shell ","True","True","False",,"0","N/A","False","True","2026-06-03T12:15:13Z","wneufeld@pbxtruck.ca","2026-06-11T18:24:13Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21072","Farmer 4 Farmer ","18","2026-06-04T05:00:00Z",,,"Valve set ","True","True","False",,"-1","N/A","False","True","2026-06-03T12:49:30Z","wneufeld@pbxtruck.ca","2026-06-05T16:16:18Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21073","Mcmunn","301108","2026-06-09T05:00:00Z",,,"Service / fender / brake pot bracket 
+done----","True","True","False",,"0","N/A","False","True","2026-06-03T13:54:52Z","wneufeld@pbxtruck.ca","2026-06-09T21:55:45Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21074","Mcmunn","301101","2026-06-05T05:00:00Z",,,"A/C not working ","True","True","False",,"0","N/A","False","True","2026-06-03T14:06:23Z","wneufeld@pbxtruck.ca","2026-06-05T19:02:13Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21075","Canada Packers ","201908","2026-06-03T05:00:00Z",,,"Air leak ","True","True","False",,"0","N/A","False","True","2026-06-03T14:08:43Z","wneufeld@pbxtruck.ca","2026-06-03T21:08:45Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21076","Janet Mead-204-799-2983","Horse trailer ","2026-07-27T05:00:00Z",,,"Safety ","False","False","False",,"54","N/A","False","False","2026-06-03T14:12:42Z","gkoop@pbxtruck.ca","2026-06-03T14:12:42Z","gkoop@pbxtruck.ca",,"False","False","False"
+"21077","Canada Packers ","2203","2026-06-03T05:00:00Z",,,"Service Call to osenort   truck is in full derate ","True","True","False",,"0","N/A","False","False","2026-06-03T14:38:04Z","rpetkau@pbxtruck.ca","2026-06-03T21:56:44Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21078","Phil  eberley",,"2026-06-03T05:00:00Z",,,"tire viberatiuon  ?","True","True","False",,"0","N/A","False","False","2026-06-03T14:46:52Z","rpetkau@pbxtruck.ca","2026-06-03T20:51:41Z","rpetkau@pbxtruck.ca","James Fehr","False","False","False"
+"21079","Trouw ","3228","2026-06-05T05:00:00Z",,,"Check engine codes / runs rough / traction light on ","True","True","False",,"0","N/A","False","True","2026-06-03T15:29:20Z","wneufeld@pbxtruck.ca","2026-06-05T15:43:31Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21080","Friesen Hauling ","39","2026-06-04T05:00:00Z",,,"Engine codes ","True","True","False",,"0","External","False","True","2026-06-03T15:29:45Z","wneufeld@pbxtruck.ca","2026-06-04T21:20:49Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21081","Jomar","848","2026-06-03T05:00:00Z",,,"Brake pot leaking ","True","True","False",,"0","N/A","False","True","2026-06-03T16:07:49Z","wneufeld@pbxtruck.ca","2026-06-03T18:52:37Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21082","Henervic","P/B ","2026-06-08T05:00:00Z",,,"AC not working  / J- brakes not working ","True","True","False",,"0","N/A","False","True","2026-06-03T16:17:05Z","wneufeld@pbxtruck.ca","2026-06-08T18:20:40Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21083","Ed 204-392-5517","443","2026-06-10T05:00:00Z",,,"Trac control ABS lights on-Grease-Grease 5th wheel.
+
+NO SHOW ","False","True","False",,"0","N/A","False","False","2026-06-03T17:23:22Z","gkoop@pbxtruck.ca","2026-06-10T20:58:09Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21084","Canada Packers ","2407/201703","2026-06-03T05:00:00Z",,,"Grease job ","True","True","False",,"0","N/A","False","True","2026-06-03T17:49:22Z","wneufeld@pbxtruck.ca","2026-06-03T21:04:08Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21085","Curt Reimer ",,"2026-06-04T05:00:00Z",,,"Windsheild / ps leak / fuel leak ","True","True","False",,"0","N/A","False","True","2026-06-03T18:10:52Z","wneufeld@pbxtruck.ca","2026-06-04T22:23:52Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21087","car-dale ","92","2026-06-04T05:00:00Z",,,"Replace  air to air to rad and wash out all Rads as you have the air to air  out   1 pm    chance3 ordered the air to air rad ","True","True","False",,"-1","N/A","False","False","2026-06-03T20:05:34Z","rpetkau@pbxtruck.ca","2026-06-05T10:50:50Z","rpetkau@pbxtruck.ca","David Reimer","False","False","False"
+"21089","Roseridge","622","2026-06-16T05:00:00Z",,,"fabricate or Buy a tool box Right side of trailer box is broken and got removed    repair left ramp safety pin eye lets  
+Center Brakes keep locking up 
+fabricate a holder to store a box in the between front frame 
+Repair dump valve  control Lever   broken 
+Order 5 Rachets and install 
+weld  holes on top deck floor ","True","True","False",,"1","N/A","False","True","2026-06-04T10:38:54Z","rpetkau@pbxtruck.ca","2026-06-15T20:08:44Z","wneufeld@pbxtruck.ca","Walter Wiens","False","False","False"
+"21090","Pbx ","34","2026-06-15T05:00:00Z",,,"Inspection / GPS not working ","True","True","False",,"2","N/A","False","True","2026-06-04T12:11:11Z","wneufeld@pbxtruck.ca","2026-06-13T14:26:19Z","dreimer@pbxtruck.ca",,"False","False","False"
+"21091","Pbx ","51","2026-06-17T05:00:00Z",,,"Inspection ","True","True","False",,"0","N/A","False","True","2026-06-04T12:11:34Z","wneufeld@pbxtruck.ca","2026-06-17T12:08:36Z","wneufeld@pbxtruck.ca","Ron Harder","False","False","False"
+"21092","Bristal-204-408-4267","FL2622","2026-06-09T05:00:00Z",,,"A/C not working-Transmission not shifting properly? Limp mode? ","True","True","False",,"0","N/A","False","True","2026-06-04T13:33:08Z","gkoop@pbxtruck.ca","2026-06-09T20:14:37Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21093","Ed and Mia ","1558","2026-06-05T05:00:00Z",,,"Service-CCV line leaking ","True","True","False",,"0","N/A","False","True","2026-06-04T14:10:45Z","gkoop@pbxtruck.ca","2026-06-05T22:52:32Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21094","Pearl ","PT129","2026-06-05T05:00:00Z",,,"LF air bag blown ","True","True","False",,"0","N/A","False","True","2026-06-04T16:00:12Z","gkoop@pbxtruck.ca","2026-06-05T19:53:46Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21095","Arlington Auto Body ","RV","2026-06-30T05:00:00Z",,,"Front right corner damaged. Emil in contact with Arlingthon auto-- requesting parts for installation. ","True","False","False",,"1","N/A","False","True","2026-06-04T16:03:07Z","gkoop@pbxtruck.ca","2026-06-29T17:59:58Z","wneufeld@pbxtruck.ca","Ron Harder","False","False","False"
+"21096","Canada Packers ","2009","2026-06-04T05:00:00Z",,,"Service call to Mill to replace air bag ","True","True","False",,"0","N/A","False","True","2026-06-04T16:59:55Z","wneufeld@pbxtruck.ca","2026-06-04T21:34:53Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21097","Canada Packers ","201901 / 2201","2026-06-05T05:00:00Z",,,"Fender /lights /air leak / wash","True","True","False",,"0","N/A","False","True","2026-06-04T17:00:52Z","wneufeld@pbxtruck.ca","2026-06-05T16:16:26Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21098","Canada Packers ","201901","2026-06-08T05:00:00Z",,,"Full Service, service all air cylinders,1) Left / right side middle deck 2 secure pins not working
+properly (red),2)Rear gate going up touched mount/bolts which hold rope pullet are too long(red)
+","True","True","False",,"0","N/A","False","True","2026-06-04T17:51:02Z","wneufeld@pbxtruck.ca","2026-06-08T20:31:01Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21099","Jim Braun",,"2026-06-13T05:00:00Z",,,"A/C not working  /EGR Cooler / Flush / Oil in air tanks / farring under driver side bunk loose / DEF cap 
+
+Dustin","True","True","False",,"0","N/A","False","True","2026-06-04T21:29:06Z","wneufeld@pbxtruck.ca","2026-06-13T16:41:25Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21100","Novid ","719","2026-06-10T05:00:00Z",,,"Good Afternoon,
+Brining in unit 719 for it's first ever oil change!
+Had a couple of things on the list for that truck:
+1.	Oil Change/Grease general look over after being on the road for 25000 ish km's
+2.	The Hood seems to be rubbing on the air cleaner lights it's wore through the paint on each side. (see attached pics)
+3.	Can we have the headache rack door handles adjusted for a tighter seal, water seems to be getting in.
+4.	Headlight on the driver side casts a weird shadow on low beams might just need adjusting, it doesn't look like the moose bumper or anything is causing the issue from what I can tell
+5.	I don't know if it's possible to adjust the programing but driver said that when using the cruise and you go down hill the jakes don't kick in till it's overspeed x amount, but would like it to kick in sooner (driver said 2kph over).
+6.	He also mentioned that he feels like the jakes still work in stages despite being on the full setting. (maybe that's how it's supposed to work, and I just need explanation on how the system works) 
+7.	Don't know if you guys do this but there's a chip in the windshield maybe we can get filled so it doesn't splinter. 
+
+Driver is off next week so we'd drop it off tomorrow and like to pick it up Thursday Noon if possible. 
+","True","True","False",,"0","N/A","False","True","2026-06-04T21:43:50Z","wneufeld@pbxtruck.ca","2026-06-10T15:23:19Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21101","Lightway","237","2026-06-05T05:00:00Z",,,"Grease ","True","True","False",,"0","N/A","False","True","2026-06-05T11:27:38Z","wneufeld@pbxtruck.ca","2026-06-05T20:17:02Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21102","Novid ","706","2026-06-17T05:00:00Z",,,"Hey all,
+We took 706 for an alignment, we're brining it back to KK tomorrow to get two steer tires put on it, then hoping you guys can take a look at it for:
+1.	There's no A/C in the truck, just blowing warm air
+2.	Looks like there's an small oil leak front left  maybe oil pan or filler tube
+3.	Headache rack doors are loose and handles are in rough shape so would like to take a look at getting those tightened up
+4.	There is some aftermarket extension mirrors made of aluminum tubing it got bent once awhile back but it kind of binds up at the end of the extension, wondering if we can maybe shave the inner tube down a little more so it slides easier or worse case scenario replace it. 
+Would like to pick this one up next Thursday as well if possible. 
+Thanks 
+TODD AND RENE WORKED ON THIS UNIT
+","True","True","False",,"0","N/A","False","True","2026-06-05T11:33:08Z","wneufeld@pbxtruck.ca","2026-06-17T16:58:11Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21103","Bvt","H121 /H221","2026-06-08T05:00:00Z",,,"Service   &   repairs ","True","True","False",,"0","N/A","False","True","2026-06-05T12:02:38Z","wneufeld@pbxtruck.ca","2026-06-08T16:36:45Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21104","Mcmunn","301601","2026-06-12T05:00:00Z",,,"Loose PTO shaft  ask Ron   get  james - Glen to Order a pump yoke and u joints    tommy flying in parts ----eta--- june 9,10---DONE 6/12/26.---
+GLEN WAS ON THIS UNIT.","True","True","False",,"0","N/A","False","True","2026-06-05T12:13:08Z","wneufeld@pbxtruck.ca","2026-06-12T19:13:21Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21105","D&W- Dale-204-426-2334","6611","2026-06-12T05:00:00Z",,,"Steer leaf spring bushings-Steer brakes, 1 is cracked-Adjust clutch-Check all air bags and replace as needed-Clean radiator ","True","True","False",,"0","N/A","False","True","2026-06-05T13:10:16Z","gkoop@pbxtruck.ca","2026-06-12T20:08:07Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21106","Canada Packers ","1810","2026-06-05T05:00:00Z",,,"Mud flap / lights ","True","True","False",,"0","N/A","False","True","2026-06-05T13:32:43Z","wneufeld@pbxtruck.ca","2026-06-05T16:12:56Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21107","More Then Just Feeds","120","2026-06-05T05:00:00Z",,,"PTO issues","True","True","False",,"0","N/A","False","True","2026-06-05T14:01:48Z","wneufeld@pbxtruck.ca","2026-06-05T20:16:51Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21108","More Then Just Feeds","216","2026-06-05T05:00:00Z",,,"Hyd leak / chain ?","True","True","False",,"0","N/A","False","True","2026-06-05T14:02:49Z","wneufeld@pbxtruck.ca","2026-06-05T21:57:55Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21109","Andy ","264","2026-06-06T05:00:00Z",,,"Full service ","False","True","False",,"-2","N/A","False","False","2026-06-05T14:09:08Z","gkoop@pbxtruck.ca","2026-06-08T10:55:27Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21110","Countryside Farms"," CSU37","2026-06-05T05:00:00Z",,,"Service-","True","True","False",,"0","N/A","False","True","2026-06-05T15:42:59Z","wneufeld@pbxtruck.ca","2026-06-05T20:53:40Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21111","Canada Packers ","2202","2026-06-06T05:00:00Z",,,"Engine codes / Mirror ","True","True","False",,"-2","N/A","False","True","2026-06-05T16:29:38Z","wneufeld@pbxtruck.ca","2026-06-08T10:55:17Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21112","trappers ","1040","2026-06-24T05:00:00Z",,,"Trans issues     Joe  auth  to inspect and report 
+--- have a quote ron is in contact with peter scharr about policy on some parts.
+---- PARTS ARE HERE, PETER SCHARR PROVIDED A CLUTCH.---
+HAIKO IS ON THIS UNIT
+WAITING ON A RANGE SYNCRO FOR THIS UNIT.
+--- trans is all reassembled and road tested, unit is done.---","True","True","False",,"0","N/A","False","True","2026-06-05T19:22:18Z","rpetkau@pbxtruck.ca","2026-06-24T19:16:13Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21113","Pearl ","85","2026-06-06T05:00:00Z",,,"Exhaust leak / flap ???","False","True","False",,"-2","N/A","False","False","2026-06-05T19:56:34Z","wneufeld@pbxtruck.ca","2026-06-08T10:55:08Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21114","D&W- Dale-204-426-2334","5322","2026-06-30T05:00:00Z",,,"Check for rip in roof 
+
+Roof Leak    Rick and Gavin working withj estimate ","True","False","False",,"1","N/A","False","True","2026-06-05T19:58:32Z","gkoop@pbxtruck.ca","2026-06-29T20:21:12Z","wneufeld@pbxtruck.ca","Kayla Dubell","False","False","False"
+"21115","Steinbach Hatchery ","331","2026-06-08T05:00:00Z",,,"Low coolant buzzer coming on ","True","True","False",,"0","N/A","False","True","2026-06-05T20:48:19Z","wneufeld@pbxtruck.ca","2026-06-08T20:30:51Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21117","corey smith ","227","2026-06-06T05:00:00Z",,,"Retorque steering wheels at daryls  shop  ","True","True","False",,"1","N/A","False","False","2026-06-05T20:57:56Z","rpetkau@pbxtruck.ca","2026-06-05T21:09:24Z","rpetkau@pbxtruck.ca",,"False","False","False"
+"21118","Light way ","LW234","2026-06-06T05:00:00Z",,,"retorque wheels at daryls shop ","True","True","False",,"-2","N/A","False","False","2026-06-05T21:14:36Z","rpetkau@pbxtruck.ca","2026-06-08T10:54:53Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21119","Canada Packers ","2009","2026-06-10T05:00:00Z",,,"Oil leak --pass side tire
+Crusie control not working 
+Oil leak rear axle ","True","True","False",,"0","N/A","False","True","2026-06-05T21:45:22Z","wneufeld@pbxtruck.ca","2026-06-10T15:23:06Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21121","North 4D",,"2026-06-17T05:00:00Z",,,"Charging issues   FORD L9000
+--- ALSO 4 EXHAUST MANIFOLD BOLTS ARE BROKEN WE GOT AUTHORIZATION TO REPAIR ALSO.----
+DAVIN IS ON THIS UNIT.","True","True","False",,"0","N/A","False","True","2026-06-08T12:29:31Z","wneufeld@pbxtruck.ca","2026-06-17T19:50:22Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21122","More Then Just Feeds","121","2026-06-09T05:00:00Z",,,"Service / Traction control light coming on / Check all lights ","True","True","False",,"0","N/A","False","True","2026-06-08T12:30:59Z","wneufeld@pbxtruck.ca","2026-06-09T19:53:49Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21123","cotton ","1912","2026-06-10T05:00:00Z",,,"No start have to prime fuel every time  ","True","True","False",,"0","N/A","False","True","2026-06-08T12:55:44Z","rpetkau@pbxtruck.ca","2026-06-10T15:22:58Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21124","The green acre ","567 pete ","2026-06-17T05:00:00Z",,,"Trans issues /  ask ron 
+
+Wont start in 1st gear-Wants to start in a higher gear
+
+Eaton auto ","True","True","False",,"0","N/A","False","True","2026-06-08T13:18:42Z","rpetkau@pbxtruck.ca","2026-06-17T11:26:08Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21125","Canada Packers ","1808","2026-06-09T05:00:00Z",,,"Service call to see why 5th wheel will not unlock ","True","True","False",,"0","N/A","False","True","2026-06-08T13:48:19Z","wneufeld@pbxtruck.ca","2026-06-09T20:22:45Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21126","Canada Packers ","2307","2026-06-08T05:00:00Z",,,"Engine codes ","True","True","False",,"0","N/A","False","True","2026-06-08T14:19:13Z","wneufeld@pbxtruck.ca","2026-06-08T22:26:42Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21127","Sollio ","W2 Feed trailer ","2026-06-17T05:00:00Z",,,"Safety-","True","True","False",,"0","N/A","False","True","2026-06-08T14:26:20Z","gkoop@pbxtruck.ca","2026-06-17T21:07:09Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21128","SmS ","1872","2026-06-30T05:00:00Z",,,"Finish Safety 127319","True","False","False",,"1","N/A","False","True","2026-06-08T14:39:12Z","gkoop@pbxtruck.ca","2026-06-29T20:20:03Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21129","Image Sod ",,"2026-06-08T05:00:00Z",,,"Check engine codes ","True","True","False",,"0","N/A","False","True","2026-06-08T14:44:58Z","wneufeld@pbxtruck.ca","2026-06-08T22:00:54Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21132","Centennial Gravel","98","2026-06-10T05:00:00Z",,,"Safety","True","True","False",,"0","N/A","False","True","2026-06-08T16:33:06Z","wneufeld@pbxtruck.ca","2026-06-10T20:52:34Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21133","Diamond Construction","463","2026-06-09T05:00:00Z",,,"Lack off power / communication issues ","True","True","False",,"0","N/A","False","True","2026-06-08T16:42:08Z","wneufeld@pbxtruck.ca","2026-06-09T19:53:41Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21134","Vik's Landscaping ",,"2026-06-09T05:00:00Z",,,"Running rough","True","True","False",,"0","N/A","False","True","2026-06-08T16:50:29Z","wneufeld@pbxtruck.ca","2026-06-09T20:14:22Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21135","Pearl ","119","2026-06-09T05:00:00Z",,,"Brakes ","True","True","False",,"0","N/A","False","True","2026-06-08T20:15:48Z","wneufeld@pbxtruck.ca","2026-06-09T15:44:57Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21136","Canada Packers ","201904","2026-06-10T05:00:00Z",,,"Service / List ","True","True","False",,"0","N/A","False","True","2026-06-08T20:53:52Z","wneufeld@pbxtruck.ca","2026-06-10T15:21:38Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21137","Fast Brothers ","st219","2026-06-08T05:00:00Z",,,"Road test and check jake brake Noise    ( Ron) ","True","True","False",,"0","N/A","False","True","2026-06-08T21:06:43Z","rpetkau@pbxtruck.ca","2026-06-08T21:29:15Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21138","Southwood Ventures",,"2026-06-09T05:00:00Z",,,"ECM udate ","True","True","False",,"0","N/A","False","True","2026-06-09T11:13:48Z","wneufeld@pbxtruck.ca","2026-06-09T19:07:57Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21139","More Then Just Feeds","120","2026-06-09T05:00:00Z",,,"Wheel seal leaking ","True","True","False",,"0","N/A","False","True","2026-06-09T11:59:41Z","wneufeld@pbxtruck.ca","2026-06-09T18:14:18Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21140","Bvt","H110/H210","2026-06-10T05:00:00Z",,,"Service ","True","True","False",,"0","N/A","False","True","2026-06-09T12:28:34Z","wneufeld@pbxtruck.ca","2026-06-10T19:09:59Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21141","Countryside Farms","30","2026-06-10T05:00:00Z",,,"Exhuast manifold. 
+
+Going out Thursday morning. ","True","True","False",,"0","N/A","False","True","2026-06-09T13:28:33Z","gkoop@pbxtruck.ca","2026-06-10T20:56:46Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21142","Canada Packers ","201903","2026-06-09T05:00:00Z",,,"Pass side lights not working ","True","True","False",,"0","N/A","False","True","2026-06-09T14:03:05Z","wneufeld@pbxtruck.ca","2026-06-09T20:50:53Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21143","Canada Packers ","1810","2026-06-09T05:00:00Z",,,"A/C not working ","True","True","False",,"0","N/A","False","True","2026-06-09T14:03:48Z","wneufeld@pbxtruck.ca","2026-06-09T20:50:46Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21144","Fast Brothers ","st219","2026-06-10T05:00:00Z",,,"Replace Leaking Exhaust manifold gaskets and torque to spec / road test unit and varify jake and performance ","True","True","False",,"0","N/A","False","True","2026-06-09T14:13:02Z","rpetkau@pbxtruck.ca","2026-06-10T12:28:52Z","rpetkau@pbxtruck.ca","David Reimer","False","False","False"
+"21145","Scheurer Farms ","388","2026-06-17T05:00:00Z",,,"2007  P/B Drive line vibration / Input yoke loose ?? 7-11 drive line angle inspection-Check ride height.  Per form a 7-11 
+
+431-458-9580  Ryan 
+NEEDS A CLUTCH CUSTOMER WILL DO.
+HAIKO WAS ON THIS UNIT.","True","True","False",,"0","N/A","False","True","2026-06-09T14:28:38Z","wneufeld@pbxtruck.ca","2026-06-17T18:52:06Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21146","Landmark Transfer ","57-22","2026-06-30T05:00:00Z",,,"MPI repairs (open claim) when unit available--  install  RH bumper end-- part in body shop.","True","False","False",,"1","N/A","False","True","2026-06-09T14:55:57Z","dkehler@pbxtruck.ca","2026-06-29T16:20:43Z","wneufeld@pbxtruck.ca","Kayla Dubell","False","False","False"
+"21148","cardale","134","2026-06-11T05:00:00Z",,,"check and repair turbo issues  note turbo FGI    waylon diag ","True","True","False",,"0","N/A","False","True","2026-06-09T18:07:40Z","rpetkau@pbxtruck.ca","2026-06-11T21:57:20Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21149","Landmark Transfer ","38","2026-06-18T05:00:00Z",,,"Safety Pre Inspection ","False","True","False",,"0","N/A","False","False","2026-06-09T18:45:54Z","gkoop@pbxtruck.ca","2026-06-18T20:43:45Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21150","Agassis Edge",,"2026-06-17T05:00:00Z",,,"Check a/c 
+---fan hub is no good we are replacing, a/c comprerssor is no good and also the engine fan does not come on with the ac due to faulty fan control module, looking into parts.
+RENE IS ON THIS UNIT. WAITING ON A FAN HUB AND FAN CONTROL MODULE.
+FAN HUB IS HERE JUNE 16 2026.","True","True","False",,"0","N/A","False","True","2026-06-09T19:44:39Z","wneufeld@pbxtruck.ca","2026-06-17T21:07:15Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21151","Fast Brothers ","ED302","2026-06-12T05:00:00Z",,,"Safety inspection  / fast brothers did repairs / have Gavin call Harry @ Fast Brothers    waylon ","True","True","False",,"0","N/A","False","False","2026-06-09T20:06:01Z","rpetkau@pbxtruck.ca","2026-06-12T13:25:48Z","rpetkau@pbxtruck.ca","David Reimer","False","False","False"
+"21152","Fal-Rick Feeds",,"2026-06-19T05:00:00Z",,,"Fuel leak
+P/S leak 
+Service
+Feed tank doors ????
+Alarm to notify pto is engaged
+Radio mute when backing up can we disable that system ","True","True","False",,"-1","N/A","False","True","2026-06-09T20:14:03Z","wneufeld@pbxtruck.ca","2026-06-20T12:41:57Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21153","Steinbach Hatchery ","884","2026-06-10T05:00:00Z",,,"Hook up live wire See Wes ","True","True","False",,"0","N/A","False","True","2026-06-09T20:35:02Z","wneufeld@pbxtruck.ca","2026-06-10T18:20:07Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21154","Steinbach Hatchery ","515","2026-06-10T05:00:00Z",,,"Alarm issues  ( back-up)","True","True","False",,"0","N/A","False","True","2026-06-09T20:35:39Z","wneufeld@pbxtruck.ca","2026-06-10T20:55:52Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21155","Isaac Neufeld ",,"2026-06-12T05:00:00Z",,,"Check injecors-Stutters under load. 
+--- number 1 injector is dead. we are also rechecking the valve set.
+isaak is on this unit.","True","True","False",,"0","N/A","False","True","2026-06-09T20:40:09Z","gkoop@pbxtruck.ca","2026-06-12T22:22:08Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21156","Tree Sun ",,"2026-06-10T05:00:00Z",,,"Service call to replace  air drier 
+
+Wayon ","True","True","False",,"0","N/A","False","True","2026-06-09T21:20:18Z","wneufeld@pbxtruck.ca","2026-06-10T15:34:19Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21157","More Then Just Feeds","114","2026-06-22T05:00:00Z",,,"Regen issues 
+--- gave the customer a quote on a new dpf.---
+KYLE ON THIS UNIT.
+CUSTOMER GAVE APPROVAL FOR A NEW DPF JUNE 16 2026.","True","True","False",,"0","N/A","False","True","2026-06-09T21:26:03Z","wneufeld@pbxtruck.ca","2026-06-22T12:54:28Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21158","Novid ","714","2026-06-17T05:00:00Z",,,"Speedo issues / ac line ?? / Service 
+--- speedo and service are done 6/11/26","True","True","False",,"0","N/A","False","True","2026-06-09T21:40:30Z","wneufeld@pbxtruck.ca","2026-06-17T19:29:28Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21159","Image Sod ",,"2026-06-15T05:00:00Z",,,"2 trucks --List ","True","True","False",,"0","N/A","False","True","2026-06-09T21:55:33Z","wneufeld@pbxtruck.ca","2026-06-15T16:19:29Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21160","Pearl ","20","2026-06-17T05:00:00Z",,,"Check and repair all electrical on truck  / note ign fuse that driver trevor marked  has been replace 8 times in 2 days  keeps blowing  / no short cuts on  diagnoses  bumper to bumper elctrical wiring check ","False","True","False",,"0","N/A","False","False","2026-06-09T22:10:28Z","rpetkau@pbxtruck.ca","2026-06-17T19:16:31Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21161","Pearl ","Morales / 73 / 1085","2026-06-11T05:00:00Z",,,"Mb safety inspection    Truck and trailer  ","True","True","False",,"1","N/A","False","True","2026-06-10T10:56:50Z","rpetkau@pbxtruck.ca","2026-06-10T22:59:00Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21162","Niverville  Towing ","DD towing Freightlinner","2026-06-11T05:00:00Z",,,"UNit is Here and Got towed here  due to not shift pass 1st gear  Check history on this unit and at one point time it had the same issue   pbx fixed it then ","True","True","False",,"0","N/A","False","True","2026-06-10T11:32:48Z","rpetkau@pbxtruck.ca","2026-06-11T15:54:59Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21163","Delbert Kornelsen ","66 ","2026-06-12T05:00:00Z",,,"Replace 6 injectors ordered by Tommy and injector Harness x 2 
+ fuel tank level sensor is not working properly . getting constant code for fuel level on e log    possibley wiring 
+--- also abs light is on.","True","True","False",,"0","N/A","False","True","2026-06-10T12:49:56Z","rpetkau@pbxtruck.ca","2026-06-12T11:48:38Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21164","Mcmunn","102","2026-06-17T05:00:00Z",,,"Electrical issues / Service ","True","True","False",,"0","N/A","False","True","2026-06-10T13:27:51Z","wneufeld@pbxtruck.ca","2026-06-17T21:08:39Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21165","Canada Packers ","2400","2026-06-11T05:00:00Z",,,"Electrical issues / Service ","True","True","False",,"0","External","False","True","2026-06-10T13:39:12Z","wneufeld@pbxtruck.ca","2026-06-11T15:54:08Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21166","paisno ","eleite concrete ","2026-06-12T05:00:00Z",,,"todd   chapter  13 ","True","True","False",,"0","N/A","False","True","2026-06-10T15:06:05Z","rpetkau@pbxtruck.ca","2026-06-12T13:16:17Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21167","Mr.Gravel ","End dump","2026-06-17T05:00:00Z",,,"Safety ","True","True","False",,"0","N/A","False","True","2026-06-10T15:39:05Z","gkoop@pbxtruck.ca","2026-06-17T11:25:47Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21168","Ridgeland colony 204-232-5430","End dump ","2026-06-15T05:00:00Z",,,"Safety-Grey","True","True","False",,"0","N/A","False","True","2026-06-10T17:58:05Z","gkoop@pbxtruck.ca","2026-06-15T16:47:31Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21170","Daryle Smith","454","2026-06-16T05:00:00Z",,,"Floor is completely wet on passenger side. Customer request to remove seats and cab carpet and get it washed and disinfected. Possible water leak around the HVAC A/C system. 
+Any further questions, ask Ron. ","True","True","False",,"0","N/A","False","True","2026-06-10T19:12:34Z","kdubell@pbxtruck.ca","2026-06-16T23:02:55Z","rpetkau@pbxtruck.ca","Kayla Dubell","False","False","False"
+"21171","Canada Packers ","201805","2026-06-12T05:00:00Z",,,"Air leak / abs ","True","True","False",,"0","N/A","False","True","2026-06-10T19:14:29Z","wneufeld@pbxtruck.ca","2026-06-12T18:35:47Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21172","Daryle Smith","342","2026-06-16T05:00:00Z",,,"Water getting into the cab at fuse panel area. Check and report.","True","True","False",,"4","N/A","False","False","2026-06-10T19:20:12Z","kdubell@pbxtruck.ca","2026-06-12T20:00:29Z","rpetkau@pbxtruck.ca","Kayla Dubell","False","False","False"
+"21173","Martin Diesel",,"2026-06-11T05:00:00Z",,,"Program ecm ","True","True","False",,"0","N/A","False","True","2026-06-10T19:35:05Z","wneufeld@pbxtruck.ca","2026-06-11T16:46:09Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21174","Golden Bay","3","2026-06-19T05:00:00Z",,,"Compressor
+Valve Set 
+Windshield Driver side 
+KYLE IS ON THIS UNIT.
+
+NEED TO BREAK IN COMPRESSOR 
+
+Michael replaced air drier, cleaned out discharge hose but recommend replacement","True","True","False",,"0","N/A","False","True","2026-06-10T20:49:53Z","wneufeld@pbxtruck.ca","2026-06-19T20:37:39Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21175","Random Transport ","177","2026-06-15T05:00:00Z",,,"Engine codes 
+Check bunk / Apu ","True","True","False",,"0","N/A","False","True","2026-06-10T20:50:52Z","wneufeld@pbxtruck.ca","2026-06-15T16:38:27Z","rpetkau@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21176","Eg Penner ","86","2026-06-20T05:00:00Z",,,"Service 
+
+po# 308593
+
+","True","True","False",,"0","N/A","False","True","2026-06-10T21:13:29Z","wneufeld@pbxtruck.ca","2026-06-20T16:14:49Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21177","Fast Brothers ","ST216","2026-06-11T05:00:00Z",,,"Engine codes ","True","True","False",,"0","N/A","False","True","2026-06-10T21:16:19Z","wneufeld@pbxtruck.ca","2026-06-11T18:22:09Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21179","ANDY HEDLUND (AVALON RIDGE LLC)",,"2026-06-11T05:00:00Z",,,"Check engine codes ","True","True","False",,"0","N/A","False","True","2026-06-11T15:18:41Z","wneufeld@pbxtruck.ca","2026-06-11T18:03:46Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21180","Jim Septic ",,"2026-06-15T05:00:00Z",,,"Check why smoking blue on take off
+
+204-371-5305
+--- intake pipe has a big hole in it, the filter is plugged and the turbo is dusted and damaged. we are looking into the condition of the valve seals also.
+GLEN IS ON THIS UNIT
+
+Isaak to fix exhaust leaks, and coolant temp guage is not working.","True","True","False",,"0","N/A","False","True","2026-06-11T16:46:01Z","wneufeld@pbxtruck.ca","2026-06-15T22:08:40Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21181","Bpps","2855","2026-06-11T05:00:00Z",,,"Unit was driving and experianced a compleate electrical failture-No lights work. All gauges and functions dead","True","True","False",,"0","N/A","False","True","2026-06-11T17:53:33Z","gkoop@pbxtruck.ca","2026-06-11T21:22:35Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21182","Alexander Mier ","1599","2026-06-12T05:00:00Z",,,"Grease-","True","True","False",,"0","N/A","False","True","2026-06-11T20:30:32Z","gkoop@pbxtruck.ca","2026-06-12T17:51:03Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21183","Trouw ","3228","2026-06-15T05:00:00Z",,,"Injectors -please road test after ","True","True","False",,"0","N/A","False","True","2026-06-11T20:40:37Z","wneufeld@pbxtruck.ca","2026-06-15T16:25:00Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21184","Canada Packers ","2202","2026-06-12T05:00:00Z",,,"Safety/ Mirrors ","True","True","False",,"0","N/A","False","True","2026-06-11T20:59:30Z","wneufeld@pbxtruck.ca","2026-06-12T18:35:38Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21185","Steinbach Hatchery ","884","2026-06-18T05:00:00Z",,,"Complete suspension inspection --tire wear  /Wheel alignment at PP 
+
+Carter","True","True","False",,"1","N/A","False","True","2026-06-11T21:00:25Z","wneufeld@pbxtruck.ca","2026-06-17T20:21:40Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21186","barkman concreate  ","T45","2026-06-20T05:00:00Z",,,"Complete service    10/30    chevron       ( haiko Hiebert ) tech     driver billy wiebe 
+204 905 0382
+
+Grease trailer if time permits. Tail lights out. 
+
+Trailers 913/914","True","True","False",,"0","N/A","False","True","2026-06-11T21:14:46Z","rpetkau@pbxtruck.ca","2026-06-20T17:16:24Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21187","Canada Packers ","1909 / 995","2026-06-17T05:00:00Z",,,"Engine codes ","True","True","False",,"0","N/A","False","True","2026-06-11T21:33:24Z","wneufeld@pbxtruck.ca","2026-06-17T21:06:51Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21188","Cam Sturard  ","New PDI ","2026-06-30T05:00:00Z",,,"Waylon Go along with Rose to Peterbilt and pick up a new Peterbilt from Cam sturard and bring tyo pbx for PDI and safety    for Green Vally  Milk hauling 
+---DONE.---","True","False","False",,"1","N/A","False","True","2026-06-12T11:25:50Z","rpetkau@pbxtruck.ca","2026-06-29T16:20:56Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21189","Countryside Farms","CSU30","2026-06-12T05:00:00Z",,,"Ar leak poss brake pot 
+MICHAEL ON THIS UNIT.","True","True","False",,"0","N/A","False","True","2026-06-12T13:04:10Z","wneufeld@pbxtruck.ca","2026-06-12T19:42:03Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21190","Canada Packers ","1903 / 201701","2026-06-12T05:00:00Z",,,"Grease job /pto light issue / air drier?","True","True","False",,"0","N/A","False","True","2026-06-12T13:15:24Z","wneufeld@pbxtruck.ca","2026-06-12T21:27:26Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21191","Swift",,"2026-06-16T05:00:00Z",,,"Transmission issues ","True","True","False",,"0","N/A","False","True","2026-06-12T15:55:31Z","wneufeld@pbxtruck.ca","2026-06-16T19:24:26Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21192","Countryside Farms","CSR15","2026-06-15T05:00:00Z",,,"Belts / Not cooling  /Plug ???
+
+Isaac
+
+Done","True","True","False",,"0","N/A","False","True","2026-06-12T15:56:34Z","wneufeld@pbxtruck.ca","2026-06-15T21:44:25Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21193","Bvt","H107 /H207","2026-06-15T05:00:00Z",,,"Service 
+
+Randy","True","True","False",,"0","N/A","False","True","2026-06-12T17:46:24Z","wneufeld@pbxtruck.ca","2026-06-15T18:41:40Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21194","Peter Funk","Blue International ","2026-06-18T05:00:00Z",,,"Exhaust manifold/ turbo --Parts here    keys on dipstick ","True","True","False",,"0","N/A","False","True","2026-06-12T18:36:59Z","wneufeld@pbxtruck.ca","2026-06-18T21:08:42Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21195","Steinbach Hatchery ","331","2026-07-02T05:00:00Z",,,"Oil pressure codes ask Ron     rebuild Motor  waiting for long block  ray ordered it 
+
+Replace driver seat ","True","False","False",,"3","N/A","False","True","2026-06-12T19:26:19Z","rpetkau@pbxtruck.ca","2026-06-29T13:47:09Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21196","Corey Smith ","227","2026-06-22T05:00:00Z",,,"List of repaires   ron has the list  from Kevin     Front suspension shackel pins and busings      Need to pick up unit ","True","True","False",,"0","N/A","False","True","2026-06-12T19:26:55Z","rpetkau@pbxtruck.ca","2026-06-22T20:34:03Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21197","Daryl smith ","442","2026-06-15T05:00:00Z",,,"A lot of rattle noise coming from the dpf area and stack    / note we just had the dpf off ","True","True","False",,"0","N/A","False","True","2026-06-12T19:29:54Z","rpetkau@pbxtruck.ca","2026-06-15T22:07:28Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21198","Eg Penner ","89 /Moffet","2026-06-15T05:00:00Z",,,"Fan speed issues 
+
+Michael working on Moffet, waiting for diagrams from Brad","True","True","False",,"0","N/A","False","True","2026-06-12T19:41:51Z","wneufeld@pbxtruck.ca","2026-06-15T21:44:06Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21199","Ed Hieldebrandt",,"2026-06-13T05:00:00Z",,,"abs / engine codes --Micheal 
+
+Done -Ewald road tested","True","True","False",,"0","N/A","False","True","2026-06-12T21:40:11Z","wneufeld@pbxtruck.ca","2026-06-13T17:13:55Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21200","Cory Smith ","400","2026-06-15T05:00:00Z",,,"Starter
+
+204-471-1925
+
+Dustin","True","True","False",,"0","N/A","False","True","2026-06-13T13:57:21Z","wneufeld@pbxtruck.ca","2026-06-15T13:35:48Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21201","Northsouth",,"2026-06-13T05:00:00Z",,,"Adjust clutch / Grease job 
+
+Charles did a clutch servo","True","True","False",,"0","N/A","False","True","2026-06-13T15:11:47Z","wneufeld@pbxtruck.ca","2026-06-13T17:11:28Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21202","Ed And Mia ",,"2026-06-17T05:00:00Z",,,"Engine fan keeps running at all times- Fan hub.","True","True","False",,"0","N/A","False","True","2026-06-13T15:16:07Z","wneufeld@pbxtruck.ca","2026-06-17T19:41:54Z","gkoop@pbxtruck.ca","David Reimer","False","False","False"
+"21203","Turbo Tonic","169","2026-06-15T05:00:00Z",,,"Check engine codes ","True","True","False",,"0","N/A","False","True","2026-06-13T15:17:13Z","wneufeld@pbxtruck.ca","2026-06-15T13:31:39Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21204","PBX capital","Peal71","2026-06-30T05:00:00Z",,,"Shifting issues (was low voltage issue, now fixed)
+Oil leaks (new oil filter when servicing next)(lots of other leaks)
+Safety inspection (complete)
+VGT?
+
+","True","False","False",,"0","N/A","False","True","2026-06-13T16:41:59Z","dreimer@pbxtruck.ca","2026-06-30T15:46:40Z","wpetkau@pbxtruck.ca","David Reimer","False","False","False"
+"21205","Isaac Bergen ","Kenworth ","2026-06-15T05:00:00Z",,,"truck was towed in for a blown upo air compressor  do not start unit   tow in with loader  
+--- compressor is ordered eta noon june 15th, also we are goind to perform an oil change.","True","True","False",,"-1","N/A","False","True","2026-06-15T10:23:19Z","rpetkau@pbxtruck.ca","2026-06-16T10:49:50Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21206","Canada Packers ","2201 /201901","2026-06-15T05:00:00Z",,,"Service call to Niverville Mill to repair air leak ","True","True","False",,"0","N/A","False","True","2026-06-15T11:33:43Z","wneufeld@pbxtruck.ca","2026-06-15T16:48:21Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21207","Feather oak ","389 White Pete","2026-06-15T05:00:00Z",,,"Replace leaking right side sleeper air bag ","True","True","False",,"0","N/A","False","True","2026-06-15T12:03:39Z","rpetkau@pbxtruck.ca","2026-06-15T16:24:27Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21208","Landmark Transfer ","49","2026-06-22T05:00:00Z",,,"Safety ","True","True","False",,"0","N/A","False","True","2026-06-15T12:22:02Z","wneufeld@pbxtruck.ca","2026-06-22T20:40:38Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21209","South East ","515","2026-06-18T05:00:00Z",,,"Safety ","True","True","False",,"0","N/A","False","True","2026-06-15T12:23:09Z","wneufeld@pbxtruck.ca","2026-06-18T12:21:52Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21210","Peter  Loewen ","09","2026-06-15T05:00:00Z",,,"Perform a complete tune up on engine and report to customer findings ","True","True","False",,"0","N/A","False","True","2026-06-15T12:49:42Z","rpetkau@pbxtruck.ca","2026-06-15T18:54:59Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21211","key stone ","3 ton ","2026-06-19T05:00:00Z",,,"Safety      list   call for more information   Ron ","True","True","False",,"0","N/A","False","True","2026-06-15T13:15:00Z","rpetkau@pbxtruck.ca","2026-06-19T20:56:35Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21212","Trouw ","2196","2026-06-24T05:00:00Z",,,"3 axle wheel alighnment    road test  befor and after   / check over unit front to back  Bill ","True","True","False",,"0","N/A","False","False","2026-06-15T13:57:21Z","rpetkau@pbxtruck.ca","2026-06-24T19:43:58Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21213","PLT ","72","2026-06-17T05:00:00Z",,,"Full service/PLT inspection ","True","True","False",,"0","N/A","False","True","2026-06-15T14:50:41Z","gkoop@pbxtruck.ca","2026-06-17T16:51:00Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21214","Vin-Transport ","002","2026-06-17T05:00:00Z",,,"J-brake / Cruise control not working 
+
+204-962-3013","False","True","False",,"0","N/A","False","False","2026-06-15T15:33:26Z","wneufeld@pbxtruck.ca","2026-06-17T16:50:50Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21215","Lightway","337","2026-06-15T05:00:00Z",,,"Service","True","True","False",,"0","N/A","False","True","2026-06-15T16:01:35Z","wneufeld@pbxtruck.ca","2026-06-15T22:45:28Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21216","Image Sod ","K/W ","2026-06-17T05:00:00Z",,,"Service / Check engine codes ","True","True","False",,"0","N/A","False","True","2026-06-15T16:19:52Z","wneufeld@pbxtruck.ca","2026-06-17T14:06:29Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21217","E.G Penner ","124","2026-06-17T05:00:00Z",,,"Safety / Service 
+MICHAEL IS ON THIS UNIT SMALL LIST AS WELL AS A LEAKING RAD.","True","True","False",,"0","N/A","False","True","2026-06-15T16:29:13Z","gkoop@pbxtruck.ca","2026-06-17T12:07:28Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21218","Danny Reimer ",,"2026-06-17T05:00:00Z",,,"Head-light issues / Check charging system 
+GLEN IS REPLACING THE STARTER AND REPAIRING A BATTERY TERMINAL.","True","True","False",,"0","N/A","False","True","2026-06-15T17:50:14Z","wneufeld@pbxtruck.ca","2026-06-17T14:05:45Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21219","Canada Packers ","2504","2026-06-15T05:00:00Z",,,"Service call to wash bay to boost truck ","True","True","False",,"0","N/A","False","True","2026-06-15T17:50:59Z","wneufeld@pbxtruck.ca","2026-06-15T20:33:49Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21220","Pearl ","55","2026-06-15T05:00:00Z",,,"Engine codes / Recall ??","True","True","False",,"0","N/A","False","True","2026-06-15T18:45:16Z","wneufeld@pbxtruck.ca","2026-06-15T22:00:20Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21222","Roseridge","622","2026-06-20T05:00:00Z",,,"Install tool box-- both if time allows. (Blaine Carruthers trailer-- here for MPI repairs) Open welding shop RO 127914","False","True","False",,"0","N/A","False","False","2026-06-15T19:12:35Z","dkehler@pbxtruck.ca","2026-06-20T13:43:38Z","wneufeld@pbxtruck.ca","Walter Wiens","False","False","False"
+"21223","Mc Munn ","301601","2026-06-19T05:00:00Z",,,"Engine runs hot 104 ce  110 ce     Replace Thermostat   &  wash out Rads ","True","True","False",,"0","N/A","False","True","2026-06-15T19:37:14Z","rpetkau@pbxtruck.ca","2026-06-19T21:29:36Z","wneufeld@pbxtruck.ca","David Reimer","True","False","False"
+"21224","Toucan Platics 204-746-5113","Ben Reimer ","2026-06-20T05:00:00Z",,,"Clean DPF 
+
+","True","True","False",,"0","N/A","False","True","2026-06-15T19:40:36Z","gkoop@pbxtruck.ca","2026-06-20T16:38:20Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21225","Isaac Loewen","284","2026-06-19T05:00:00Z",,,"H-Vac issues       fairing end cab  / lighter plug  ","True","True","False",,"0","N/A","False","True","2026-06-15T20:24:12Z","wneufeld@pbxtruck.ca","2026-06-19T12:33:01Z","rpetkau@pbxtruck.ca","David Reimer","False","False","False"
+"21226","Quinones Transport","6033","2026-06-17T05:00:00Z",,,"Safety / Service / Coolant leak ","True","True","False",,"0","N/A","False","True","2026-06-15T21:43:22Z","wneufeld@pbxtruck.ca","2026-06-17T19:29:58Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21227","S.E.G Enterprise ",,"2026-07-02T05:00:00Z",,,"No start   waiting for ecm customer authization ","True","False","False",,"3","N/A","False","True","2026-06-15T22:13:46Z","wneufeld@pbxtruck.ca","2026-06-29T16:20:06Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21228","timo brielmen ","red mack ","2026-06-22T05:00:00Z",,,"Fuel in coolant 
+KYLE IS REMOVING THE INJECTORS TO INSPECT THEM AND TO REMOVE THE INJECTOR CUPS TO SEE WHAT WE ARE ALL GOING TO NEED.
+----DONE---","True","True","False",,"0","N/A","False","True","2026-06-16T11:32:39Z","rpetkau@pbxtruck.ca","2026-06-22T13:29:57Z","rpetkau@pbxtruck.ca","James Fehr","False","False","False"
+"21229","Canada Packers ","2206","2026-06-16T05:00:00Z",,,"Check engine codes ","True","True","False",,"0","N/A","False","True","2026-06-16T13:05:51Z","wneufeld@pbxtruck.ca","2026-06-16T13:45:23Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21230","Canada Packers ","2407","2026-06-16T05:00:00Z",,,"Hyd cooling fan not working ","True","True","False",,"0","N/A","False","True","2026-06-16T13:06:24Z","wneufeld@pbxtruck.ca","2026-06-16T19:19:58Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21231","MPI ","6033","2026-06-17T05:00:00Z",,,"Replace 8 Drive Tires that are skidded. Plan is to have similar value tires. ","False","True","False",,"0","N/A","False","False","2026-06-16T13:28:19Z","rpetkau@pbxtruck.ca","2026-06-17T19:49:49Z","wneufeld@pbxtruck.ca","Kayla Dubell","False","False","False"
+"21232","Daryle Smith","355","2026-06-17T05:00:00Z",,,"no sleeper heater fan  not operational      check all filters    chreck engine  codes and report   11 am ","True","True","False",,"0","N/A","False","True","2026-06-16T13:44:05Z","rpetkau@pbxtruck.ca","2026-06-17T22:55:03Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21233","Canada Packers","2202","2026-06-18T05:00:00Z",,,"Wheel Alignment at Penner Preformance 
+
+R/O 128222","True","True","False",,"0","N/A","False","True","2026-06-16T13:47:48Z","gkoop@pbxtruck.ca","2026-06-18T19:32:01Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21235","Bristal-204-408-4267","2222","2026-06-18T05:00:00Z",,,"Customer reports unit showing a time on the dahs and shutting down when the time is up even when driving. Truck is being towed in.  ","True","True","False",,"1","N/A","False","True","2026-06-16T14:05:53Z","gkoop@pbxtruck.ca","2026-06-17T22:59:31Z","gkoop@pbxtruck.ca","James Fehr","False","False","False"
+"21236","Countryside Farms","CSU19","2026-06-16T05:00:00Z",,,"Service call to repair air leak","True","True","False",,"0","N/A","False","True","2026-06-16T16:31:34Z","wneufeld@pbxtruck.ca","2026-06-16T19:19:50Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21237","Roseridge","324","2026-06-25T05:00:00Z",,,"List ","True","True","False",,"0","N/A","False","True","2026-06-16T18:20:43Z","wneufeld@pbxtruck.ca","2026-06-25T11:34:35Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21238","Kevin's Pumbing ","111","2026-06-19T05:00:00Z",,,"Runs rought ?","True","True","False",,"0","N/A","False","True","2026-06-16T20:34:44Z","wneufeld@pbxtruck.ca","2026-06-19T22:36:27Z","gkoop@pbxtruck.ca","David Reimer","False","False","False"
+"21239","Friesen Hauling ","37","2026-06-17T05:00:00Z",,,"CEL","True","True","False",,"0","N/A","False","True","2026-06-16T21:33:46Z","gkoop@pbxtruck.ca","2026-06-17T17:45:28Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21240","henry's trucking ","201","2026-06-30T05:00:00Z",,,"Rebuild unit    trans / engine oil leaks  / cab and electrical ","True","False","False",,"1","N/A","False","True","2026-06-16T22:54:30Z","rpetkau@pbxtruck.ca","2026-06-29T16:21:08Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21242","Cory Smith ","cascadia  250 ","2026-06-30T05:00:00Z",,,"Rebuild Engine   ask ron    isaac  on this unit ","True","False","False",,"1","N/A","False","True","2026-06-16T22:58:07Z","rpetkau@pbxtruck.ca","2026-06-29T16:21:19Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21243","David Lee ","589 red pete ","2026-06-17T05:00:00Z",,,"Replace Thermostat and check why truck would be over heating  // customer says hes loosing a gallon of coolant a week   ask ron   repair diff sensor wiring and conections 
+--------------------DONE------------------","True","True","False",,"0","N/A","False","True","2026-06-16T23:01:30Z","rpetkau@pbxtruck.ca","2026-06-17T22:55:11Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21244","Vik'S Landscaping ","kw  2007 cat ","2026-06-17T05:00:00Z",,,"Program trim code for injector #4   and check all other timming codes and report ","True","True","False",,"0","N/A","False","True","2026-06-17T11:29:13Z","rpetkau@pbxtruck.ca","2026-06-17T16:00:42Z","rpetkau@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21245","Trouw ","1182","2026-06-24T05:00:00Z",,,"Helena To perform a complete Interior Cleaning   / remove decals       and Make a seperate Work order for PDI inspection  and check all codes   /  No repairs      Kayla and Daryl  To get estimate for all repaires and report to Ron  ","True","True","False",,"0","N/A","False","True","2026-06-17T11:45:17Z","rpetkau@pbxtruck.ca","2026-06-24T18:31:52Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21246","Mcmunn","301109","2026-06-17T05:00:00Z",,,"Leaking Brake pot   truck will be here at 7.10 am 
+--- DONE FOR NOW UNIT HAS THE WRONG S-CAM AND TUBE ON THE TRUCK AT THE LEFT REAR DRIVE BRAKE, CAUSING THE BRAKE POT TO HIT THE SPRING AND WEAR A HOLE INTO THE POT. CORRECT PARTS ARE ON ORDER WITH COLIN, WILL NEED TO REBOOK AND REPAIR WHEN THE PARTS ARE IN. ETA 3-5 DAYS ORDERED ON JUNE 17 2026.","True","True","False",,"0","N/A","False","True","2026-06-17T11:55:34Z","rpetkau@pbxtruck.ca","2026-06-17T21:09:03Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21247","paccar ","ser# 844443","2026-06-30T05:00:00Z",,,"PDI inspection  all add ones  canada packers ","False","False","False",,"1","N/A","False","False","2026-06-17T13:10:16Z","rpetkau@pbxtruck.ca","2026-06-29T17:58:43Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21248","paccar ","ser# 844446","2026-06-30T05:00:00Z",,,"PDI inspection   all add ones    canada packers ","False","False","False",,"1","N/A","False","False","2026-06-17T13:11:03Z","rpetkau@pbxtruck.ca","2026-06-29T17:58:53Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21249","Circle T ","42","2026-06-19T05:00:00Z",,,"Program --cruise control not working   set cruise at 115   pedal 120       check why cruise and Jakes Both won't work ","True","True","False",,"0","N/A","False","True","2026-06-17T14:18:44Z","wneufeld@pbxtruck.ca","2026-06-19T21:29:27Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21250","Trouw ","3274","2026-06-17T05:00:00Z",,,"Line blew off ?","True","True","False",,"0","N/A","False","True","2026-06-17T14:19:36Z","wneufeld@pbxtruck.ca","2026-06-17T18:51:42Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21251","Pearl ","29 ","2026-06-24T05:00:00Z",,,"valve Train Noise  possible Valve  not seating or sealing ","True","True","False",,"0","N/A","False","True","2026-06-17T14:29:48Z","rpetkau@pbxtruck.ca","2026-06-24T13:19:02Z","rpetkau@pbxtruck.ca","James Fehr","False","False","False"
+"21252","Steinbach Hatchery ","599","2026-06-25T05:00:00Z",,,"Park brake issues / runs rough????     replace 4 shocks     / check front cab mounts 
+----------","True","True","False",,"0","N/A","False","True","2026-06-17T16:49:29Z","wneufeld@pbxtruck.ca","2026-06-25T20:04:54Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21253","Victor ( Penner Driver )","66071","2026-06-17T05:00:00Z",,,"Check engine codes ","True","True","False",,"0","N/A","False","True","2026-06-17T16:54:00Z","wneufeld@pbxtruck.ca","2026-06-17T21:31:49Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21254","McVicker Fuel ",,"2026-06-18T05:00:00Z",,,"Engine codes ","True","True","False",,"0","N/A","False","True","2026-06-17T19:03:35Z","wneufeld@pbxtruck.ca","2026-06-18T18:52:06Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21255","Trouw ","3119","2026-06-23T05:00:00Z",,,"Engine codes 
+
+Pick up from Otterburne ","True","True","False",,"0","N/A","False","True","2026-06-17T19:47:57Z","wneufeld@pbxtruck.ca","2026-06-23T16:43:14Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21256","Feather Oak ",,"2026-06-20T05:00:00Z",,,"Finish safety repairs   /Replace starter ","True","True","False",,"0","N/A","False","True","2026-06-17T21:29:05Z","wneufeld@pbxtruck.ca","2026-06-20T16:39:05Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21257","MJ trucking ","2013  389 ","2026-06-19T05:00:00Z",,,"a/c repairs as per dustin     unit will be here 3.30 pm     condensor in parts shelf ","True","True","False",,"-1","N/A","False","True","2026-06-17T22:13:43Z","rpetkau@pbxtruck.ca","2026-06-20T13:40:42Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21258","The Green Acre ","pete ","2026-06-23T05:00:00Z",,,"Remove Trans to  inspect and report to ervin   ","True","True","False",,"1","N/A","False","True","2026-06-17T22:33:47Z","rpetkau@pbxtruck.ca","2026-06-22T22:52:08Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21259","Centennial Gravel","Mack ","2026-06-27T05:00:00Z",,,"Rebuild a/c system  Noel will bring hoses and some parts 
+----- A/C LINE HAS BEEN SENT OUT TO ALL TEMP JUNE 26 2026 IN THE MORNING TO GET REPAIRED.----","True","True","False",,"-2","N/A","False","True","2026-06-17T23:09:29Z","rpetkau@pbxtruck.ca","2026-06-29T10:29:29Z","rpetkau@pbxtruck.ca","James Fehr","False","False","False"
+"21260","Peter klippenstein ","379 Pete ","2026-06-19T05:00:00Z",,,"Check abs codes 7 am    truck is in front of old shop front door 
+ED LOOKED AT THIS UNIT, HAS ABS ENGINE RETARDER RELAY FAULT COME BACK AGAIN.","False","True","False",,"0","N/A","False","False","2026-06-17T23:11:55Z","rpetkau@pbxtruck.ca","2026-06-19T11:55:54Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21261","Eg Penner ","77","2026-06-22T05:00:00Z",,,"Service / power issue 
+1 running light on rear of truck is out
+po # 309266","True","True","False",,"-1","N/A","False","True","2026-06-18T12:40:45Z","wneufeld@pbxtruck.ca","2026-06-23T18:00:36Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21262","Canada Packers ","2203 / 2023-03","2026-06-26T05:00:00Z",,,"Safety 
+Service truck and trailer ","True","True","False",,"0","N/A","False","True","2026-06-18T13:49:43Z","wneufeld@pbxtruck.ca","2026-06-26T23:10:39Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21263","Canada Packers ","2501/202103","2026-06-18T05:00:00Z",,,"Grease job ","True","True","False",,"0","N/A","False","True","2026-06-18T13:50:53Z","wneufeld@pbxtruck.ca","2026-06-18T18:28:20Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21264","Canada Packers ","2201/201901","2026-06-19T05:00:00Z",,,"Grease job 
+
+","True","True","False",,"0","N/A","False","True","2026-06-18T13:51:29Z","wneufeld@pbxtruck.ca","2026-06-19T14:49:35Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21265","Random Transport ","184","2026-06-20T05:00:00Z",,,"Check engine codes  ( goes on and off )
+
+shift issues ","True","True","False",,"0","N/A","False","True","2026-06-18T14:15:26Z","wneufeld@pbxtruck.ca","2026-06-20T16:41:42Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21266","Garth Herman",,"2026-06-25T05:00:00Z",,,"Safety Truck  /  Check why cruise control not working 
+
+Poss safety trailer ","True","True","False",,"0","N/A","False","True","2026-06-18T15:17:26Z","wneufeld@pbxtruck.ca","2026-06-25T16:05:21Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21267","Chuck Wagon",,"2026-06-20T05:00:00Z",,,"Tranny temp  /   engine oil temp sensor / and both diff sensors / clutch and clutch brake adjustment / oil leak v/c area / engien fan going on and off / check rad and turbo / ","True","True","False",,"0","N/A","False","True","2026-06-18T15:59:05Z","wneufeld@pbxtruck.ca","2026-06-20T17:09:08Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21268","Brian Kornelsen ","579 pete ","2026-06-20T05:00:00Z",,,"Repair oil leaks   8 am   Note engine got reuilt at pbx  and rons has work order and parts   / possible oil pan leak as well ","True","True","False",,"0","N/A","False","True","2026-06-18T18:01:53Z","rpetkau@pbxtruck.ca","2026-06-20T15:31:11Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21269","Canada Packers ","winkler ramp ","2026-06-19T05:00:00Z",,,"Service Call /  to winkler  to repair  mobile ramp     waylon and mattious ","True","True","False",,"0","N/A","False","True","2026-06-18T18:04:32Z","rpetkau@pbxtruck.ca","2026-06-19T21:28:37Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21270","Mike Fehr",,"2026-06-20T05:00:00Z",,,"Check why engine fan will not shut off ","True","True","False",,"0","N/A","False","True","2026-06-18T18:34:02Z","wneufeld@pbxtruck.ca","2026-06-20T15:47:59Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21271","PKW","395","2026-06-22T05:00:00Z",,,"Service   pick up at 6 am     check shocks as well ","True","True","False",,"0","N/A","False","True","2026-06-18T18:35:31Z","wneufeld@pbxtruck.ca","2026-06-22T18:58:34Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21272","Canada Packers ","1812","2026-06-20T05:00:00Z",,,"List","True","True","False",,"0","N/A","False","True","2026-06-18T19:38:04Z","wneufeld@pbxtruck.ca","2026-06-20T16:20:13Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21273","Herold Stoesz","588","2026-07-06T05:00:00Z",,,"MPI-- install bumper. RO 127780","False","False","False",,"18","N/A","False","False","2026-06-18T19:38:54Z","dkehler@pbxtruck.ca","2026-06-18T19:39:46Z","dkehler@pbxtruck.ca","Kayla Dubell","False","False","False"
+"21274","Bvt","H124 / H224","2026-06-20T05:00:00Z",,,"Good afternoon Wes,
+
+Could you service this set of hoppers for us this Saturday? Trailers will be on our yard tomorrow around 6pm. 
+
+We need this set to roll for Monday morning so do what you can, and we'll schedule back in for any remaining repairs if needed.
+
+H124
+2026 Lode King
+VIN 2LDAH2833TV080239
+
+H224
+2026 Lode King
+VIN 2LDAH3029TV080240
+","True","True","False",,"0","N/A","False","True","2026-06-18T20:00:37Z","wneufeld@pbxtruck.ca","2026-06-20T12:50:24Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21275","Canada Packers ","201920","2026-06-20T05:00:00Z",,,"Full service,-minor leak( hydraulic hose ),-ABS light ON,-tires need repair( driver side middle axle inner and
+passenger middle axle inner),
+","True","True","False",,"0","N/A","False","True","2026-06-18T20:09:59Z","wneufeld@pbxtruck.ca","2026-06-20T16:20:20Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21276","Canada Packers ","2402","2026-06-20T05:00:00Z",,,"Full service/ Safety (NOTE! Safety is due in July, but want it done in June, have to many units due in july),-need
+cab air filter,- broken glad hand holder,-driver side door unable to Lock using a key outside,Still have Noise at
+the steering when turning to the left
+","True","True","False",,"0","N/A","False","True","2026-06-18T20:12:37Z","wneufeld@pbxtruck.ca","2026-06-20T16:20:29Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21277","Lightway  john 431 61 7899","249","2026-07-02T05:00:00Z",,,"Rebarrel fuel tanks   remove  one tank  and keep it the truck going   ask Ron ","False","False","False",,"8","N/A","False","False","2026-06-18T22:16:40Z","wneufeld@pbxtruck.ca","2026-06-24T11:49:55Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21278","B&L Sorokowski",,"2026-06-20T05:00:00Z",,,"Service / engine codes / Retourqe AND RECHECK ALL WORK ","True","True","False",,"0","N/A","False","True","2026-06-19T11:04:40Z","wneufeld@pbxtruck.ca","2026-06-20T15:00:10Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21279","Isaac Lowen  ","284","2026-06-19T05:00:00Z",,,"Replace driver side seat belt  Used  ask ron ","True","True","False",,"0","N/A","False","True","2026-06-19T12:32:51Z","rpetkau@pbxtruck.ca","2026-06-19T15:38:10Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21280","turbo tonic ","579","2026-06-19T05:00:00Z",,,"Check complete hvac system for codes  and calibrate soft ware ","True","True","False",,"0","N/A","False","True","2026-06-19T13:30:23Z","rpetkau@pbxtruck.ca","2026-06-19T16:40:02Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21281","RUBY TRUCKING","175","2026-06-30T05:00:00Z",,,"MPI REPAIRS-- RO 128025 
+Customer -- RO 128667","False","False","False",,"0","N/A","False","False","2026-06-19T13:30:42Z","dkehler@pbxtruck.ca","2026-06-30T16:02:33Z","kdubell@pbxtruck.ca","Kayla Dubell","False","False","False"
+"21282","Canada Packers ","2203 / 202303","2026-06-19T05:00:00Z",,,"Grease job / boom light not working ","True","True","False",,"0","N/A","False","True","2026-06-19T14:00:10Z","wneufeld@pbxtruck.ca","2026-06-19T16:39:54Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21283","Trouw ","3176","2026-06-19T05:00:00Z",,,"Coolant leak --Ed in parts has the fitting ","True","True","False",,"0","N/A","False","True","2026-06-19T14:08:13Z","wneufeld@pbxtruck.ca","2026-06-19T19:24:53Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21284","Anthony  Potvin","303","2026-06-30T05:00:00Z",,,"Pick up unit from Ste agatha    truck in derate   ask ron       Mb safety inspection  /  comp[lete service 10/30  chevron oil    report to ron  
+---- CAM IS NO GOOD WE REMOVED THE ENGINE AND ARE INSPECTING TO SEE THE EXTENT OF THE DAMAGE.---   replace engine with used  ","True","False","False",,"1","N/A","False","True","2026-06-19T15:08:04Z","rpetkau@pbxtruck.ca","2026-06-29T17:59:48Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21285","Cory Smith ","227","2026-07-02T05:00:00Z",,,"Front end work 
+
+List of repaires   ron has the list  from Kevin     Front suspension shackel pins and busings      Need to pick up unit ","False","False","False",,"10","N/A","False","False","2026-06-19T16:39:45Z","wneufeld@pbxtruck.ca","2026-06-22T12:51:07Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21286","Tetrault Transport ","352","2026-06-23T05:00:00Z",,,"Engine codes ","True","True","False",,"0","N/A","False","True","2026-06-19T20:30:11Z","wneufeld@pbxtruck.ca","2026-06-23T14:22:17Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21287","Chris Klassen ","34510","2026-06-22T05:00:00Z",,,"Syncro regen ","True","True","False",,"0","N/A","False","True","2026-06-19T21:02:08Z","gkoop@pbxtruck.ca","2026-06-22T20:34:29Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21288","Lightway","237","2026-06-22T05:00:00Z",,,"Grease Trailer ","True","True","False",,"0","N/A","False","True","2026-06-19T21:27:53Z","rpetkau@pbxtruck.ca","2026-06-22T19:07:33Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21289","Pearl ","35","2026-06-20T05:00:00Z",,,"CEL Leaving monday ","True","True","False",,"0","N/A","False","True","2026-06-19T22:17:44Z","gkoop@pbxtruck.ca","2026-06-20T17:09:40Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21290","E.G","M10T1","2026-06-22T05:00:00Z",,,"could you work on the rad fan being wired direct and also a hydraulic leak coming from under the machine","True","True","False",,"-1","N/A","False","True","2026-06-19T22:40:54Z","gkoop@pbxtruck.ca","2026-06-23T18:00:44Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21291","Countryside Farms","CST20","2026-06-20T05:00:00Z",,,"Finish Safety repairs ","True","True","False",,"0","N/A","False","True","2026-06-20T11:53:24Z","wneufeld@pbxtruck.ca","2026-06-20T15:32:56Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21292","Fast Brothers ","ST218","2026-06-20T05:00:00Z",,,"Mirror issue","True","True","False",,"0","N/A","False","True","2026-06-20T15:47:49Z","wneufeld@pbxtruck.ca","2026-06-20T16:36:02Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21293","Mcvicker Fuel ",,"2026-06-23T05:00:00Z",,,"Service ","True","True","False",,"0","N/A","False","True","2026-06-20T15:48:50Z","wneufeld@pbxtruck.ca","2026-06-23T16:39:54Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21294","Trappers","1014","2026-06-30T05:00:00Z",,,"Transmission issues 
+---GOT A QUOTE FOR THE CUSTOMER, WAITING FOR AUTHORIZATION.---
+---CUSTOMER WANTS US TO IND A USED TRANSMISSION SO RAY IS LOOKING INTO IT.---
+---PULLED THE UNIT OUTSIDE WHILE WE WAIT.---","True","False","False",,"0","N/A","False","True","2026-06-22T11:30:18Z","wneufeld@pbxtruck.ca","2026-06-30T12:20:41Z","jfehr@pbxtruck.ca","James Fehr","False","False","False"
+"21296","Eagle Brook 431-205-5675","Mac","2026-06-30T05:00:00Z",,,"Check engine codes 
+
+Hard starting-Seems like the fuel is back bleeding. ","True","True","False",,"0","N/A","False","True","2026-06-22T12:33:10Z","wneufeld@pbxtruck.ca","2026-06-30T11:39:51Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21297","More Then Just Feeds","120 ","2026-06-26T05:00:00Z",,,"Hydraulic leaks all over the tank and fan and filter system   check a-z and repair properly and teste with our test unit kit                         Replace faulty emergency quick release valve  and adjust all brakes 
+-----DONE-----","True","True","False",,"0","N/A","False","True","2026-06-22T12:33:24Z","rpetkau@pbxtruck.ca","2026-06-26T22:12:55Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21298","Frank Falk ","int  truck ","2026-06-26T05:00:00Z",,,"Check and repair  for  no   Cruise Contol    but hi idle works       complete tune up on engine   verify valve cover asket before releaseing truck and make sure road test was one 
+--- REPLACING THE FAULTY TRACTOR PROTECTION VALVE ALSO.---","True","True","False",,"0","N/A","False","True","2026-06-22T13:13:15Z","rpetkau@pbxtruck.ca","2026-06-26T20:05:30Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21299","spare time custom ","567 red Pete ","2026-06-25T05:00:00Z",,,"Check and repair for engine codes     derate issues on /off    trans  codes and calibrations needed ","True","True","False",,"0","N/A","False","True","2026-06-22T13:27:09Z","rpetkau@pbxtruck.ca","2026-06-25T10:19:42Z","rpetkau@pbxtruck.ca","James Fehr","False","False","False"
+"21300","Centennial Gravel","16","2026-06-30T05:00:00Z",,,"Safety ","False","False","False",,"1","N/A","False","False","2026-06-22T14:13:42Z","wneufeld@pbxtruck.ca","2026-06-29T18:00:17Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21301","Centennial Gravel","00","2026-06-26T05:00:00Z",,,"Safety ","True","True","False",,"0","N/A","False","True","2026-06-22T14:14:00Z","wneufeld@pbxtruck.ca","2026-06-26T19:26:07Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21302","Feather Oak ","359  david ","2026-06-30T05:00:00Z",,,"Paint engine  and replace breaker on dash as per Ed loewen   check over truck A-Z ","True","False","False",,"1","N/A","False","False","2026-06-22T15:28:45Z","rpetkau@pbxtruck.ca","2026-06-29T19:01:38Z","wneufeld@pbxtruck.ca","Kayla Dubell","False","False","False"
+"21303","Canada Packers ","201921","2026-06-23T05:00:00Z",,,"Service ","True","True","False",,"0","N/A","False","True","2026-06-22T15:39:13Z","wneufeld@pbxtruck.ca","2026-06-23T21:07:56Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21304","Mike--Northern Connect 204-990-8957","2026 F/L Box truck.  ","2026-06-26T05:00:00Z",,,"Safety-No decals-Temp permit to transfer here 
+
+Info@northernconnectLTD.com 
+
+ Mike 204-230-5286","True","True","False",,"0","N/A","False","True","2026-06-22T16:53:19Z","wneufeld@pbxtruck.ca","2026-06-26T15:22:12Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21305","Isaac Bergen ",,"2026-06-22T05:00:00Z",,,"Service truck and grease trailer ","True","True","False",,"0","N/A","False","True","2026-06-22T16:56:29Z","wneufeld@pbxtruck.ca","2026-06-22T23:06:28Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21306","Canada Packers ","2011/ 201601","2026-06-23T05:00:00Z",,,"Auger motor  / grease truck and trialer ","True","True","False",,"0","N/A","False","True","2026-06-22T16:56:57Z","wneufeld@pbxtruck.ca","2026-06-23T20:02:24Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21307","Canada Packers ","1904","2026-06-23T05:00:00Z",,,"washer tank leaking / Poss service ??","True","True","False",,"0","N/A","False","True","2026-06-22T16:59:32Z","wneufeld@pbxtruck.ca","2026-06-23T14:51:47Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21308","M&M","116","2026-06-24T05:00:00Z",,,"Smokes poss injectors ","True","True","False",,"0","N/A","False","True","2026-06-22T17:00:29Z","wneufeld@pbxtruck.ca","2026-06-24T19:45:08Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21310","Windy Poplars Trucking ",,"2026-06-29T05:00:00Z",,,"Ron to road test ---Check diff's
+--- needs both diffs, eta is friday june 26th","True","True","False",,"-1","N/A","False","True","2026-06-22T19:18:04Z","wneufeld@pbxtruck.ca","2026-06-30T13:00:55Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21311","Penner Farm ","120","2026-06-24T05:00:00Z",,,"Safety ","True","True","False",,"0","N/A","False","True","2026-06-22T20:31:51Z","wneufeld@pbxtruck.ca","2026-06-24T13:19:00Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21312","surge ","22","2026-06-23T05:00:00Z",,,"raise right steering suspension with spcer from rons office and replave 4 rear shackel pins and bushings   11 am ","True","True","False",,"-1","N/A","False","True","2026-06-22T21:04:11Z","rpetkau@pbxtruck.ca","2026-06-24T11:18:52Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21313","Canada Packers ","1809 / ST56","2026-06-23T05:00:00Z",,,"Grease truck and trailer 
+
+Truck stalling out ?","True","True","False",,"0","N/A","False","True","2026-06-22T21:21:56Z","wneufeld@pbxtruck.ca","2026-06-23T21:24:04Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21314","Mcmunn","142480","2026-06-29T05:00:00Z",,,"A - Service ","True","True","False",,"0","N/A","False","True","2026-06-23T12:52:09Z","wneufeld@pbxtruck.ca","2026-06-29T19:00:28Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21315","Countryside Farms","CSR23 / CST23","2026-06-23T05:00:00Z",,,"Check reefer codes / abs codes ","True","True","False",,"0","N/A","False","True","2026-06-23T14:16:42Z","wneufeld@pbxtruck.ca","2026-06-23T21:09:31Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21316","Canada Packers ","1808","2026-06-23T05:00:00Z",,,"Electrical issues ","True","True","False",,"0","N/A","False","True","2026-06-23T14:56:10Z","wneufeld@pbxtruck.ca","2026-06-23T18:01:11Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21317","Canada Packers ","2009","2026-06-25T05:00:00Z",,,"Service ","True","True","False",,"0","N/A","False","True","2026-06-23T15:30:16Z","wneufeld@pbxtruck.ca","2026-06-25T20:03:32Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21318","Mcmunn","301106","2026-06-25T05:00:00Z",,,"Service ","True","True","False",,"0","N/A","False","True","2026-06-23T17:58:29Z","wneufeld@pbxtruck.ca","2026-06-25T21:34:06Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21319","E.G","95","2026-06-24T05:00:00Z",,,"Valve issue ?/?/
+
+
+Service line on the right side leaking/Worn-4 way switch hard to turn off some times? 5th wheel slide air hose is broken-
+---WAITING ON PARTS, SPIDER, S-CAM TUBE AND S-CAM, ALSO WAITING FOR HAZARD SWITCH HAVE A SPARE IN TEMPERARLY.","True","True","False",,"-1","N/A","False","True","2026-06-23T18:03:37Z","wneufeld@pbxtruck.ca","2026-06-25T10:54:07Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21320","Canada Packers ","1906","2026-06-23T05:00:00Z",,,"Driver side fender ","True","True","False",,"0","N/A","False","True","2026-06-23T18:23:03Z","wneufeld@pbxtruck.ca","2026-06-23T21:42:43Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21321","Countryside Farms","CSU32 /CST31","2026-06-24T05:00:00Z",,,"Aie leak / tail-gate issues","True","True","False",,"0","N/A","False","True","2026-06-23T18:55:04Z","wneufeld@pbxtruck.ca","2026-06-24T22:19:14Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21322","Pearl ","50 and 70","2026-06-23T05:00:00Z",,,"Swap ECM from 50 to 70","False","True","False",,"-1","N/A","False","False","2026-06-23T19:18:02Z","gkoop@pbxtruck.ca","2026-06-24T21:11:07Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21323","Canada Packers ","2500","2026-06-24T05:00:00Z",,,"Full service, sometimes shows fault codes, like predictive cruise fault, engine light on.","True","True","False",,"-1","N/A","False","True","2026-06-23T19:42:55Z","wneufeld@pbxtruck.ca","2026-06-25T10:53:48Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21324","Leighlee Farms",,"2026-06-26T05:00:00Z",,,"Oil leak ??   pto ??","True","True","False",,"0","N/A","False","True","2026-06-23T20:48:48Z","wneufeld@pbxtruck.ca","2026-06-26T17:50:46Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21325","More Then Just Feeds","Box Truck ","2026-06-27T05:00:00Z",,,"Coolant leak leak --rad ?  / a/c 
+---TRUCK IS IN THE SHOP AT 11:30 AM JUNE 26TH THE RAD IS IN THE BOX OF THE TRUCK AND THE CONDENSOR IS IN PARTS----","True","True","False",,"-2","N/A","False","True","2026-06-23T20:55:29Z","wneufeld@pbxtruck.ca","2026-06-29T10:29:11Z","rpetkau@pbxtruck.ca","James Fehr","False","False","False"
+"21326","Canada Packers ","201601","2026-06-24T05:00:00Z",,,"Safety","True","True","False",,"0","N/A","False","True","2026-06-23T21:03:11Z","wneufeld@pbxtruck.ca","2026-06-24T16:17:44Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21327","Daryle Smith","440","2026-06-24T05:00:00Z",,,"#5 Injector fault   new injector order under warranty  with Ray ","True","True","False",,"0","N/A","False","True","2026-06-23T21:27:54Z","rpetkau@pbxtruck.ca","2026-06-24T21:12:03Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21328","Chris Klassen 204-381-1470","Kenworth ","2026-06-24T05:00:00Z",,,"7 am   lambda sensor fault ","True","True","False",,"0","N/A","False","True","2026-06-23T21:29:58Z","rpetkau@pbxtruck.ca","2026-06-24T19:15:30Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21329","Westroc",,"2026-06-29T05:00:00Z",,,"Injector # 3  issues  ask  Ron     waiting on customer ","True","False","False",,"0","N/A","False","True","2026-06-23T22:41:08Z","gkoop@pbxtruck.ca","2026-06-29T10:31:15Z","rpetkau@pbxtruck.ca","David Reimer","False","False","False"
+"21330","Northsouth",,"2026-06-24T05:00:00Z",,,"Abs light on 
+
+no show ","True","True","False",,"0","N/A","False","True","2026-06-24T10:56:25Z","wneufeld@pbxtruck.ca","2026-06-24T21:11:54Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21331","Canada Packers ","2203","2026-06-24T05:00:00Z",,,"Service Call to 305  DPW  farm   o replace main Hydraulic hoses from the pump to the discharge manifold    waylon ","True","True","False",,"0","N/A","False","True","2026-06-24T10:56:33Z","rpetkau@pbxtruck.ca","2026-06-24T16:08:50Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21332","Light way ","3406 E  ","2026-06-24T05:00:00Z",,,"Check and repair for fuel pressure and bleeding off  issues   ask ron ","True","True","False",,"0","N/A","False","True","2026-06-24T10:57:41Z","rpetkau@pbxtruck.ca","2026-06-24T13:18:23Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21333","Countryside Farms","CST29 / CSR29","2026-06-26T05:00:00Z",,,"Safety trailer 
+Service reefer ","True","True","False",,"0","N/A","False","True","2026-06-24T13:41:37Z","wneufeld@pbxtruck.ca","2026-06-26T18:19:29Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21334","Sunrise Chick","Reefer","2026-06-25T05:00:00Z",,,"Check for reefer not starting","True","True","False",,"0","N/A","False","True","2026-06-24T14:01:22Z","gkoop@pbxtruck.ca","2026-06-25T12:34:53Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21335","C.N Donovan 431-791-4420","275311","2026-06-30T05:00:00Z",,,"Check for unit in derate
+
+Outriger leg fell out?
+---- DEF PUMP HAS BEEN ORDERED BY CHANCE HE WAS INSTRUCTED TO FLY THE PART IN. JUNE  OUTRIGGER NEEDS A NEW PIN ORDERED. 
+-----DEF PUMP IS HERE--- 6/29/2026","True","False","False",,"1","N/A","False","True","2026-06-24T14:28:22Z","gkoop@pbxtruck.ca","2026-06-29T19:57:54Z","jfehr@pbxtruck.ca","James Fehr","False","False","False"
+"21336","Tim Klassen",,"2026-06-26T05:00:00Z",,,"Transmission cooler leaking --We just installed 
+-there is also a txv ordered for this unit eta monday possibly tuesday---","True","True","False",,"0","N/A","False","True","2026-06-24T15:29:04Z","wneufeld@pbxtruck.ca","2026-06-26T19:25:45Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21337","Northsouth",,"2026-06-29T05:00:00Z",,,"Repair landing gear issue     Mike steffenson 
+------DONE---- SENT TO THE WASH BAY.","True","True","False",,"0","N/A","False","True","2026-06-24T15:49:19Z","wneufeld@pbxtruck.ca","2026-06-29T20:20:13Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21338","C. Falk",,"2026-06-25T05:00:00Z",,,"Check engine codes 
+
+no show ","False","True","False",,"0","N/A","False","False","2026-06-24T16:09:19Z","wneufeld@pbxtruck.ca","2026-06-25T20:03:22Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21340","Canada Packers ","ST56","2026-06-24T05:00:00Z",,,"Chain issues ","True","True","False",,"0","N/A","False","True","2026-06-24T16:59:57Z","wneufeld@pbxtruck.ca","2026-06-24T23:17:09Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21341","Daryle Smith","387","2026-06-24T05:00:00Z",,,"Install a estra Front suspension leveling valve ","True","True","False",,"-1","N/A","False","False","2026-06-24T18:17:01Z","rpetkau@pbxtruck.ca","2026-06-25T10:18:39Z","rpetkau@pbxtruck.ca",,"False","False","False"
+"21342","Niverville Towing ","F650","2026-06-25T05:00:00Z",,,"King pins","True","True","False",,"0","N/A","False","True","2026-06-24T19:45:46Z","gkoop@pbxtruck.ca","2026-06-25T21:33:30Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21343","Name  ???",,"2026-06-30T05:00:00Z",,,"CECU issues Need more information ","True","True","False",,"1","N/A","False","True","2026-06-24T20:53:24Z","wneufeld@pbxtruck.ca","2026-06-29T11:15:02Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21344","Peter Funk ","International ","2026-06-25T05:00:00Z",,,"repair loud exhaust    and etune enegine ","True","True","False",,"0","N/A","False","True","2026-06-25T10:22:19Z","rpetkau@pbxtruck.ca","2026-06-25T20:03:04Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21345","Frank Falk ","White KW","2026-06-30T05:00:00Z",,,"Mb safety Inspection   no repaires   
+--- WE ARE CURRENTLY DOING REPAIRS.---
+---DONE---","True","True","False",,"0","N/A","False","True","2026-06-25T10:24:00Z","rpetkau@pbxtruck.ca","2026-06-30T11:39:39Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21346","Peter Neufeld arborg ","MPI ","2026-06-30T05:00:00Z",,,"MPI  claim  77748366           # 78212304         service Call to arborg to inspect truck   waylon 
+
+Waiting for MPI verdict","False","False","False",,"0","N/A","False","False","2026-06-25T10:26:22Z","rpetkau@pbxtruck.ca","2026-06-30T15:48:20Z","wpetkau@pbxtruck.ca","Kayla Dubell","False","False","False"
+"21347","Fast Brothers ","ST216","2026-06-25T05:00:00Z",,,"adjust speed  limit settings  on air suspension dump mode    p/u and d/l ","True","True","False",,"0","N/A","False","False","2026-06-25T10:58:33Z","rpetkau@pbxtruck.ca","2026-06-25T20:03:57Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21348","Fast Brothers ","Big Low bed ","2026-06-27T05:00:00Z",,,"Pick up Low bed and perform safety inspection   and report ","True","True","False",,"1","N/A","False","True","2026-06-25T10:59:50Z","rpetkau@pbxtruck.ca","2026-06-26T23:01:34Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21349","Farmer 4 Farmer ","04","2026-07-02T05:00:00Z",,,"Touch up paint around the stack mounts, fender straps and dash panel","True","False","False",,"3","N/A","False","True","2026-06-25T13:16:33Z","kdubell@pbxtruck.ca","2026-06-29T22:33:18Z","rpetkau@pbxtruck.ca","Kayla Dubell","False","False","False"
+"21350","walinga  carmen ","6318","2026-06-30T05:00:00Z",,,"Complete polish and interior done  / customer  says make the truck look new ","True","False","False",,"1","N/A","False","True","2026-06-25T13:33:35Z","rpetkau@pbxtruck.ca","2026-06-29T19:00:10Z","wneufeld@pbxtruck.ca","Brooke Penney","False","False","False"
+"21351","Canada Packers ","2406","2026-06-26T05:00:00Z",,,"Safety  /Valve set ","True","True","False",,"0","N/A","False","True","2026-06-25T16:15:23Z","wneufeld@pbxtruck.ca","2026-06-26T21:53:44Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21352","Heath Finch 204-260-9953","PT227","2026-06-30T05:00:00Z",,,"Safety-Grain trailer
+
+
+
+
+","True","True","False",,"0","N/A","False","True","2026-06-25T18:31:30Z","gkoop@pbxtruck.ca","2026-06-30T14:59:36Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21353","Heath Finch 204-260-9953","Truck","2026-07-02T05:00:00Z",,,"Safety ","False","False","False",,"7","N/A","False","False","2026-06-25T18:32:06Z","gkoop@pbxtruck.ca","2026-06-25T18:32:06Z","gkoop@pbxtruck.ca",,"False","False","False"
+"21354","Canada Packers ","2407 / 2017-03","2026-06-29T05:00:00Z",,,"Service   coming towards end of day picking up monday at noon 
+
+NEED CAR ","True","True","False",,"0","N/A","False","True","2026-06-25T19:17:52Z","wneufeld@pbxtruck.ca","2026-06-29T19:03:02Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21355","clarence Falk ","T680","2026-06-27T05:00:00Z",,,"Check Preditive cruise  radar  calibration  an check ack pressure alve and report to customer ","True","True","False",,"-2","N/A","False","False","2026-06-25T21:43:17Z","rpetkau@pbxtruck.ca","2026-06-29T10:28:01Z","rpetkau@pbxtruck.ca",,"False","False","False"
+"21356","Roseridge","D223","2026-06-27T05:00:00Z",,,"Repair lights / check traile cord / center axle tires ","True","True","False",,"-2","N/A","False","True","2026-06-25T22:00:35Z","wneufeld@pbxtruck.ca","2026-06-29T10:54:52Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21357","Diamond Construction","529","2026-06-26T05:00:00Z",,,"Engine codes ","True","True","False",,"0","N/A","False","True","2026-06-25T22:06:47Z","wneufeld@pbxtruck.ca","2026-06-26T19:25:28Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21358","Canada Packers ","201902","2026-06-26T05:00:00Z",,,"Waiting for email / Service ","True","True","False",,"0","N/A","False","True","2026-06-25T22:11:01Z","wneufeld@pbxtruck.ca","2026-06-26T21:52:07Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21359","Canada Packers ","201802","2026-06-27T05:00:00Z",,,"Waiting for email  /Service","True","True","False",,"-2","N/A","False","True","2026-06-25T22:11:35Z","wneufeld@pbxtruck.ca","2026-06-29T10:54:44Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21360","JNR Farms",,"2026-06-30T05:00:00Z",,,"Safety truck and trialer ","True","False","False",,"1","N/A","False","True","2026-06-26T11:21:45Z","wneufeld@pbxtruck.ca","2026-06-29T19:00:01Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21361","Cory Dyck",,"2026-06-26T05:00:00Z",,,"Turbo 
+---DONE--- NEW TURBO,AIR TO AIR AND NEW ENGINE AIR FILTERS. ALL INTAKE PIPES AND AIR TO AIR PIPES WERE CLEANED OUT.","True","True","False",,"0","N/A","False","True","2026-06-26T11:47:43Z","wneufeld@pbxtruck.ca","2026-06-26T16:10:25Z","jfehr@pbxtruck.ca","James Fehr","False","False","False"
+"21362","Novid ","714","2026-06-30T05:00:00Z",,,"A/C line--Part here 
+---AC LINES DAMAGED AND SENT TO ALL TEMP TO SEE IF THEY CAN REPAIR THEM.","True","False","False",,"1","N/A","False","True","2026-06-26T13:50:07Z","wneufeld@pbxtruck.ca","2026-06-29T21:16:57Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21363","TyToe Construction Art-431-335-5670","PX8","2026-06-29T05:00:00Z",,,"CEL-Truck smoking-Cust thinks issues with tune","True","True","False",,"-1","N/A","False","True","2026-06-26T14:13:59Z","gkoop@pbxtruck.ca","2026-06-30T10:45:40Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21364","CLOSED","CLOSED","2026-07-01T05:00:00Z",,,"CLOSED","False","False","False",,"5","N/A","False","True","2026-06-26T14:14:30Z","gkoop@pbxtruck.ca","2026-06-26T14:14:45Z","gkoop@pbxtruck.ca",,"False","False","False"
+"21365","Richard B.",,"2026-06-27T05:00:00Z",,,"Service   10/30 chevron and oil filter no fuel filters ","True","True","False",,"-2","N/A","False","True","2026-06-26T16:14:30Z","wneufeld@pbxtruck.ca","2026-06-29T10:27:43Z","rpetkau@pbxtruck.ca","David Reimer","False","False","False"
+"21366","QUINONES TRANSPORT LTD","6033","2026-06-26T05:00:00Z",,,"Truck pulling to the left after replacing L steer brake drum-LRD air bag sitting crooked-Check and report.    ","True","True","False",,"0","N/A","False","True","2026-06-26T18:04:41Z","gkoop@pbxtruck.ca","2026-06-26T20:43:24Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21367","Flex Hauling-Martin-204-392-0695","28","2026-06-30T05:00:00Z",,,"Main hydraulic cylinder leaking ","True","False","False",,"1","N/A","False","True","2026-06-26T18:29:10Z","gkoop@pbxtruck.ca","2026-06-29T20:58:15Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21368","Diamond Construction","516","2026-06-30T05:00:00Z",,,"Engine codes ","True","False","False",,"1","N/A","False","True","2026-06-26T19:23:30Z","wneufeld@pbxtruck.ca","2026-06-29T18:59:51Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21369","Pearl ","55","2026-06-30T05:00:00Z",,,"Fuel filter gauge  / APU will not start ","True","False","False",,"1","N/A","False","True","2026-06-26T20:14:03Z","wneufeld@pbxtruck.ca","2026-06-29T21:23:26Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21370","Canada Packers ","1809 /ST56","2026-06-29T05:00:00Z",,,"Check codes --Air fliter codes ??  / Drvier side mirror sticks 
+Trailer --Right rear inner tail-light not working at times 
+Boom cylinder leaking report ","True","True","False",,"0","N/A","False","True","2026-06-26T22:24:57Z","wneufeld@pbxtruck.ca","2026-06-29T19:02:20Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21371","Mcmunn","302207","2026-06-30T05:00:00Z",,,"Service / inspect damage ","True","False","False",,"1","N/A","False","True","2026-06-26T22:35:03Z","wneufeld@pbxtruck.ca","2026-06-29T20:57:21Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21372","Darren Schroder ","Yellow KW ","2026-06-30T05:00:00Z",,,"Check over A/C-A-Z-Check cab fan cust reports cutting in and out-Check drive line angle-7/11   remove Fridge and get it fixed by berts ","True","False","False",,"1","N/A","False","True","2026-06-27T12:35:04Z","gkoop@pbxtruck.ca","2026-06-29T22:34:21Z","rpetkau@pbxtruck.ca","David Reimer","False","False","False"
+"21373","Penner International","33590","2026-06-29T05:00:00Z",,,"Injector cut out test ","True","True","False",,"0","N/A","False","True","2026-06-29T10:56:55Z","wneufeld@pbxtruck.ca","2026-06-29T14:57:17Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21374","Bvt","H103/H203","2026-06-30T05:00:00Z",,,"Replace tarp -Customer supplied 
+
+at Norm's Shop","True","True","False",,"0","N/A","False","True","2026-06-29T11:21:03Z","wneufeld@pbxtruck.ca","2026-06-30T13:00:13Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21375","Tim Klassen","kw ","2026-06-29T05:00:00Z",,,"a/c 
+---LINE IS OUT AT ALL TEMP WE HAVE NOT GOT IT BACK YET AS OF 11:15 AM JUNE 29.--
+LINE IS BACK AND ED IS CURRENTLY INTASLLING IT. 2:30","True","True","False",,"0","N/A","False","True","2026-06-29T11:23:06Z","rpetkau@pbxtruck.ca","2026-06-29T21:16:41Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21377","Isaac Loewen","393","2026-06-30T05:00:00Z",,,"Check transmission codes ","True","False","False",,"1","N/A","False","True","2026-06-29T11:42:10Z","wneufeld@pbxtruck.ca","2026-06-29T18:52:00Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21378","Bristal-204-408-4267","FL2623","2026-07-02T05:00:00Z",,,"Safety","False","False","False",,"3","N/A","False","False","2026-06-29T12:31:18Z","wneufeld@pbxtruck.ca","2026-06-29T12:31:18Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21379","Eg Penner ","56","2026-07-03T05:00:00Z",,,"Service 
+
+po# 310147","False","False","False",,"4","N/A","False","False","2026-06-29T13:06:25Z","wneufeld@pbxtruck.ca","2026-06-29T13:06:25Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21380","Mike Fehr ","6004","2026-07-04T05:00:00Z",,,"Full service-3L of coolant added in the last 2 weeks-Cust can smell coolant in the cab. ","False","False","False",,"5","N/A","False","False","2026-06-29T14:04:32Z","gkoop@pbxtruck.ca","2026-06-29T14:04:32Z","gkoop@pbxtruck.ca",,"False","False","False"
+"21381"," Gord Voth ",,"2026-06-30T05:00:00Z",,,"Safety trailer / Service reefer ","True","False","False",,"1","N/A","False","True","2026-06-29T14:35:30Z","wneufeld@pbxtruck.ca","2026-06-29T20:20:56Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21382","Countryside Farms","CSR15","2026-06-30T05:00:00Z",,,"Check codes ","True","False","False",,"1","N/A","False","True","2026-06-29T14:36:00Z","wneufeld@pbxtruck.ca","2026-06-29T20:57:51Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21383","Niverville  Towing ","DD 2023","2026-06-30T05:00:00Z",,,"Safety-Park brake not holding-Cruise and high idel not working. ","True","False","False",,"1","N/A","False","True","2026-06-29T14:57:40Z","gkoop@pbxtruck.ca","2026-06-29T20:22:01Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21384","Green Prairie","KW","2026-06-29T05:00:00Z",,,"Check over engine-Cust reports water temp got to 250C
+---CURRENTLY REPLACING THE THERMOSTAT AND WILL RECHECK TEMPS AFTER.--- THE ROAD TEST WAS GOOD, HAD THE UNIT OUTSIDE RUNNING FOR 4 HOURS AND TEMPS ALL SEEM NORMAL, AND FAN OPERATES AS IT SHOULD.","True","True","False",,"0","N/A","False","True","2026-06-29T15:07:22Z","gkoop@pbxtruck.ca","2026-06-29T21:16:33Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21385","Grunthal Cartage ",,"2026-07-04T05:00:00Z",,,"Safety ","False","False","False",,"5","N/A","False","False","2026-06-29T15:21:07Z","wneufeld@pbxtruck.ca","2026-06-29T15:21:07Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21386","Canada Packers ","201601","2026-06-29T05:00:00Z",,,"Service call to repair hyd leak
+
+Customer is  brining trailer here to PBX  to see why trauf aguer not working ","True","True","False",,"0","N/A","False","True","2026-06-29T15:23:36Z","wneufeld@pbxtruck.ca","2026-06-29T18:59:12Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21387","Ernie Harder ",,"2026-06-30T05:00:00Z",,,"Adjust clutch ","True","False","False",,"0","N/A","False","True","2026-06-29T16:18:52Z","wneufeld@pbxtruck.ca","2026-06-30T12:37:45Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21388","Mcmunn","302402","2026-06-29T05:00:00Z",,,"Mux bank leaking ","True","True","False",,"0","N/A","False","True","2026-06-29T16:24:24Z","wneufeld@pbxtruck.ca","2026-06-29T19:01:15Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21389","Eg Penner ","74 / 202","2026-07-03T05:00:00Z",,,"Service truck and trailer 
+
+Good morning,
+
+Could we book in 74 & 202 for full services on Friday July 3?
+
+Truck also needs 3 brake pots replaced (Not RRD...done June 6)
+
+74 PO 310177
+202 PO 310184
+","False","False","False",,"4","N/A","False","False","2026-06-29T16:45:26Z","wneufeld@pbxtruck.ca","2026-06-29T16:45:26Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21390","Peter Wiebe ","DDEC 5","2026-06-29T05:00:00Z",,,"soft ware up date on Egr     2 pm ","True","True","False",,"0","N/A","False","True","2026-06-29T16:53:42Z","rpetkau@pbxtruck.ca","2026-06-29T21:46:44Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21391","Canada Packers ","201918","2026-06-30T05:00:00Z",,,"Full service, disinfectant gladhand broken, floor guide plastic coming out, ,need change cylinders,,NOTE! this
+one has the auto oilers on, but when PBX but the auto oilers on this Trailer, they did not change the broken air
+cylinders. I would like to see all the cylinders working properly to see if they will last longer with the auto oilers.
+","False","False","False",,"1","N/A","False","False","2026-06-29T16:53:57Z","wneufeld@pbxtruck.ca","2026-06-29T21:16:16Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21392","Peter Loewen ","Pete 2020 ","2026-06-29T05:00:00Z",,,"Check codes  1  pm   and report ","True","True","False",,"0","N/A","False","False","2026-06-29T16:56:49Z","rpetkau@pbxtruck.ca","2026-06-29T22:18:52Z","rpetkau@pbxtruck.ca","David Reimer","False","False","False"
+"21393","DR Hauling ",,"2026-07-02T05:00:00Z",,,"Safety trailer ","False","False","False",,"3","N/A","False","False","2026-06-29T16:58:13Z","wneufeld@pbxtruck.ca","2026-06-29T16:58:13Z","wneufeld@pbxtruck.ca",,"False","False","False"
+"21394","Canada Packers ","1910","2026-06-29T05:00:00Z",,,"Mud flap / heater knob/ fog light/ right rear brake pot / grease job / torque all wheels.","True","True","False",,"0","N/A","False","True","2026-06-29T17:58:10Z","wneufeld@pbxtruck.ca","2026-06-29T21:13:48Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21395","M & M ","124","2026-06-30T05:00:00Z",,,"Derate ","True","False","False",,"0","N/A","False","True","2026-06-29T18:01:26Z","gkoop@pbxtruck.ca","2026-06-30T13:01:19Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21396","Canada Packers ","1810","2026-06-30T05:00:00Z",,,"AC not working ","False","False","False",,"0","N/A","False","False","2026-06-29T21:24:14Z","wneufeld@pbxtruck.ca","2026-06-30T15:50:49Z","jfehr@pbxtruck.ca","James Fehr","False","False","False"
+"21397","spare Time customes ","389 pete ","2026-06-30T05:00:00Z",,,"Check and repair for complete Fuel issues /  blows o rings on primary fuel filter  ask Ron   x15 cummins ","True","False","False",,"1","N/A","False","False","2026-06-30T00:06:10Z","rpetkau@pbxtruck.ca","2026-06-30T00:14:12Z","rpetkau@pbxtruck.ca",,"False","False","False"
+"21398","Jake & M  ","120","2026-06-30T05:00:00Z",,,"Coolant leaks   truck is being Towed in    ask ron   water in the rad  alread y dump and flush and put in new coolant after rep[airs are done ","True","False","False",,"0","N/A","False","True","2026-06-30T00:21:15Z","rpetkau@pbxtruck.ca","2026-06-30T12:37:28Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21399","Fast Brothers ","ST217","2026-06-30T05:00:00Z",,,"Codes for injectors  issues   ask ron     work ordered made already ","True","False","False",,"0","N/A","False","True","2026-06-30T11:47:38Z","rpetkau@pbxtruck.ca","2026-06-30T13:01:39Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21400","wesrock","389 cummins ","2026-06-30T05:00:00Z",,,"Major Fuel pressure issues  / keeps blowing filter orings on primary and secindary  and runs like no bueno  /  Note engine was overhauled 5000 ks ago     talk to Ron ","True","False","False",,"0","N/A","False","False","2026-06-30T12:05:09Z","rpetkau@pbxtruck.ca","2026-06-30T12:05:09Z","rpetkau@pbxtruck.ca",,"False","False","False"
+"21401"," Gord Voth ",,"2026-06-30T05:00:00Z",,,"Install bumper ","True","False","False",,"0","N/A","False","True","2026-06-30T12:38:09Z","wneufeld@pbxtruck.ca","2026-06-30T13:01:07Z","wneufeld@pbxtruck.ca","James Fehr","False","False","False"
+"21402","Ed 204-392-5517","443","2026-07-06T05:00:00Z",,,"Full service-CEL- DPG filter-Check rads clean if needed-Check A/C ","False","False","False",,"6","N/A","False","False","2026-06-30T13:34:34Z","gkoop@pbxtruck.ca","2026-06-30T13:34:34Z","gkoop@pbxtruck.ca",,"False","False","False"
+"21404","Sunrise","17","2026-06-30T05:00:00Z",,,"Oil change-Door locks-Welding on the chick box-","True","False","False",,"0","N/A","False","True","2026-06-30T13:57:18Z","gkoop@pbxtruck.ca","2026-06-30T15:01:20Z","wneufeld@pbxtruck.ca","David Reimer","False","False","False"
+"21405","Canada Packers","201604","2026-06-30T05:00:00Z",,"2026-07-03T05:00:00Z","Rollover accident repairs etc","True","False","False",,"0","N/A","False","False","2026-06-30T14:56:41Z","wpetkau@pbxtruck.ca","2026-06-30T15:54:05Z","wpetkau@pbxtruck.ca","Walter Wiens","False","True","False"
+"21406","Spruce Products","23a","2026-06-30T05:00:00Z",,"2026-07-10T05:00:00Z","Complete structural and mechanical inspection","True","False","False",,"0","N/A","False","False","2026-06-30T14:57:55Z","wpetkau@pbxtruck.ca","2026-06-30T14:58:12Z","wpetkau@pbxtruck.ca","Walter Wiens","False","True","False"
+"21407","Suds","Fuel Tank","2026-06-25T05:00:00Z",,"2026-07-31T05:00:00Z","Repair fuel tank","False","False","False",,"-5","N/A","False","False","2026-06-30T15:00:10Z","wpetkau@pbxtruck.ca","2026-06-30T15:00:10Z","wpetkau@pbxtruck.ca","Walter Wiens","False","True","False"
+"21408","Canada Packers ","2202","2026-06-30T05:00:00Z",,,"Check engine codes ","True","False","False",,"0","N/A","False","True","2026-06-30T15:19:43Z","wneufeld@pbxtruck.ca","2026-06-30T15:19:43Z","wneufeld@pbxtruck.ca","Triage (Todd)","False","False","False"
+"21409","K & S Lathing",,"2026-07-06T05:00:00Z",,,"Fabricate grave shoring","False","False","False",,"6","N/A","False","False","2026-06-30T16:08:36Z","wpetkau@pbxtruck.ca","2026-06-30T16:08:52Z","wpetkau@pbxtruck.ca","Walter Wiens","False","True","False"
+"21410","Canada Packers (Niverville)","Rollers","2026-07-06T05:00:00Z",,,"Diagnose new roller (seized after 15 muntes of use)","False","False","False",,"6","N/A","False","False","2026-06-30T16:10:24Z","wpetkau@pbxtruck.ca","2026-06-30T16:10:24Z","wpetkau@pbxtruck.ca","Walter Wiens","False","False","False"

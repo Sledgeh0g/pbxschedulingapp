@@ -6,18 +6,43 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 import { supabase } from './supabaseClient'
+import { departmentColors } from './mapTaskToEvent'
 import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
 
 const CONTRACT_CUSTOMERS = ['canada packers', 'trouw nutrition']
-const STATUS_ORDER = { queued: 0, confirmed: 1, completed: 2 }
+const STATUS_ORDER = { queued: 0, completed: 2 }
 const PRIORITY_ORDER = { urgent: 0, end_of_day: 1, scheduled: 2 }
 
 const columns = [
   { accessorKey: 'customer', header: 'Customer' },
   { accessorKey: 'unit', header: 'Unit' },
   { accessorKey: 'service_date', header: 'Service Date' },
-  { accessorKey: 'department', header: 'Department' },
+  {
+    accessorKey: 'department',
+    header: 'Department',
+    filterFn: 'arrIncludes',
+    cell: ({ row }) => {
+      const depts = Array.isArray(row.getValue('department')) ? row.getValue('department') : [];
+      return (
+        <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap' }}>
+          {depts.map(dept => (
+            <span key={dept} style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px' }}>
+              <span style={{
+                display: 'block',
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                backgroundColor: departmentColors[dept] || '#999',
+                flexShrink: 0,
+              }} />
+              {dept}
+            </span>
+          ))}
+        </div>
+      );
+    },
+  },
   {
     accessorKey: 'status',
     header: 'Status',

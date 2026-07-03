@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
-import { mapTaskToEvent } from './mapTaskToEvent';
+import { mapTaskToEvent, departmentColors } from './mapTaskToEvent';
 import TaskForm from './TaskForm';
 
 export default function EditDetailModal({
@@ -34,7 +34,7 @@ export default function EditDetailModal({
       service_date: event.startStr || '',
       status: props.status || '',
       priority: props.priority || 'scheduled',
-      department: props.department || '',
+      department: props.department || [],
       complaint: props.complaint || '',
     });
     setIsEditing(false);
@@ -134,7 +134,23 @@ export default function EditDetailModal({
               </div>
               <div className="task-detail-row">
                 <span className="task-detail-label">Department</span>
-                <span className="task-detail-value">{props.department}</span>
+                <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
+                  {(Array.isArray(props.department) ? props.department : [props.department]).filter(Boolean).map(dept => (
+                    <span
+                      key={dept}
+                      style={{
+                        display: 'inline-block',
+                        padding: '2px 8px',
+                        borderRadius: '12px',
+                        fontSize: '12px',
+                        backgroundColor: departmentColors[dept] || '#999',
+                        color: 'white',
+                      }}
+                    >
+                      {dept}
+                    </span>
+                  ))}
+                </div>
               </div>
               <div className="task-detail-row task-detail-row--complaint">
                 <span className="task-detail-label">Complaint</span>
