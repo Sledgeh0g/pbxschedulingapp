@@ -8,6 +8,7 @@ const DEPARTMENTS = [
   { value: 'old shop',  label: 'Old Shop' },
   { value: 'new shop',  label: 'New Shop' },
   { value: 'triage',    label: 'Triage' },
+  { value: 'mobile service', label: 'Mobile Serv.' },
 ];
 
 export default function TaskForm({

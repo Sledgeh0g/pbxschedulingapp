@@ -14,6 +14,7 @@ export default function DepartmentSelect({ selectedDepartment, setSelectedDepart
       <option value="body shop">Body Shop</option>
       <option value="triage">Triage</option>
       <option value="unassigned">Unassigned</option>
+      <option value="mobile service">Mobile Serv.</option>
     </select>
   );
 }

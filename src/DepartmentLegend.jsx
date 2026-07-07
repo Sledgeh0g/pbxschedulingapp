@@ -8,6 +8,7 @@ const DEPARTMENTS = [
   { value: 'triage',    label: 'Triage' },
   { value: 'old shop',  label: 'Old Shop' },
   { value: 'new shop',  label: 'New Shop' },
+  { value: 'mobile service',    label: 'Mobile Serv.' },
 ];
 
 export default function DepartmentLegend() {

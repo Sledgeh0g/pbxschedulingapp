@@ -12,6 +12,7 @@ const departmentColors = {
   'triage':     '#ec4899',
   'old shop':   '#1e3a5f',
   'new shop':   '#eab308',
+  'mobile service': '#000000',
 };
 
 // keep old name as alias so existing imports don't break

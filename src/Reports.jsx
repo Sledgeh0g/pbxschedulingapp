@@ -10,7 +10,7 @@ import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
 import { generateWorkOrderReport } from './generateWorkOrderReport'
 
-const DEPARTMENTS = ['warranty', 'wash bay', 'welding', 'body shop', 'old shop', 'new shop', 'triage']
+const DEPARTMENTS = ['warranty', 'wash bay', 'welding', 'body shop', 'old shop', 'new shop', 'triage', 'mobile service']
 
 const columns = [
   { accessorKey: 'customer', header: 'Customer' },
