@@ -419,6 +419,38 @@ button:hover {
   border-radius: 4px;
 }
 
+.customer-field {
+  position: relative;
+}
+
+.customer-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: -12px;
+  margin-bottom: 12px;
+  padding: 4px 0;
+  list-style: none;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  max-height: 160px;
+  overflow-y: auto;
+  z-index: 1002;
+}
+
+.customer-suggestions li {
+  padding: 8px 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.customer-suggestions li:hover {
+  background: #f0f0f0;
+}
+
 /* Make the two buttons sit side by side nicely */
 .modal-buttons {
   display: flex;

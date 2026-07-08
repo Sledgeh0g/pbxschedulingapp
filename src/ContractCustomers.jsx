@@ -62,7 +62,7 @@ function sortByPriority(tasks) {
   })
 }
 
-export default function ContractCustomers({ formData, setFormData, appSetEvents, searchTerm, selectedDepartment }) {
+export default function ContractCustomers({ formData, setFormData, appSetEvents, searchTerm, selectedDepartment, customerOptions }) {
   const [tasks, setTasks] = useState([])
   const [columnFilters, setColumnFilters] = useState([])
   const [selectedTask, setSelectedTask] = useState(null)
@@ -181,6 +181,7 @@ export default function ContractCustomers({ formData, setFormData, appSetEvents,
           setTasks(prev => prev.filter(t => String(t.id) !== String(id)))
         }}
         mapTaskToEvent={mapTaskToEvent}
+        customerOptions={customerOptions}
       />
     </div>
   )

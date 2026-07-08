@@ -11,7 +11,8 @@ export default function EditDetailModal({
   setFormData,
   setEvents,
   onDelete,
-  mapTaskToEvent: mapTaskToEventProp
+  mapTaskToEvent: mapTaskToEventProp,
+  customerOptions
 }) {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -87,6 +88,7 @@ export default function EditDetailModal({
             title="Edit Task"
             submitLabel="Save Changes"
             buttonsAlign="right"
+            customerOptions={customerOptions}
           />
         ) : (
           <div className="task-detail-view">

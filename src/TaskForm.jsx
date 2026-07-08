@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { departmentColors } from './mapTaskToEvent';
 
 const DEPARTMENTS = [
@@ -18,13 +19,28 @@ export default function TaskForm({
   onCancel,
   title = "Add Task",
   submitLabel = "Save",
-  buttonsAlign = "center"
+  buttonsAlign = "center",
+  customerOptions = []
 }) {
+  const [showCustomerSuggestions, setShowCustomerSuggestions] = useState(false);
+
   const handleChange = (field) => (e) => {
     setForm({ ...form, [field]: e.target.value });
   };
 
   const currentDepts = Array.isArray(form.department) ? form.department : [];
+
+  const customerSuggestions = form.customer
+    ? customerOptions.filter(name =>
+        name.toLowerCase().includes(form.customer.toLowerCase()) &&
+        name.toLowerCase() !== form.customer.toLowerCase()
+      ).slice(0, 6)
+    : [];
+
+  function selectCustomer(name) {
+    setForm({ ...form, customer: name });
+    setShowCustomerSuggestions(false);
+  }
 
   function toggleDept(value) {
     setForm({
@@ -39,12 +55,26 @@ export default function TaskForm({
     <form onSubmit={onSubmit}>
       <h2>{title}</h2>
 
-      <input
-        placeholder="Customer"
-        value={form.customer}
-        onChange={handleChange('customer')}
-        required
-      />
+      <div className="customer-field">
+        <input
+          placeholder="Customer"
+          value={form.customer}
+          onChange={handleChange('customer')}
+          onFocus={() => setShowCustomerSuggestions(true)}
+          onBlur={() => setTimeout(() => setShowCustomerSuggestions(false), 150)}
+          autoComplete="off"
+          required
+        />
+        {showCustomerSuggestions && customerSuggestions.length > 0 && (
+          <ul className="customer-suggestions">
+            {customerSuggestions.map(name => (
+              <li key={name} onMouseDown={() => selectCustomer(name)}>
+                {name}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
       <input
         placeholder="Unit"
         value={form.unit}

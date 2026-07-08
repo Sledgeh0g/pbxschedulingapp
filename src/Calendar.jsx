@@ -13,7 +13,8 @@ export default function Calendar({ events, setEvents, searchTerm, setSearchTerm,
     selectedDepartment, setSelectedDepartment,
     formData, setFormData,
     selectedEvent, setSelectedEvent,
-    showDetailModal, setShowDetailModal }) {
+    showDetailModal, setShowDetailModal,
+    customerOptions }) {
     const [showModal, setShowModal] = useState(false);
 
     async function handleEventDrop({ event }) {
@@ -33,15 +34,16 @@ export default function Calendar({ events, setEvents, searchTerm, setSearchTerm,
 
     return (
         <div className="calendar">
-            <AddTaskModal setEvents={setEvents} showModal={showModal} setShowModal={setShowModal} mapTaskToEvent={mapTaskToEvent} />
-            <EditDetailModal 
-                event={selectedEvent} 
-                showModal={showDetailModal} 
+            <AddTaskModal setEvents={setEvents} showModal={showModal} setShowModal={setShowModal} mapTaskToEvent={mapTaskToEvent} customerOptions={customerOptions} />
+            <EditDetailModal
+                event={selectedEvent}
+                showModal={showDetailModal}
                 setShowModal={setShowDetailModal}
                 formData={formData}
                 setFormData={setFormData}
                 setEvents={setEvents}
                 mapTaskToEvent={mapTaskToEvent}
+                customerOptions={customerOptions}
             />
             <FullCalendar
                 plugins={[dayGridPlugin, interactionPlugin]}

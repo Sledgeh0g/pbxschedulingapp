@@ -3,7 +3,7 @@ import { supabase } from './supabaseClient';
 import { mapTaskToEvent } from './mapTaskToEvent';
 import TaskForm from './TaskForm';
 
-export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTaskToEvent: mapTaskToEventProp }) {
+export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTaskToEvent: mapTaskToEventProp, customerOptions }) {
     const [form, setForm] = useState({
         customer: '',
         unit: '',
@@ -55,6 +55,7 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
                             onCancel={() => setShowModal(false)}
                             title="Add Task"
                             submitLabel="Save"
+                            customerOptions={customerOptions}
                         />
                     </div>
                 </div>

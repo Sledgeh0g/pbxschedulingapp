@@ -39,7 +39,7 @@ function getDefaultMonth() {
   return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}`
 }
 
-export default function Reports({ searchTerm, selectedDepartment, formData, setFormData, appSetEvents }) {
+export default function Reports({ searchTerm, selectedDepartment, formData, setFormData, appSetEvents, customerOptions }) {
   const [selectedMonth, setSelectedMonth] = useState(getDefaultMonth)
   const [tasks, setTasks] = useState([])
   const [columnFilters, setColumnFilters] = useState([])
@@ -259,6 +259,7 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
           setTasks(prev => prev.filter(t => String(t.id) !== String(id)))
         }}
         mapTaskToEvent={mapTaskToEvent}
+        customerOptions={customerOptions}
       />
     </div>
   )

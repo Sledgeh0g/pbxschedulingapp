@@ -93,6 +93,10 @@ function App () {
     return Array.isArray(depts) && depts.includes(selectedDepartment);
   });
 
+  const customerOptions = [...new Set(
+    events.map(event => event.extendedProps?.customer).filter(Boolean)
+  )].sort((a, b) => a.localeCompare(b));
+
   const filteredEvents = deptFilteredEvents.filter(event => {
     const { customer, unit, status, department, created_at } = event.extendedProps || {};
     const term = searchTerm.toLowerCase();
@@ -136,11 +140,11 @@ function App () {
         <div className="legend-right"><ColorLegend /></div>
       </div>
       <Routes>
-      <Route path="/" element={<Calendar 
-          events={filteredEvents} 
-          searchTerm={searchTerm} 
-          setSearchTerm={setSearchTerm} 
-          setEvents={setEvents} 
+      <Route path="/" element={<Calendar
+          events={filteredEvents}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          setEvents={setEvents}
           mapTaskToEvent={mapTaskToEvent}
           formData={formData}
           setFormData={setFormData}
@@ -148,32 +152,35 @@ function App () {
           setSelectedEvent={setSelectedEvent}
           showDetailModal={showDetailModal}
           setShowDetailModal={setShowDetailModal}
+          customerOptions={customerOptions}
            />} />
-      <Route path="/calendar" element={<Calendar 
-          events={filteredEvents} 
-          searchTerm={searchTerm} 
-          setSearchTerm={setSearchTerm} 
-          setEvents={setEvents} 
-          mapTaskToEvent={mapTaskToEvent} 
+      <Route path="/calendar" element={<Calendar
+          events={filteredEvents}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          setEvents={setEvents}
+          mapTaskToEvent={mapTaskToEvent}
           formData={formData}
           setFormData={setFormData}
           selectedEvent={selectedEvent}
           setSelectedEvent={setSelectedEvent}
           showDetailModal={showDetailModal}
           setShowDetailModal={setShowDetailModal}
+          customerOptions={customerOptions}
            />} />
-      <Route path="/list" element={<List 
-          events={filteredEvents} 
-          searchTerm={searchTerm} 
-          setSearchTerm={setSearchTerm} 
-          setEvents={setEvents} 
-          mapTaskToEvent={mapTaskToEvent} 
+      <Route path="/list" element={<List
+          events={filteredEvents}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          setEvents={setEvents}
+          mapTaskToEvent={mapTaskToEvent}
           formData={formData}
           setFormData={setFormData}
           selectedEvent={selectedEvent}
           setSelectedEvent={setSelectedEvent}
           showDetailModal={showDetailModal}
           setShowDetailModal={setShowDetailModal}
+          customerOptions={customerOptions}
            />} />
           <Route path="/reports" element={<Reports
             searchTerm={searchTerm}
@@ -181,6 +188,7 @@ function App () {
             formData={formData}
             setFormData={setFormData}
             appSetEvents={setEvents}
+            customerOptions={customerOptions}
           />} />
           <Route path="/contractcustomers" element={<ContractCustomers
             formData={formData}
@@ -188,6 +196,7 @@ function App () {
             appSetEvents={setEvents}
             searchTerm={searchTerm}
             selectedDepartment={selectedDepartment}
+            customerOptions={customerOptions}
           />}/>
     </Routes>
     <div className="App">
