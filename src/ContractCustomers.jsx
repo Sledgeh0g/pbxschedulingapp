@@ -10,7 +10,7 @@ import { departmentColors } from './mapTaskToEvent'
 import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
 
-const CONTRACT_CUSTOMERS = ['canada packers', 'trouw nutrition']
+const CONTRACT_CUSTOMERS = ['canada packers', 'trouw']
 const STATUS_ORDER = { queued: 0, completed: 2 }
 const PRIORITY_ORDER = { urgent: 0, end_of_day: 1, scheduled: 2 }
 

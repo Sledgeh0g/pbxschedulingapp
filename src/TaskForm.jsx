@@ -81,12 +81,22 @@ export default function TaskForm({
         onChange={handleChange('unit')}
         required
       />
-      <input
-        type="date"
-        value={form.service_date}
-        onChange={handleChange('service_date')}
-        required
-      />
+      <div className="phone-date-row">
+        <input
+          className="phone-field"
+          type="tel"
+          placeholder="Phone (204-222-2233)"
+          value={form.phone || ''}
+          onChange={handleChange('phone')}
+        />
+        <input
+          className="date-field"
+          type="date"
+          value={form.service_date}
+          onChange={handleChange('service_date')}
+          required
+        />
+      </div>
       <textarea
         className="complaint-textarea"
         placeholder="Complaint"

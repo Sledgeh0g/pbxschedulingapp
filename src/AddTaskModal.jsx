@@ -7,6 +7,7 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
     const [form, setForm] = useState({
         customer: '',
         unit: '',
+        phone: '',
         service_date: '',
         status: 'Queued',
         priority: 'scheduled',
@@ -26,7 +27,7 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
         const newEvent = (mapTaskToEventProp || mapTaskToEvent)(t);
         setEvents(prev => [...prev, newEvent]);
         setShowModal(false);
-        setForm({ customer: '', unit: '', service_date: '', status: '', priority: 'scheduled', department: [], complaint: '' });
+        setForm({ customer: '', unit: '', phone: '', service_date: '', status: '', priority: 'scheduled', department: [], complaint: '' });
     }
 
     return (

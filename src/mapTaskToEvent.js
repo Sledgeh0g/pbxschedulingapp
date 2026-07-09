@@ -33,14 +33,15 @@ export function mapTaskToEvent(t) {
     : (t.department ? [t.department] : []);
   return {
     id: String(t.id),
-    title: `${t.customer} - ${t.unit}`,
+    title: t.unit ? `${t.customer} - ${t.unit}` : t.customer,
     start: displayDate,
     backgroundColor: 'transparent',
     borderColor: priorityColors[t.priority] || '#999',
     textColor: priorityColors[t.priority] || '#999',
     extendedProps: {
       customer: t.customer,
-      unit: t.unit,
+      unit: t.unit || '',
+      phone: t.phone || '',
       status: t.status,
       priority: t.priority || 'scheduled',
       department: departments,

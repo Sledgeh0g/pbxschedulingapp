@@ -32,6 +32,7 @@ export default function EditDetailModal({
     setFormData({
       customer: props.customer || '',
       unit: props.unit || '',
+      phone: props.phone || '',
       service_date: event.startStr || '',
       status: props.status || '',
       priority: props.priority || 'scheduled',
@@ -121,6 +122,10 @@ export default function EditDetailModal({
               <div className="task-detail-row">
                 <span className="task-detail-label">Unit</span>
                 <span className="task-detail-value">{props.unit}</span>
+              </div>
+              <div className="task-detail-row">
+                <span className="task-detail-label">Phone</span>
+                <span className="task-detail-value">{props.phone}</span>
               </div>
               <div className="task-detail-row">
                 <span className="task-detail-label">Date</span>
