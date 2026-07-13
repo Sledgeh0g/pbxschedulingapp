@@ -6,7 +6,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 import { supabase } from './supabaseClient'
-import { departmentColors } from './mapTaskToEvent'
+import { departmentColors, departmentIcons } from './mapTaskToEvent'
 import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
 
@@ -26,19 +26,39 @@ const columns = [
       const depts = Array.isArray(row.getValue('department')) ? row.getValue('department') : [];
       return (
         <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap' }}>
-          {depts.map(dept => (
-            <span key={dept} style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px' }}>
-              <span style={{
-                display: 'block',
-                width: '8px',
-                height: '8px',
-                borderRadius: '50%',
-                backgroundColor: departmentColors[dept] || '#999',
-                flexShrink: 0,
-              }} />
-              {dept}
-            </span>
-          ))}
+          {depts.map(dept => {
+            const icon = departmentIcons[dept];
+            return (
+              <span key={dept} style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px' }}>
+                {icon ? (
+                  <span style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '10px',
+                    height: '10px',
+                    borderRadius: '50%',
+                    border: '1.5px solid #4b5563',
+                    color: '#4b5563',
+                    fontSize: '9px',
+                    lineHeight: 1,
+                    fontWeight: 'bold',
+                    flexShrink: 0,
+                  }}>{icon}</span>
+                ) : (
+                  <span style={{
+                    display: 'block',
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    backgroundColor: departmentColors[dept] || '#999',
+                    flexShrink: 0,
+                  }} />
+                )}
+                {dept}
+              </span>
+            );
+          })}
         </div>
       );
     },

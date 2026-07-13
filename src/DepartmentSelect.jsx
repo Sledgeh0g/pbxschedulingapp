@@ -15,6 +15,7 @@ export default function DepartmentSelect({ selectedDepartment, setSelectedDepart
       <option value="triage">Triage</option>
       <option value="unassigned">Unassigned</option>
       <option value="mobile service">Mobile Serv.</option>
+      <option value="external vendor">External Vendor</option>
     </select>
   );
 }

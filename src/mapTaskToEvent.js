@@ -18,6 +18,11 @@ const departmentColors = {
 // keep old name as alias so existing imports don't break
 const departmentDotColors = departmentColors;
 
+// departments rendered with a glyph badge instead of a solid color chip
+const departmentIcons = {
+  'external vendor': '×',
+};
+
 const PRIORITY_ORDER = { urgent: 0, end_of_day: 1, scheduled: 2 };
 
 function clampToToday(dateStr) {
@@ -52,7 +57,7 @@ export function mapTaskToEvent(t) {
   };
 }
 
-export { priorityColors, departmentColors, departmentDotColors };
+export { priorityColors, departmentColors, departmentDotColors, departmentIcons };
 
 export function eventOrderComparator(a, b) {
   const aRank = PRIORITY_ORDER[a.extendedProps?.priority] ?? 99;

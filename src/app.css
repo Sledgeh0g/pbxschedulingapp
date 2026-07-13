@@ -356,8 +356,8 @@ button:hover {
 /* end FullCalendar toolbar buttons */
 
 .fc-daygrid-event {
-  height: 18px;
-  font-size: 12px;
+  height: 26px;
+  font-size: 14px;
   text-align: left;
 }
 

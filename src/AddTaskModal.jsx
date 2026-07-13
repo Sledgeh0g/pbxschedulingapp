@@ -11,16 +11,17 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
         service_date: '',
         status: 'Queued',
         priority: 'scheduled',
-        department: [],
+        department: ['unassigned'],
         complaint: '',
     });
 
     async function handleSubmit(e) {
         e.preventDefault();
         const { data: { user } } = await supabase.auth.getUser();
+        const department = form.department.length ? form.department : ['unassigned'];
         const { data, error } = await supabase
             .from('tasks')
-            .insert([{ ...form, created_by: user?.email || '' }])
+            .insert([{ ...form, department, created_by: user?.email || '' }])
             .select();
         if (error) { console.error(error); return; }
         const t = data[0];

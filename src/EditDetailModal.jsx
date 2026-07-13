@@ -57,9 +57,10 @@ export default function EditDetailModal({
   async function handleSubmit(e) {
     e.preventDefault();
 
+    const department = formData.department.length ? formData.department : ['unassigned'];
     const { data, error } = await supabase
       .from('tasks')
-      .update(formData)
+      .update({ ...formData, department })
       .eq('id', event.id)
       .select();
 

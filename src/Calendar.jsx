@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { supabase } from './supabaseClient';
-import { eventOrderComparator, departmentDotColors } from './mapTaskToEvent';
+import { eventOrderComparator, departmentDotColors, departmentIcons } from './mapTaskToEvent';
 import AddTaskModal from './AddTaskModal';
 import EditDetailModal from './EditDetailModal';
 import SearchInput from './SearchInput';
@@ -73,6 +73,25 @@ export default function Calendar({ events, setEvents, searchTerm, setSearchTerm,
                             <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>{info.event.title}</span>
                             <div style={{ display: 'flex', gap: '2px', flexShrink: 0, marginLeft: '4px' }}>
                                 {departments.map(dept => {
+                                    const icon = departmentIcons[dept];
+                                    if (icon) {
+                                        return (
+                                            <span key={dept} style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                width: '10px',
+                                                height: '10px',
+                                                borderRadius: '50%',
+                                                border: '1.5px solid #4b5563',
+                                                color: '#4b5563',
+                                                fontSize: '9px',
+                                                lineHeight: 1,
+                                                fontWeight: 'bold',
+                                                flexShrink: 0,
+                                            }}>{icon}</span>
+                                        );
+                                    }
                                     const dotColor = departmentDotColors[dept];
                                     return dotColor ? (
                                         <span key={dept} style={{

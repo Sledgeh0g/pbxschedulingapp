@@ -1,4 +1,4 @@
-import { departmentColors } from './mapTaskToEvent';
+import { departmentColors, departmentIcons } from './mapTaskToEvent';
 
 const DEPARTMENTS = [
   { value: 'warranty',  label: 'Warranty' },
@@ -9,17 +9,34 @@ const DEPARTMENTS = [
   { value: 'old shop',  label: 'Old Shop' },
   { value: 'new shop',  label: 'New Shop' },
   { value: 'mobile service',    label: 'Mobile Serv.' },
+  { value: 'external vendor',   label: 'External Vendor' },
 ];
 
 export default function DepartmentLegend() {
   return (
     <div className="dept-legend">
-      {DEPARTMENTS.map(({ value, label }) => (
-        <div key={value} className="dept-legend-item">
-          <span className="dept-legend-dot" style={{ backgroundColor: departmentColors[value] }} />
-          <span className="dept-legend-label">{label}</span>
-        </div>
-      ))}
+      {DEPARTMENTS.map(({ value, label }) => {
+        const icon = departmentIcons[value];
+        return (
+          <div key={value} className="dept-legend-item">
+            {icon ? (
+              <span className="dept-legend-dot" style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1.5px solid #4b5563',
+                color: '#4b5563',
+                fontSize: '9px',
+                fontWeight: 'bold',
+                backgroundColor: 'transparent',
+              }}>{icon}</span>
+            ) : (
+              <span className="dept-legend-dot" style={{ backgroundColor: departmentColors[value] }} />
+            )}
+            <span className="dept-legend-label">{label}</span>
+          </div>
+        );
+      })}
     </div>
   );
 }

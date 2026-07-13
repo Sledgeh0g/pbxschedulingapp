@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { departmentColors } from './mapTaskToEvent';
+import { departmentColors, departmentIcons } from './mapTaskToEvent';
 
 const DEPARTMENTS = [
   { value: 'warranty',  label: 'Warranty' },
@@ -10,7 +10,10 @@ const DEPARTMENTS = [
   { value: 'new shop',  label: 'New Shop' },
   { value: 'triage',    label: 'Triage' },
   { value: 'mobile service', label: 'Mobile Serv.' },
+  { value: 'external vendor', label: 'External Vendor' },
 ];
+
+const ICON_DEPARTMENT_COLOR = '#4b5563';
 
 export default function TaskForm({
   form,
@@ -129,7 +132,8 @@ export default function TaskForm({
       <div className="dept-form-chips">
         {DEPARTMENTS.map(({ value, label }) => {
           const selected = currentDepts.includes(value);
-          const color = departmentColors[value];
+          const icon = departmentIcons[value];
+          const color = icon ? ICON_DEPARTMENT_COLOR : departmentColors[value];
           return (
             <button
               key={value}
@@ -139,10 +143,11 @@ export default function TaskForm({
                 backgroundColor: selected ? color : 'transparent',
                 borderColor: color,
                 color: selected ? 'white' : color,
+                ...(icon ? { width: '100%', textAlign: 'center' } : {}),
               }}
               onClick={() => toggleDept(value)}
             >
-              {label}
+              {icon ? `${icon} ${label}` : label}
             </button>
           );
         })}
