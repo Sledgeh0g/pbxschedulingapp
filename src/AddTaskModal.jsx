@@ -9,7 +9,7 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
         unit: '',
         phone: '',
         service_date: '',
-        status: 'Queued',
+        status: 'queued',
         priority: 'scheduled',
         department: ['unassigned'],
         complaint: '',
@@ -28,7 +28,7 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
         const newEvent = (mapTaskToEventProp || mapTaskToEvent)(t);
         setEvents(prev => [...prev, newEvent]);
         setShowModal(false);
-        setForm({ customer: '', unit: '', phone: '', service_date: '', status: '', priority: 'scheduled', department: [], complaint: '' });
+        setForm({ customer: '', unit: '', phone: '', service_date: '', status: 'queued', priority: 'scheduled', department: ['unassigned'], complaint: '' });
     }
 
     return (

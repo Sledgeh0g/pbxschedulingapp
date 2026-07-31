@@ -50,7 +50,7 @@ export default function TaskForm({
       ...form,
       department: currentDepts.includes(value)
         ? currentDepts.filter(d => d !== value)
-        : [...currentDepts, value],
+        : [...currentDepts.filter(d => d !== 'unassigned'), value],
     });
   }
 
