@@ -18,7 +18,10 @@ export default function LoginPage() {
       return;
     }
     const { error } = await supabase.auth.signInWithOtp({ email });
-    if (error) setError(error.message);
+    if (error) {
+      console.error(error);
+      setError('Could not send verification code. Please try again later.');
+    }
     else setStep('otp');
     setLoading(false);
   }
@@ -28,7 +31,10 @@ export default function LoginPage() {
     setLoading(true);
     setError(null);
     const { error } = await supabase.auth.verifyOtp({ email, token, type: 'email' });
-    if (error) setError(error.message);
+    if (error) {
+      console.error(error);
+      setError('Invalid or expired code. Please try again.');
+    }
     setLoading(false);
     // on success, App.jsx's onAuthStateChange fires automatically
   }
