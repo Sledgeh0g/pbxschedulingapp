@@ -658,3 +658,356 @@ button:hover {
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
+
+/* Diagnostics */
+.diagnostics-page {
+  padding: 26px 50px 80px;
+  color: #111827;
+}
+
+.diagnostics-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.diagnostics-header h1 {
+  margin: 0 0 6px;
+  text-align: left;
+  font-size: 30px;
+  letter-spacing: -0.02em;
+}
+
+.diagnostics-header p {
+  margin: 0;
+  max-width: 680px;
+  text-align: left;
+  color: #4b5563;
+}
+
+.diagnostics-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.diagnostics-actions button {
+  width: auto;
+  min-width: 112px;
+  margin: 0;
+  padding: 0 16px;
+  border-radius: 6px;
+}
+
+.diagnostics-primary-button {
+  background: #111827;
+}
+
+.diagnostics-secondary-button {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #111827;
+}
+
+.diagnostics-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.diagnostics-status {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-block: 1px solid #d1d5db;
+  margin-bottom: 20px;
+}
+
+.diagnostics-status div {
+  padding: 16px 18px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.diagnostics-status div:last-child {
+  border-right: 0;
+}
+
+.diagnostics-status strong,
+.diagnostics-status span {
+  display: block;
+}
+
+.diagnostics-status strong {
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+}
+
+.diagnostics-status span {
+  margin-top: 3px;
+  color: #6b7280;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.diagnostics-notice {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px solid;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.diagnostics-notice--warning {
+  border-color: #f59e0b;
+  background: #fffbeb;
+  color: #78350f;
+}
+
+.diagnostics-notice--error {
+  border-color: #dc2626;
+  background: #fef2f2;
+  color: #7f1d1d;
+}
+
+.diagnostics-controls {
+  display: grid;
+  grid-template-columns: 150px 150px minmax(240px, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.diagnostics-controls label,
+.diagnostics-last-sync {
+  display: grid;
+  gap: 5px;
+  color: #4b5563;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.diagnostics-controls select,
+.diagnostics-controls input {
+  min-height: 38px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  background: #fff;
+  padding: 7px 10px;
+  color: #111827;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.diagnostics-controls select:focus,
+.diagnostics-controls input:focus,
+.diagnostics-actions button:focus-visible,
+.diagnostics-table summary:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.28);
+  outline-offset: 2px;
+}
+
+.diagnostics-last-sync {
+  justify-items: end;
+  padding-bottom: 2px;
+  font-weight: 400;
+}
+
+.diagnostics-last-sync strong {
+  color: #111827;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.diagnostics-log {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.diagnostics-log-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.diagnostics-log-heading h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.diagnostics-log-heading span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.diagnostics-table-wrap {
+  overflow-x: auto;
+}
+
+.diagnostics-table {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.diagnostics-table th,
+.diagnostics-table td {
+  padding: 11px 12px;
+  border: 0;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  vertical-align: top;
+}
+
+.diagnostics-table th {
+  color: #4b5563;
+  background: #fff;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.diagnostics-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.diagnostics-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.diagnostics-time,
+.diagnostics-event-name {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.diagnostics-event-name {
+  font-weight: 600;
+}
+
+.diagnostics-level {
+  display: inline-block;
+  min-width: 46px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.diagnostics-level--info {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.diagnostics-level--warn {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.diagnostics-level--error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.diagnostics-table details {
+  position: relative;
+}
+
+.diagnostics-table summary {
+  color: #1d4ed8;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.diagnostics-table pre {
+  max-width: 460px;
+  max-height: 260px;
+  overflow: auto;
+  margin: 8px 0 0;
+  padding: 10px;
+  border-radius: 4px;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.diagnostics-empty {
+  padding: 48px 20px;
+  color: #6b7280;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .diagnostics-page {
+    padding-inline: 20px;
+  }
+
+  .diagnostics-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .diagnostics-status {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .diagnostics-status div {
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .diagnostics-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .diagnostics-event-filter,
+  .diagnostics-last-sync {
+    grid-column: 1 / -1;
+  }
+
+  .diagnostics-last-sync {
+    justify-items: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .diagnostics-page {
+    padding-inline: 14px;
+  }
+
+  .diagnostics-actions,
+  .diagnostics-actions button {
+    width: 100%;
+  }
+
+  .diagnostics-status,
+  .diagnostics-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .diagnostics-event-filter,
+  .diagnostics-last-sync {
+    grid-column: auto;
+  }
+
+  .diagnostics-notice {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

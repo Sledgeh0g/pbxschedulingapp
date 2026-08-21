@@ -9,6 +9,7 @@ import { supabase } from './supabaseClient'
 import { departmentColors, departmentIcons } from './mapTaskToEvent'
 import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
+import { createTaskSnapshot, recordDiagnostic, serializeError } from './diagnostics'
 
 const CONTRACT_CUSTOMERS = ['canada packers', 'trouw']
 const STATUS_ORDER = { queued: 0, completed: 2 }
@@ -97,18 +98,42 @@ export default function ContractCustomers({ formData, setFormData, appSetEvents,
   }, [selectedDepartment])
 
   useEffect(() => {
+    const startedAt = performance.now()
+    const requestId = recordDiagnostic('task_fetch_started', { source: 'contract_customers' })
     supabase
       .from('tasks')
-      .select('id, customer, unit, service_date, status, priority, department, created_at')
+      .select('id, customer, unit, service_date, status, priority, department, created_at', { count: 'exact' })
       .order('created_at', { ascending: true })
-      .then(({ data, error }) => {
-        if (error) { console.error(error); return }
-        const contractTasks = data.filter(task =>
+      .then(async ({ data, error, count }) => {
+        const durationMs = Math.round(performance.now() - startedAt)
+        if (error) {
+          console.error(error)
+          recordDiagnostic('task_fetch_failed', {
+            source: 'contract_customers',
+            requestId,
+            durationMs,
+            error: serializeError(error),
+          }, 'error')
+          return
+        }
+        const safeData = data || []
+        const contractTasks = safeData.filter(task =>
           task.status !== 'completed' &&
           CONTRACT_CUSTOMERS.some(name =>
             task.customer?.toLowerCase().includes(name)
           )
         )
+        const snapshot = await createTaskSnapshot(safeData, 'contract_customers_query')
+        const responseTruncated = count !== null && count !== safeData.length
+        recordDiagnostic('task_fetch_succeeded', {
+          source: 'contract_customers',
+          requestId,
+          durationMs,
+          contractTaskCount: contractTasks.length,
+          serverRowCount: count,
+          responseTruncated,
+          ...snapshot,
+        }, responseTruncated ? 'warn' : 'info')
         setTasks(sortByPriority(contractTasks))
       })
   }, [])

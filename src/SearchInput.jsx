@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function SearchInput({ searchTerm, setSearchTerm, placeholder = "Search..." }) {
   return (
     <input

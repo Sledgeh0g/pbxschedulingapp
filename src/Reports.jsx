@@ -9,6 +9,7 @@ import { supabase } from './supabaseClient'
 import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
 import { generateWorkOrderReport } from './generateWorkOrderReport'
+import { createTaskSnapshot, recordDiagnostic, serializeError } from './diagnostics'
 
 const DEPARTMENTS = ['warranty', 'wash bay', 'welding', 'body shop', 'old shop', 'new shop', 'triage', 'mobile service']
 
@@ -63,32 +64,91 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
     const lastDay = new Date(Number(year), Number(month), 0).getDate()
     const endDate = `${year}-${month}-${String(lastDay).padStart(2, '0')}`
 
+    const startedAt = performance.now()
+    const requestId = recordDiagnostic('task_fetch_started', {
+      source: 'reports_completed_month',
+      selectedMonth,
+      startDate,
+      endDate,
+    })
+
     supabase
       .from('tasks')
-      .select('id, customer, unit, service_date, status, priority, department, created_at')
+      .select('id, customer, unit, service_date, status, priority, department, created_at', { count: 'exact' })
       .eq('status', 'completed')
       .gte('service_date', startDate)
       .lte('service_date', endDate)
       .order('service_date', { ascending: true })
-      .then(({ data, error }) => {
-        if (error) { console.error(error); return }
-        setTasks(data || [])
+      .then(async ({ data, error, count }) => {
+        const durationMs = Math.round(performance.now() - startedAt)
+        if (error) {
+          console.error(error)
+          recordDiagnostic('task_fetch_failed', {
+            source: 'reports_completed_month',
+            requestId,
+            selectedMonth,
+            durationMs,
+            error: serializeError(error),
+          }, 'error')
+          return
+        }
+        const safeData = data || []
+        const snapshot = await createTaskSnapshot(safeData, `reports_completed_month:${selectedMonth}`)
+        const responseTruncated = count !== null && count !== safeData.length
+        recordDiagnostic('task_fetch_succeeded', {
+          source: 'reports_completed_month',
+          requestId,
+          selectedMonth,
+          durationMs,
+          serverRowCount: count,
+          responseTruncated,
+          ...snapshot,
+        }, responseTruncated ? 'warn' : 'info')
+        setTasks(safeData)
       })
   }, [selectedMonth])
 
   async function handleOpenExport() {
     setExportLoading(true)
+    const startedAt = performance.now()
+    const requestId = recordDiagnostic('task_fetch_started', {
+      source: 'reports_active_export',
+      selectedDepartment,
+    })
     let query = supabase
       .from('tasks')
-      .select('id, customer, unit, service_date, complaint')
+      .select('id, customer, unit, service_date, complaint', { count: 'exact' })
       .neq('status', 'completed')
       .order('service_date', { ascending: true })
     if (selectedDepartment && selectedDepartment !== 'All Departments') {
       query = query.contains('department', [selectedDepartment])
     }
-    const { data, error } = await query
-    if (error) { console.error(error); setExportLoading(false); return }
-    setExportTasks(data || [])
+    const { data, error, count } = await query
+    if (error) {
+      console.error(error)
+      recordDiagnostic('task_fetch_failed', {
+        source: 'reports_active_export',
+        requestId,
+        selectedDepartment,
+        durationMs: Math.round(performance.now() - startedAt),
+        error: serializeError(error),
+      }, 'error')
+      setExportLoading(false)
+      return
+    }
+    const safeData = data || []
+    const snapshot = await createTaskSnapshot(safeData, `reports_active_export:${selectedDepartment || 'all'}`)
+    const responseTruncated = count !== null && count !== safeData.length
+    recordDiagnostic('task_fetch_succeeded', {
+      source: 'reports_active_export',
+      requestId,
+      selectedDepartment,
+      durationMs: Math.round(performance.now() - startedAt),
+      serverRowCount: count,
+      responseTruncated,
+      ...snapshot,
+    }, responseTruncated ? 'warn' : 'info')
+    setExportTasks(safeData)
     setExportLoading(false)
     setShowExportDialog(true)
   }

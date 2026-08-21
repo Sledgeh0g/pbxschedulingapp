@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { supabase } from './supabaseClient';
 import { mapTaskToEvent, departmentColors } from './mapTaskToEvent';
 import TaskForm from './TaskForm';
+import { recordDiagnostic, serializeError } from './diagnostics';
 
 export default function EditDetailModal({
   event,
@@ -16,15 +17,17 @@ export default function EditDetailModal({
 }) {
   const [isEditing, setIsEditing] = useState(false);
 
-  useEffect(() => {
-    if (!showModal) setIsEditing(false);
-  }, [showModal]);
-
   if (!showModal || !event) return null;
 
   const props = event.extendedProps || {};
 
   function handleClose() {
+    setIsEditing(false);
+    setShowModal(false);
+  }
+
+  function closeAndReset() {
+    setIsEditing(false);
     setShowModal(false);
   }
 
@@ -44,19 +47,43 @@ export default function EditDetailModal({
 
   async function handleDelete() {
     if (!window.confirm('Are you sure you want to delete this task?')) return;
+    const startedAt = performance.now();
+    const requestId = recordDiagnostic('task_delete_started', { taskId: String(event.id) }, 'warn');
     const { error } = await supabase.from('tasks').delete().eq('id', event.id);
-    if (error) { console.error(error); return; }
+    if (error) {
+      console.error(error);
+      recordDiagnostic('task_delete_failed', {
+        requestId,
+        taskId: String(event.id),
+        durationMs: Math.round(performance.now() - startedAt),
+        error: serializeError(error),
+      }, 'error');
+      return;
+    }
     if (onDelete) {
       onDelete(event.id);
     } else {
       setEvents(prev => prev.filter(e => e.id !== event.id));
     }
-    setShowModal(false);
+    recordDiagnostic('task_delete_succeeded', {
+      requestId,
+      taskId: String(event.id),
+      durationMs: Math.round(performance.now() - startedAt),
+    }, 'warn');
+    closeAndReset();
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
+    const startedAt = performance.now();
+    const requestId = recordDiagnostic('task_update_started', {
+      taskId: String(event.id),
+      changedFields: Object.keys(formData),
+      status: formData.status,
+      serviceDate: formData.service_date,
+      departments: formData.department,
+    });
     const department = formData.department.length ? formData.department : ['unassigned'];
     const { data, error } = await supabase
       .from('tasks')
@@ -66,14 +93,37 @@ export default function EditDetailModal({
 
     if (error) {
       console.error(error);
+      recordDiagnostic('task_update_failed', {
+        requestId,
+        taskId: String(event.id),
+        durationMs: Math.round(performance.now() - startedAt),
+        error: serializeError(error),
+      }, 'error');
       return;
     }
 
     const updatedTask = data[0];
+    if (!updatedTask) {
+      recordDiagnostic('task_update_failed', {
+        requestId,
+        taskId: String(event.id),
+        durationMs: Math.round(performance.now() - startedAt),
+        error: { message: 'Update returned no task row.' },
+      }, 'error');
+      return;
+    }
     const updatedEvent = (mapTaskToEventProp || mapTaskToEvent)(updatedTask);
 
     setEvents(prev => prev.map(e => e.id === updatedEvent.id ? updatedEvent : e));
-    setShowModal(false);
+    recordDiagnostic('task_update_succeeded', {
+      requestId,
+      taskId: String(updatedTask.id),
+      durationMs: Math.round(performance.now() - startedAt),
+      status: updatedTask.status,
+      serviceDate: updatedTask.service_date,
+      departments: updatedTask.department,
+    });
+    closeAndReset();
   }
 
   return (

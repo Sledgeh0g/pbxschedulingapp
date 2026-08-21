@@ -6,25 +6,47 @@ import { supabase } from './supabaseClient';
 import { eventOrderComparator, departmentDotColors, departmentIcons } from './mapTaskToEvent';
 import AddTaskModal from './AddTaskModal';
 import EditDetailModal from './EditDetailModal';
-import SearchInput from './SearchInput';
-import DepartmentSelect from './DepartmentSelect';
+import { recordDiagnostic, serializeError } from './diagnostics';
 
-export default function List({ events, setEvents, searchTerm, setSearchTerm, mapTaskToEvent,
-    selectedDepartment, setSelectedDepartment,
+export default function List({ events, setEvents, mapTaskToEvent,
     formData, setFormData,
     selectedEvent, setSelectedEvent,
     showDetailModal, setShowDetailModal,
     customerOptions }) {
     const [showModal, setShowModal] = useState(false);
 
-    async function handleEventDrop({ event }) {
-        await supabase
+    async function handleEventDrop({ event, revert }) {
+        const startedAt = performance.now();
+        const requestId = recordDiagnostic('task_reschedule_started', {
+            taskId: String(event.id),
+            serviceDate: event.startStr,
+            view: 'list',
+        });
+        const { error } = await supabase
             .from('tasks')
             .update({ service_date: event.startStr })
             .eq('id', event.id);
+        if (error) {
+            console.error(error);
+            revert();
+            recordDiagnostic('task_reschedule_failed', {
+                requestId,
+                taskId: String(event.id),
+                durationMs: Math.round(performance.now() - startedAt),
+                error: serializeError(error),
+            }, 'error');
+            return;
+        }
         setEvents(prev => prev.map(e =>
             e.id === event.id ? { ...e, start: event.startStr } : e
         ));
+        recordDiagnostic('task_reschedule_succeeded', {
+            requestId,
+            taskId: String(event.id),
+            durationMs: Math.round(performance.now() - startedAt),
+            serviceDate: event.startStr,
+            view: 'list',
+        });
     }
 
         function handleEventClick({event}) {
