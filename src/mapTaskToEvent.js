@@ -60,6 +60,8 @@ export function mapTaskToEvent(t) {
 export { priorityColors, departmentColors, departmentDotColors, departmentIcons };
 
 export function eventOrderComparator(a, b) {
+  if (a.extendedProps?.overflow) return 1;
+  if (b.extendedProps?.overflow) return -1;
   const aRank = PRIORITY_ORDER[a.extendedProps?.priority] ?? 99;
   const bRank = PRIORITY_ORDER[b.extendedProps?.priority] ?? 99;
   if (aRank !== bRank) return aRank - bRank;

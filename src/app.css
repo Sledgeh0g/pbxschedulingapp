@@ -366,6 +366,32 @@ button:hover {
   cursor: pointer;
 }
 
+.fc-daygrid-event.overflow-event,
+.fc-list-event.overflow-event {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+.fc-list-event.overflow-event td {
+  border: none;
+}
+
+.overflow-chip {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: #4b5563;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.overflow-chip:hover {
+  color: #111827;
+}
+
 /* === Modal Backdrop (shared by both modals) === */
 .modal-backdrop {
   position: fixed;

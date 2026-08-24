@@ -26,9 +26,11 @@ VITE_SUPABASE_ANON_KEY=...
 Single-page React app (React 19 + Vite) backed by a Supabase `tasks` table. State lives entirely in `App.jsx` and is passed down as props — there is no context or global store.
 
 **Data flow:**
-- `App.jsx` fetches all tasks from Supabase on mount, maps them through `mapTaskToEvent.js` into FullCalendar event objects, and stores them in `events` state.
-- Filtering (dispatch mode, department, search) is done in `App.jsx` before passing `filteredEvents` to views.
-- `Calendar` and `List` are two views of the same data — both render FullCalendar (dayGrid vs list plugins) with identical props and modal wiring.
+- `Calendar` and `List` report their visible date range via FullCalendar `datesSet` (`onVisibleRangeChange`). `App.jsx` fetches tasks for that range padded by `FETCH_PAD_DAYS` (7), plus all incomplete tasks regardless of date (so `clampToToday` overdue work still appears). Completed tasks outside the padded range are not fetched.
+- Results are merged into `events` by id. Already-covered ranges skip the network. Ordering is `created_at`, then `id`.
+- Filtering (department, search) is done in `App.jsx` before passing `filteredEvents` to views. Completed tasks are hidden from Calendar/List.
+- `Calendar` caps each day at `DAY_CAP` (15) with a `+N ⌄` chip; `List` shows the first `LIST_DAY_CAP` (3) occupied days of the current view. Caps are disabled while search is active. Constants live in `src/constants.js`.
+- `Calendar` and `List` are two views of the same data — both render FullCalendar (dayGrid vs list plugins) with identical modal wiring.
 
 **Task data shape (Supabase `tasks` table):**
 `id, customer, unit, phone, service_date, status, priority, department, created_at, complaint, created_by`

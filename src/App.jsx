@@ -13,6 +13,8 @@ import LoginPage from './LoginPage';
 import ColorLegend from './ColorLegend';
 import DepartmentLegend from './DepartmentLegend';
 import Diagnostics from './Diagnostics';
+import { FETCH_PAD_DAYS } from './constants';
+import { mergeIntervals, padRange, rangeContains } from './dateRange';
 import {
   createTaskSnapshot,
   recordDiagnostic,
@@ -42,7 +44,10 @@ function App () {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [populatedForEvent, setPopulatedForEvent] = useState(null);
+  const [visibleRange, setVisibleRange] = useState(null);
   const previousVisibilityCounts = useRef(null);
+  const fetchedRangesRef = useRef([]);
+  const fetchUserRef = useRef(null);
 
   // Populate the central edit form whenever a new event is selected for editing
   if (selectedEvent !== populatedForEvent) {
@@ -60,20 +65,55 @@ function App () {
     }
   }
 
+  function handleVisibleRangeChange(range) {
+    setVisibleRange(prev => {
+      if (prev?.start === range.start && prev?.end === range.end && prev?.viewId === range.viewId) {
+        return prev;
+      }
+      return range;
+    });
+  }
+
   useEffect(() => {
     const userId = session?.user?.id;
-    if (!userId) return;
+    if (!userId || !visibleRange) return;
+    const userChanged = fetchUserRef.current !== userId;
+    if (userChanged) {
+      fetchUserRef.current = userId;
+      fetchedRangesRef.current = [];
+    }
+    const padded = padRange(visibleRange.start, visibleRange.end, FETCH_PAD_DAYS);
+    if (!userChanged && fetchedRangesRef.current.some(interval => rangeContains(interval, padded))) {
+      recordDiagnostic('task_fetch_skipped', {
+        source: 'app_schedule',
+        userId,
+        visibleStart: visibleRange.start,
+        visibleEnd: visibleRange.end,
+        paddedStart: padded.start,
+        paddedEnd: padded.end,
+        viewId: visibleRange.viewId,
+      });
+      return;
+    }
+
     let cancelled = false;
     const startedAt = performance.now();
     const requestId = recordDiagnostic('task_fetch_started', {
       source: 'app_schedule',
       userId,
+      visibleStart: visibleRange.start,
+      visibleEnd: visibleRange.end,
+      paddedStart: padded.start,
+      paddedEnd: padded.end,
+      viewId: visibleRange.viewId,
     });
 
     supabase
       .from('tasks')
       .select('id, customer, unit, phone, service_date, status, priority, department, created_at, complaint, created_by', { count: 'exact' })
+      .or(`and(service_date.gte."${padded.start}",service_date.lt."${padded.end}"),status.neq.completed`)
       .order('created_at', { ascending: true })
+      .order('id', { ascending: true })
       .then(async ({ data, error, count }) => {
         const durationMs = Math.round(performance.now() - startedAt);
         if (error) {
@@ -87,7 +127,8 @@ function App () {
           return;
         }
 
-        const snapshot = await createTaskSnapshot(data, 'app_schedule');
+        const snapshotKey = `app_schedule:${padded.start}:${padded.end}`;
+        const snapshot = await createTaskSnapshot(data, snapshotKey);
         const responseTruncated = count !== null && count !== data.length;
         const substantialDrop = snapshot.previousRowCount !== null &&
           snapshot.removedCount >= 10 &&
@@ -99,6 +140,12 @@ function App () {
           durationMs,
           serverRowCount: count,
           responseTruncated,
+          visibleStart: visibleRange.start,
+          visibleEnd: visibleRange.end,
+          paddedStart: padded.start,
+          paddedEnd: padded.end,
+          viewId: visibleRange.viewId,
+          fetchedIntervals: fetchedRangesRef.current,
           ...snapshot,
         }, substantialDrop || responseTruncated ? 'warn' : 'info');
 
@@ -110,13 +157,20 @@ function App () {
           }, 'warn');
           return;
         }
-        setEvents(data.map(mapTaskToEvent));
+        fetchedRangesRef.current = mergeIntervals([...fetchedRangesRef.current, padded]);
+        setEvents(prev => {
+          const byId = new Map((userChanged ? [] : prev).map(event => [String(event.id), event]));
+          for (const event of data.map(mapTaskToEvent)) {
+            byId.set(String(event.id), event);
+          }
+          return [...byId.values()];
+        });
       });
 
     return () => {
       cancelled = true;
     };
-  }, [session?.user?.id])
+  }, [session?.user?.id, visibleRange])
 
   useEffect(() => {
     const stopDiagnosticListeners = startDiagnosticListeners();
@@ -255,7 +309,6 @@ function App () {
           <NavLink to="/list">List</NavLink>
           <NavLink to="/contractcustomers">Contract Customers</NavLink>
           <NavLink to="/reports">Reports</NavLink>
-          <NavLink to="/diagnostics">Diagnostics</NavLink>
           </div>
     </nav>
       <div className="legend-row">
@@ -277,6 +330,7 @@ function App () {
           showDetailModal={showDetailModal}
           setShowDetailModal={setShowDetailModal}
           customerOptions={customerOptions}
+          onVisibleRangeChange={handleVisibleRangeChange}
            />} />
       <Route path="/calendar" element={<Calendar
           events={filteredEvents}
@@ -291,6 +345,7 @@ function App () {
           showDetailModal={showDetailModal}
           setShowDetailModal={setShowDetailModal}
           customerOptions={customerOptions}
+          onVisibleRangeChange={handleVisibleRangeChange}
            />} />
       <Route path="/list" element={<List
           events={filteredEvents}
@@ -305,6 +360,7 @@ function App () {
           showDetailModal={showDetailModal}
           setShowDetailModal={setShowDetailModal}
           customerOptions={customerOptions}
+          onVisibleRangeChange={handleVisibleRangeChange}
            />} />
           <Route path="/reports" element={<Reports
             searchTerm={searchTerm}

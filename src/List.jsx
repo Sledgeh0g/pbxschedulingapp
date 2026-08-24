@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
@@ -6,16 +6,77 @@ import { supabase } from './supabaseClient';
 import { eventOrderComparator, departmentDotColors, departmentIcons } from './mapTaskToEvent';
 import AddTaskModal from './AddTaskModal';
 import EditDetailModal from './EditDetailModal';
+import OverflowChip from './OverflowChip';
+import { applyListDayCap, isOverflowEvent } from './applyEventCap';
+import { LIST_DAY_CAP } from './constants';
+import { toDateStr } from './dateRange';
 import { recordDiagnostic, serializeError } from './diagnostics';
 
 export default function List({ events, setEvents, mapTaskToEvent,
     formData, setFormData,
     selectedEvent, setSelectedEvent,
     showDetailModal, setShowDetailModal,
-    customerOptions }) {
+    customerOptions,
+    searchTerm,
+    onVisibleRangeChange }) {
     const [showModal, setShowModal] = useState(false);
+    const [expanded, setExpanded] = useState(false);
+    const [viewRange, setViewRange] = useState(null);
+    const overflowSignatureRef = useRef('');
+
+    const cappedEvents = applyListDayCap(events, {
+        cap: LIST_DAY_CAP,
+        expanded,
+        searchActive: Boolean(searchTerm),
+        viewStart: viewRange?.start,
+        viewEnd: viewRange?.end,
+    });
+
+    useEffect(() => {
+        const overflows = cappedEvents.filter(event =>
+            isOverflowEvent(event) && !event.extendedProps?.expanded
+        );
+        const signature = overflows
+            .map(event => `${event.extendedProps.overflowDate}:${event.extendedProps.hiddenCount}`)
+            .sort()
+            .join(',');
+        if (signature === overflowSignatureRef.current) return;
+        overflowSignatureRef.current = signature;
+        for (const event of overflows) {
+            recordDiagnostic('day_cap_overflow_shown', {
+                date: event.extendedProps.overflowDate,
+                hiddenCount: event.extendedProps.hiddenCount,
+                viewId: viewRange?.viewId || 'list',
+            });
+        }
+    }, [cappedEvents, viewRange?.viewId]);
+
+    function handleDatesSet(info) {
+        const range = {
+            start: toDateStr(info.startStr),
+            end: toDateStr(info.endStr),
+            viewId: info.view.type,
+        };
+        setViewRange(range);
+        setExpanded(false);
+        overflowSignatureRef.current = '';
+        onVisibleRangeChange?.(range);
+    }
+
+    function toggleExpanded(hiddenCount, expanding) {
+        setExpanded(prev => !prev);
+        recordDiagnostic(expanding ? 'day_cap_expanded' : 'day_cap_collapsed', {
+            date: viewRange?.start,
+            hiddenCount,
+            viewId: viewRange?.viewId || 'list',
+        });
+    }
 
     async function handleEventDrop({ event, revert }) {
+        if (isOverflowEvent(event)) {
+            revert();
+            return;
+        }
         const startedAt = performance.now();
         const requestId = recordDiagnostic('task_reschedule_started', {
             taskId: String(event.id),
@@ -49,10 +110,14 @@ export default function List({ events, setEvents, mapTaskToEvent,
         });
     }
 
-        function handleEventClick({event}) {
-            setSelectedEvent(event);
-            setShowDetailModal(true);
+    function handleEventClick({event}) {
+        if (isOverflowEvent(event)) {
+            toggleExpanded(event.extendedProps.hiddenCount, !event.extendedProps.expanded);
+            return;
         }
+        setSelectedEvent(event);
+        setShowDetailModal(true);
+    }
 
     return (
         <div className="calendar">
@@ -88,11 +153,16 @@ export default function List({ events, setEvents, mapTaskToEvent,
                     listMonth: 'Month'
                 }}
                 allDayText=""
-                events={events}
+                events={cappedEvents}
                 editable={true}
+                eventAllow={(_dropInfo, dragged) => !isOverflowEvent(dragged)}
                 eventDrop={handleEventDrop}
                 eventClick={handleEventClick}
+                datesSet={handleDatesSet}
                 eventContent={(info) => {
+                    if (isOverflowEvent(info.event)) {
+                        return <OverflowChip event={info.event} />;
+                    }
                     const departments = Array.isArray(info.event.extendedProps.department)
                         ? info.event.extendedProps.department
                         : [];
