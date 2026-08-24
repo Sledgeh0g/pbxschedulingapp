@@ -153,7 +153,7 @@ export default function EditDetailModal({
                   aria-label="Edit task"
                   type="button"
                 >
-                  ✎
+                  Edit
                 </button>
                 <button
                   className="delete-btn"
@@ -161,7 +161,7 @@ export default function EditDetailModal({
                   aria-label="Delete task"
                   type="button"
                 >
-                  🗑
+                  Delete
                 </button>
               </div>
             </div>
@@ -198,9 +198,11 @@ export default function EditDetailModal({
                       key={dept}
                       style={{
                         display: 'inline-block',
-                        padding: '2px 8px',
-                        borderRadius: '12px',
+                        padding: '1px 7px',
+                        borderRadius: 0,
                         fontSize: '12px',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.04em',
                         backgroundColor: departmentColors[dept] || '#999',
                         color: 'white',
                       }}

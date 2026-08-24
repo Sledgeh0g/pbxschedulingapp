@@ -10,8 +10,7 @@ import { supabase } from './supabaseClient';
 import { mapTaskToEvent } from './mapTaskToEvent';
 import SearchInput from './SearchInput';
 import LoginPage from './LoginPage';
-import ColorLegend from './ColorLegend';
-import DepartmentLegend from './DepartmentLegend';
+import LegendBar from './LegendBar';
 import Diagnostics from './Diagnostics';
 import { FETCH_PAD_DAYS } from './constants';
 import { mergeIntervals, padRange, rangeContains } from './dateRange';
@@ -286,36 +285,45 @@ function App () {
     return () => window.clearTimeout(timeout);
   }, [session, events, deptFilteredEvents, filteredEvents, selectedDepartment, searchTerm]);
 
-  if (authLoading) return <div>Loading...</div>;
+  if (authLoading) return (
+    <div className="gate-screen"><div className="gate-box">Loading<span className="gate-title">...</span></div></div>
+  );
   if (!session) return <LoginPage />;
-  if (!profile) return <div>Your account is pending approval. Contact your manager.</div>;
+  if (!profile) return (
+    <div className="gate-screen">
+      <div className="gate-box">
+        <p className="gate-title">Pending approval</p>
+        <p>Your account is pending approval. Contact your manager.</p>
+      </div>
+    </div>
+  );
 
   return (
-    
+
     <>
-    <nav id="root">
-      <div className="nav-left">
-        <DepartmentSelect selectedDepartment={selectedDepartment} setSelectedDepartment={setSelectedDepartment} />
+    <nav className="app-nav">
+        <div className="nav-brand">
+          <span className="nav-brand-mark">SCHEDULE</span>
+          <span className="nav-brand-sub">PBX TRUCK SERVICE</span>
         </div>
-        <div className="nav-center">
+        <div className="nav-filter">
+          <DepartmentSelect selectedDepartment={selectedDepartment} setSelectedDepartment={setSelectedDepartment} />
+        </div>
+        <div className="nav-search">
           <SearchInput
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             placeholder="Search all tasks..."
           />
         </div>
-        <div className="nav-right">
-          <NavLink to="/calendar">Calendar</NavLink>
-          <NavLink to="/list">List</NavLink>
-          <NavLink to="/contractcustomers">Contract Customers</NavLink>
-          <NavLink to="/reports">Reports</NavLink>
-          </div>
+        <div className="nav-tabs">
+          <NavLink className="nav-tab" to="/calendar">Calendar</NavLink>
+          <NavLink className="nav-tab" to="/list">List</NavLink>
+          <NavLink className="nav-tab" to="/contractcustomers">Contract Customers</NavLink>
+          <NavLink className="nav-tab" to="/reports">Reports</NavLink>
+        </div>
     </nav>
-      <div className="legend-row">
-        <div className="legend-left"></div>
-        <div className="legend-center"><DepartmentLegend /></div>
-        <div className="legend-right"><ColorLegend /></div>
-      </div>
+      <LegendBar events={events} />
       <Routes>
       <Route path="/" element={<Calendar
           events={filteredEvents}

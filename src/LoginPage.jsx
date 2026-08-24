@@ -40,25 +40,42 @@ export default function LoginPage() {
   }
 
   return (
-      <div className="login-form-container">
-        <h1 className="login-title">Login</h1>
-        {step === 'email' ? (
-          <form className="login-form" onSubmit={handleSendOtp}>
-            <input className="login-input" placeholder="Enter your PBX email" type="email" id="email" value={email} onChange={e => setEmail(e.target.value)} required />
-            <button className="login-btn" type="submit" disabled={loading}>
-              {loading ? 'Sending...' : 'Send Code'}
-            </button>
-          </form>
-        ) : (
-          <form className="login-form" onSubmit={handleVerifyOtp}>
-            <p>Check your email for a verification code.</p>
-            <input className="login-input" placeholder="Enter the 6-digit code" type="text" id="otp" value={token} onChange={e => setToken(e.target.value)} required />
-            <button className="login-btn" type="submit" disabled={loading}>
-              {loading ? 'Verifying...' : 'Verify'}
-            </button>
-          </form>
-        )}
-        {error && <p>{error}</p>}
+    <div className="login-page">
+      <div className="login-panel">
+        <div className="login-titlebar">
+          <span>PBX TRUCK SERVICE</span>
+          <span className="login-titlebar-red">SCHEDULE</span>
+        </div>
+        <div className="login-body">
+          <p className="login-sub">Work order board — staff sign-on</p>
+          {step === 'email' ? (
+            <form className="login-form" onSubmit={handleSendOtp}>
+              <label className="login-label" htmlFor="email">PBX Email</label>
+              <span className="term-field">
+                <input className="login-input" placeholder="Enter your PBX email" type="email" id="email" value={email} onChange={e => setEmail(e.target.value)} required />
+                <span className="cursor-block" aria-hidden="true">▮</span>
+              </span>
+              <button className="login-btn" type="submit" disabled={loading}>
+                {loading ? 'Sending...' : 'Send Code'}
+              </button>
+            </form>
+          ) : (
+            <form className="login-form" onSubmit={handleVerifyOtp}>
+              <p className="login-note">Check your email for a verification code.</p>
+              <label className="login-label" htmlFor="otp">6-Digit Code</label>
+              <span className="term-field">
+                <input className="login-input" placeholder="Enter the 6-digit code" type="text" id="otp" value={token} onChange={e => setToken(e.target.value)} required />
+                <span className="cursor-block" aria-hidden="true">▮</span>
+              </span>
+              <button className="login-btn" type="submit" disabled={loading}>
+                {loading ? 'Verifying...' : 'Verify'}
+              </button>
+            </form>
+          )}
+          {error && <p className="login-error">{error}</p>}
+        </div>
+        <div className="login-foot">Authorized @pbxtruck.ca accounts only</div>
       </div>
+    </div>
   );
 }

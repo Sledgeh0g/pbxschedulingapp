@@ -143,7 +143,6 @@ export default function TaskForm({
                 backgroundColor: selected ? color : 'transparent',
                 borderColor: color,
                 color: selected ? 'white' : color,
-                ...(icon ? { width: '100%', textAlign: 'center' } : {}),
               }}
               onClick={() => toggleDept(value)}
             >
