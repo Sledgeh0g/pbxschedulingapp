@@ -1,7 +1,13 @@
+const PRIORITY_LABELS = {
+  scheduled: 'Scheduled',
+  'end of day': 'End of Day',
+  urgent: 'Urgent',
+};
+
 const priorityColors = {
-  'urgent': '#dc2626',
-  'end_of_day': '#f59e0b',
-  'scheduled': '#16a34a',
+  urgent: '#dc2626',
+  'end of day': '#f59e0b',
+  scheduled: '#16a34a',
 };
 
 const departmentColors = {
@@ -23,7 +29,7 @@ const departmentIcons = {
   'external vendor': '×',
 };
 
-const PRIORITY_ORDER = { urgent: 0, end_of_day: 1, scheduled: 2 };
+const PRIORITY_ORDER = { urgent: 0, 'end of day': 1, scheduled: 2 };
 
 function clampToToday(dateStr) {
   if (!dateStr) return dateStr
@@ -57,7 +63,7 @@ export function mapTaskToEvent(t) {
   };
 }
 
-export { priorityColors, departmentColors, departmentDotColors, departmentIcons };
+export { PRIORITY_LABELS, PRIORITY_ORDER, priorityColors, departmentColors, departmentDotColors, departmentIcons };
 
 export function eventOrderComparator(a, b) {
   if (a.extendedProps?.overflow) return 1;

@@ -36,7 +36,8 @@ Single-page React app (React 19 + Vite) backed by a Supabase `tasks` table. Stat
 `id, customer, unit, phone, service_date, status, priority, department, created_at, complaint, created_by`
 
 **Status values:** `queued`, `confirmed`, `completed`, `waiting`  
-**Priority values:** `scheduled` (green), `end_of_day` (yellow), `urgent` (red) — colors act as a heat map for urgency, set by dispatch  
+**Priority values:** `scheduled` (green), `end of day` (yellow), `urgent` (red) — colors act as a heat map for urgency, set by dispatch. Canonical strings live in `PRIORITY_LABELS` / `priorityColors` in `src/mapTaskToEvent.js`.  
+
 **Department values:** `warranty`, `wash bay`, `welding`, `body shop`, `old shop`, `new shop`, `triage`
 
 **Dispatch mode:** a boolean toggle that filters to show only `queued` tasks (for dispatchers) vs all non-queued tasks.

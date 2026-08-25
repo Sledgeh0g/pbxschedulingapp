@@ -37,7 +37,7 @@ Views in use: Calendar, List, Contract Customers, Reports.
 - A `profiles` row (role) is required; unapproved accounts see a pending-approval gate.
 - Task fields: customer, unit, phone, service date, status, priority, department(s), complaint, created_at, created_by.
 - Statuses: queued, confirmed, completed, waiting.
-- Priorities (dispatch-set heat map): scheduled, end_of_day, urgent.
+- Priorities (dispatch-set heat map): scheduled, end of day, urgent.
 - Departments (a task may have more than one): warranty, wash bay, welding, body shop, old shop, new shop, triage, mobile service, external vendor.
 - Contract customers: Canada Packers and Trouw. They appear on the regular calendar and on a separate manager list ordered by creation (then priority).
 - Calendar and List are two views of the same non-completed work. Reports is completed work by month, with export.

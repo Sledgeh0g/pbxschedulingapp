@@ -12,7 +12,7 @@ palette:
 data-colors-pinned:
   priority:
     scheduled: "#16a34a"
-    end_of_day: "#f59e0b"
+    end of day: "#f59e0b"
     urgent: "#dc2626"
   department:
     warranty: "#dc2626"

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { departmentColors, departmentIcons } from './mapTaskToEvent';
+import { PRIORITY_LABELS, departmentColors, departmentIcons } from './mapTaskToEvent';
 
 const DEPARTMENTS = [
   { value: 'warranty',  label: 'Warranty' },
@@ -124,9 +124,9 @@ export default function TaskForm({
         required
       >
         <option value="">Select Priority</option>
-        <option value="scheduled">Scheduled</option>
-        <option value="end_of_day">End of Day</option>
-        <option value="urgent">Urgent</option>
+        {Object.entries(PRIORITY_LABELS).map(([value, label]) => (
+          <option key={value} value={value}>{label}</option>
+        ))}
       </select>
 
       <div className="dept-form-chips">

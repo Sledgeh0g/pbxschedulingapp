@@ -6,14 +6,13 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 import { supabase } from './supabaseClient'
-import { departmentColors, departmentIcons } from './mapTaskToEvent'
+import { PRIORITY_ORDER, departmentColors, departmentIcons } from './mapTaskToEvent'
 import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
 import { createTaskSnapshot, recordDiagnostic, serializeError } from './diagnostics'
 
 const CONTRACT_CUSTOMERS = ['canada packers', 'trouw']
 const STATUS_ORDER = { queued: 0, completed: 2 }
-const PRIORITY_ORDER = { urgent: 0, end_of_day: 1, scheduled: 2 }
 
 const columns = [
   { accessorKey: 'customer', header: 'Customer' },
@@ -194,7 +193,8 @@ export default function ContractCustomers({ formData, setFormData, appSetEvents,
               table.getRowModel().rows.map(row => (
                 <tr
                   key={row.id}
-                  className={`contract-table-row contract-table-row--${row.original.priority || 'scheduled'}`}
+                  className="contract-table-row"
+                  data-priority={row.original.priority || 'scheduled'}
                   onClick={() => handleRowClick(row.original)}
                 >
                   {row.getVisibleCells().map(cell => (

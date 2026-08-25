@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { supabase } from './supabaseClient';
-import { mapTaskToEvent, departmentColors } from './mapTaskToEvent';
+import { mapTaskToEvent, departmentColors, PRIORITY_LABELS } from './mapTaskToEvent';
 import TaskForm from './TaskForm';
 import { recordDiagnostic, serializeError } from './diagnostics';
 
@@ -188,7 +188,7 @@ export default function EditDetailModal({
               </div>
               <div className="task-detail-row">
                 <span className="task-detail-label">Priority</span>
-                <span className="task-detail-value">{(props.priority || 'scheduled').replace('_', ' ')}</span>
+                <span className="task-detail-value">{PRIORITY_LABELS[props.priority] || props.priority || 'scheduled'}</span>
               </div>
               <div className="task-detail-row">
                 <span className="task-detail-label">Department</span>
