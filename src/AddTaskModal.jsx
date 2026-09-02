@@ -3,6 +3,7 @@ import { supabase } from './supabaseClient';
 import { mapTaskToEvent } from './mapTaskToEvent';
 import TaskForm from './TaskForm';
 import { recordDiagnostic, serializeError } from './diagnostics';
+import { parseAuthorizedEstimate } from './formatAuthorizedEstimate';
 
 export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTaskToEvent: mapTaskToEventProp, customerOptions }) {
     const [form, setForm] = useState({
@@ -14,6 +15,7 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
         priority: 'scheduled',
         department: ['unassigned'],
         complaint: '',
+        authorized_estimate: '$0.00',
     });
 
     async function handleSubmit(e) {
@@ -26,9 +28,10 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
         });
         const { data: { user } } = await supabase.auth.getUser();
         const department = form.department.length ? form.department : ['unassigned'];
+        const { authorized_estimate, ...rest } = form;
         const { data, error } = await supabase
             .from('tasks')
-            .insert([{ ...form, department, created_by: user?.email || '' }])
+            .insert([{ ...rest, department, authorized_estimate: parseAuthorizedEstimate(authorized_estimate), created_by: user?.email || '' }])
             .select();
         if (error) {
             console.error(error);
@@ -51,7 +54,7 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
             departments: t.department,
         });
         setShowModal(false);
-        setForm({ customer: '', unit: '', phone: '', service_date: '', status: 'queued', priority: 'scheduled', department: ['unassigned'], complaint: '' });
+        setForm({ customer: '', unit: '', phone: '', service_date: '', status: 'queued', priority: 'scheduled', department: ['unassigned'], complaint: '', authorized_estimate: '$0.00' });
     }
 
     return (

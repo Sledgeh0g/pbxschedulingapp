@@ -3,6 +3,7 @@ import { supabase } from './supabaseClient';
 import { mapTaskToEvent, departmentColors, PRIORITY_LABELS } from './mapTaskToEvent';
 import TaskForm from './TaskForm';
 import { recordDiagnostic, serializeError } from './diagnostics';
+import { formatAuthorizedEstimate, parseAuthorizedEstimate } from './formatAuthorizedEstimate';
 
 export default function EditDetailModal({
   event,
@@ -41,6 +42,7 @@ export default function EditDetailModal({
       priority: props.priority || 'scheduled',
       department: props.department || [],
       complaint: props.complaint || '',
+      authorized_estimate: formatAuthorizedEstimate(props.authorized_estimate),
     });
     setIsEditing(false);
   }
@@ -85,9 +87,10 @@ export default function EditDetailModal({
       departments: formData.department,
     });
     const department = formData.department.length ? formData.department : ['unassigned'];
+    const { authorized_estimate, ...rest } = formData;
     const { data, error } = await supabase
       .from('tasks')
-      .update({ ...formData, department })
+      .update({ ...rest, department, authorized_estimate: parseAuthorizedEstimate(authorized_estimate) })
       .eq('id', event.id)
       .select();
 
@@ -181,6 +184,10 @@ export default function EditDetailModal({
               <div className="task-detail-row">
                 <span className="task-detail-label">Date</span>
                 <span className="task-detail-value">{event.startStr}</span>
+              </div>
+              <div className="task-detail-row">
+                <span className="task-detail-label">Authorized Estimate</span>
+                <span className="task-detail-value">{formatAuthorizedEstimate(props.authorized_estimate)}</span>
               </div>
               <div className="task-detail-row">
                 <span className="task-detail-label">Status</span>

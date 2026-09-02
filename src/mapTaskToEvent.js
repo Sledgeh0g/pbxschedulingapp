@@ -58,7 +58,8 @@ export function mapTaskToEvent(t) {
       department: departments,
       complaint: t.complaint,
       created_by: t.created_by || '',
-      created_at: t.created_at || ''
+      created_at: t.created_at || '',
+      authorized_estimate: t.authorized_estimate ?? 0
     }
   };
 }

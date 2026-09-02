@@ -1,5 +1,6 @@
 import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
+import { formatAuthorizedEstimate } from './formatAuthorizedEstimate'
 
 function formatDate(dateStr) {
   if (!dateStr) return ''
@@ -16,16 +17,16 @@ export function generateWorkOrderReport(tasks) {
     '',
     task.customer || '',
     task.unit || '',
+    formatAuthorizedEstimate(task.authorized_estimate),
     '',
     '',
     '',
     '',
     task.complaint || '',
-    '',
   ])
 
   autoTable(doc, {
-    head: [['#', 'ServiceDate', 'TECH#', 'Customer', 'UNIT#', 'HERE', 'IN SHOP', 'DONE', 'CALLED', 'Complaint']],
+    head: [['#', 'ServiceDate', 'TECH#', 'Customer', 'UNIT#', 'AUTH EST', 'HERE', 'IN SHOP', 'DONE', 'CALLED', 'Complaint']],
     body: rows,
     startY: 8,
     styles: {
@@ -47,12 +48,12 @@ export function generateWorkOrderReport(tasks) {
       2: { cellWidth: 15 },
       3: { cellWidth: 35 },
       4: { cellWidth: 22 },
-      5: { cellWidth: 12 },
-      6: { cellWidth: 15 },
-      7: { cellWidth: 12 },
-      8: { cellWidth: 15 },
-      9: { cellWidth: 'auto' },
-      10: { cellWidth: 12 },
+      5: { cellWidth: 22 },
+      6: { cellWidth: 12 },
+      7: { cellWidth: 15 },
+      8: { cellWidth: 12 },
+      9: { cellWidth: 15 },
+      10: { cellWidth: 'auto' },
     },
     margin: { top: 8, left: 5, right: 5 },
   })

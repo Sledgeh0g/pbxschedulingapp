@@ -13,6 +13,7 @@ import LoginPage from './LoginPage';
 import LegendBar from './LegendBar';
 import Diagnostics from './Diagnostics';
 import { FETCH_PAD_DAYS } from './constants';
+import { formatAuthorizedEstimate } from './formatAuthorizedEstimate';
 import { mergeIntervals, padRange, rangeContains } from './dateRange';
 import {
   createTaskSnapshot,
@@ -37,7 +38,8 @@ function App () {
     status: "",
     priority: "",
     department: [],
-    complaint: ""
+    complaint: "",
+    authorized_estimate: "$0.00"
   });
 
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -60,6 +62,7 @@ function App () {
         priority: selectedEvent.extendedProps?.priority || 'scheduled',
         department: selectedEvent.extendedProps?.department || [],
         complaint: selectedEvent.extendedProps?.complaint || '',
+        authorized_estimate: formatAuthorizedEstimate(selectedEvent.extendedProps?.authorized_estimate),
       });
     }
   }
@@ -109,7 +112,7 @@ function App () {
 
     supabase
       .from('tasks')
-      .select('id, customer, unit, phone, service_date, status, priority, department, created_at, complaint, created_by', { count: 'exact' })
+      .select('id, customer, unit, phone, service_date, status, priority, department, created_at, complaint, created_by, authorized_estimate', { count: 'exact' })
       .or(`and(service_date.gte."${padded.start}",service_date.lt."${padded.end}"),status.neq.completed`)
       .order('created_at', { ascending: true })
       .order('id', { ascending: true })

@@ -10,12 +10,18 @@ import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
 import { generateWorkOrderReport } from './generateWorkOrderReport'
 import { createTaskSnapshot, recordDiagnostic, serializeError } from './diagnostics'
+import { formatAuthorizedEstimate } from './formatAuthorizedEstimate'
 
 const DEPARTMENTS = ['warranty', 'wash bay', 'welding', 'body shop', 'old shop', 'new shop', 'triage', 'mobile service']
 
 const columns = [
   { accessorKey: 'customer', header: 'Customer' },
   { accessorKey: 'unit', header: 'Unit' },
+  {
+    accessorKey: 'authorized_estimate',
+    header: 'Authorized Estimate',
+    cell: ({ row }) => formatAuthorizedEstimate(row.getValue('authorized_estimate')),
+  },
   { accessorKey: 'service_date', header: 'Service Date' },
   {
     accessorKey: 'department',
@@ -74,7 +80,7 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
 
     supabase
       .from('tasks')
-      .select('id, customer, unit, service_date, status, priority, department, created_at', { count: 'exact' })
+      .select('id, customer, unit, service_date, status, priority, department, created_at, authorized_estimate', { count: 'exact' })
       .eq('status', 'completed')
       .gte('service_date', startDate)
       .lte('service_date', endDate)
@@ -117,7 +123,7 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
     })
     let query = supabase
       .from('tasks')
-      .select('id, customer, unit, service_date, complaint', { count: 'exact' })
+      .select('id, customer, unit, service_date, complaint, authorized_estimate', { count: 'exact' })
       .neq('status', 'completed')
       .order('service_date', { ascending: true })
     if (selectedDepartment && selectedDepartment !== 'All Departments') {
@@ -167,6 +173,7 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
       status: task.status || '',
       priority: task.priority || 'scheduled',
       department: task.department || '',
+      authorized_estimate: formatAuthorizedEstimate(task.authorized_estimate),
     })
     setShowModal(true)
   }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { PRIORITY_LABELS, departmentColors, departmentIcons } from './mapTaskToEvent';
+import { formatAuthorizedEstimate } from './formatAuthorizedEstimate';
 
 const DEPARTMENTS = [
   { value: 'warranty',  label: 'Warranty' },
@@ -100,6 +101,14 @@ export default function TaskForm({
           required
         />
       </div>
+      <input
+        type="text"
+        inputMode="decimal"
+        placeholder="Authorized Estimate"
+        value={form.authorized_estimate || ''}
+        onChange={handleChange('authorized_estimate')}
+        onBlur={(e) => setForm({ ...form, authorized_estimate: formatAuthorizedEstimate(e.target.value) })}
+      />
       <textarea
         className="complaint-textarea"
         placeholder="Complaint"

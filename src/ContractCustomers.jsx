@@ -10,6 +10,7 @@ import { PRIORITY_ORDER, departmentColors, departmentIcons } from './mapTaskToEv
 import EditDetailModal from './EditDetailModal'
 import { mapTaskToEvent } from './mapTaskToEvent'
 import { createTaskSnapshot, recordDiagnostic, serializeError } from './diagnostics'
+import { formatAuthorizedEstimate } from './formatAuthorizedEstimate'
 
 const CONTRACT_CUSTOMERS = ['canada packers', 'trouw']
 const STATUS_ORDER = { queued: 0, completed: 2 }
@@ -17,6 +18,11 @@ const STATUS_ORDER = { queued: 0, completed: 2 }
 const columns = [
   { accessorKey: 'customer', header: 'Customer' },
   { accessorKey: 'unit', header: 'Unit' },
+  {
+    accessorKey: 'authorized_estimate',
+    header: 'Authorized Estimate',
+    cell: ({ row }) => formatAuthorizedEstimate(row.getValue('authorized_estimate')),
+  },
   { accessorKey: 'service_date', header: 'Service Date' },
   {
     accessorKey: 'department',
@@ -101,7 +107,7 @@ export default function ContractCustomers({ formData, setFormData, appSetEvents,
     const requestId = recordDiagnostic('task_fetch_started', { source: 'contract_customers' })
     supabase
       .from('tasks')
-      .select('id, customer, unit, service_date, status, priority, department, created_at', { count: 'exact' })
+      .select('id, customer, unit, service_date, status, priority, department, created_at, authorized_estimate', { count: 'exact' })
       .order('created_at', { ascending: true })
       .then(async ({ data, error, count }) => {
         const durationMs = Math.round(performance.now() - startedAt)
@@ -146,6 +152,7 @@ export default function ContractCustomers({ formData, setFormData, appSetEvents,
       status: task.status || '',
       priority: task.priority || 'scheduled',
       department: task.department || '',
+      authorized_estimate: formatAuthorizedEstimate(task.authorized_estimate),
     })
     setShowModal(true)
   }
