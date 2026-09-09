@@ -80,7 +80,7 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
 
     supabase
       .from('tasks')
-      .select('id, customer, unit, service_date, status, priority, department, created_at, authorized_estimate', { count: 'exact' })
+      .select('id, customer, unit, phone, service_date, status, priority, department, created_at, complaint, created_by, authorized_estimate', { count: 'exact' })
       .eq('status', 'completed')
       .gte('service_date', startDate)
       .lte('service_date', endDate)
@@ -169,10 +169,12 @@ export default function Reports({ searchTerm, selectedDepartment, formData, setF
     setFormData({
       customer: task.customer || '',
       unit: task.unit || '',
+      phone: task.phone || '',
       service_date: task.service_date || '',
       status: task.status || '',
       priority: task.priority || 'scheduled',
-      department: task.department || '',
+      department: task.department || [],
+      complaint: task.complaint || '',
       authorized_estimate: formatAuthorizedEstimate(task.authorized_estimate),
     })
     setShowModal(true)

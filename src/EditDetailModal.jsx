@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { supabase } from './supabaseClient';
 import { mapTaskToEvent, departmentColors, PRIORITY_LABELS } from './mapTaskToEvent';
 import TaskForm from './TaskForm';
+import ComplaintExpandModal, { ComplaintExpandButton } from './ComplaintExpandModal';
 import { recordDiagnostic, serializeError } from './diagnostics';
 import { formatAuthorizedEstimate, parseAuthorizedEstimate } from './formatAuthorizedEstimate';
 
@@ -17,6 +18,7 @@ export default function EditDetailModal({
   customerOptions
 }) {
   const [isEditing, setIsEditing] = useState(false);
+  const [expandOpen, setExpandOpen] = useState(false);
 
   if (!showModal || !event) return null;
 
@@ -75,19 +77,17 @@ export default function EditDetailModal({
     closeAndReset();
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-
+  async function persistTask(snapshot) {
     const startedAt = performance.now();
     const requestId = recordDiagnostic('task_update_started', {
       taskId: String(event.id),
-      changedFields: Object.keys(formData),
-      status: formData.status,
-      serviceDate: formData.service_date,
-      departments: formData.department,
+      changedFields: Object.keys(snapshot),
+      status: snapshot.status,
+      serviceDate: snapshot.service_date,
+      departments: snapshot.department,
     });
-    const department = formData.department.length ? formData.department : ['unassigned'];
-    const { authorized_estimate, ...rest } = formData;
+    const department = snapshot.department.length ? snapshot.department : ['unassigned'];
+    const { authorized_estimate, ...rest } = snapshot;
     const { data, error } = await supabase
       .from('tasks')
       .update({ ...rest, department, authorized_estimate: parseAuthorizedEstimate(authorized_estimate) })
@@ -102,7 +102,7 @@ export default function EditDetailModal({
         durationMs: Math.round(performance.now() - startedAt),
         error: serializeError(error),
       }, 'error');
-      return;
+      return false;
     }
 
     const updatedTask = data[0];
@@ -113,7 +113,7 @@ export default function EditDetailModal({
         durationMs: Math.round(performance.now() - startedAt),
         error: { message: 'Update returned no task row.' },
       }, 'error');
-      return;
+      return false;
     }
     const updatedEvent = (mapTaskToEventProp || mapTaskToEvent)(updatedTask);
 
@@ -127,12 +127,34 @@ export default function EditDetailModal({
       departments: updatedTask.department,
     });
     closeAndReset();
+    return true;
+  }
+
+  async function handleSubmit(e, snapshot = formData) {
+    e.preventDefault();
+    await persistTask(snapshot);
+  }
+
+  async function handleDetailExpandSave(text) {
+    await persistTask({
+      customer: props.customer || '',
+      unit: props.unit || '',
+      phone: props.phone || '',
+      service_date: event.startStr || '',
+      status: props.status || '',
+      priority: props.priority || 'scheduled',
+      department: props.department || [],
+      complaint: text,
+      authorized_estimate: formatAuthorizedEstimate(props.authorized_estimate),
+    });
   }
 
   return (
     <div className="modal-backdrop" onClick={handleClose}>
       <div className="editModal" onClick={(e) => e.stopPropagation()}>
-        <span className="modal-close" onClick={handleClose} aria-label="Close modal">×</span>
+        {isEditing && (
+          <span className="modal-close" onClick={handleClose} aria-label="Close modal">×</span>
+        )}
 
         {isEditing ? (
           <TaskForm
@@ -165,6 +187,13 @@ export default function EditDetailModal({
                   type="button"
                 >
                   Delete
+                </button>
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  aria-label="Close modal"
+                >
+                  ×
                 </button>
               </div>
             </div>
@@ -221,7 +250,10 @@ export default function EditDetailModal({
               </div>
               <div className="task-detail-row task-detail-row--complaint">
                 <span className="task-detail-label">Complaint</span>
-                <span className="task-detail-value task-detail-value--complaint">{props.complaint}</span>
+                <div className="task-detail-complaint-box">
+                  <span className="task-detail-value task-detail-value--complaint">{props.complaint}</span>
+                  <ComplaintExpandButton onClick={() => setExpandOpen(true)} />
+                </div>
               </div>
             </div>
             {props.created_by && (
@@ -232,6 +264,13 @@ export default function EditDetailModal({
           </div>
         )}
       </div>
+      {expandOpen && !isEditing && (
+        <ComplaintExpandModal
+          value={props.complaint}
+          onSave={handleDetailExpandSave}
+          onCancel={() => setExpandOpen(false)}
+        />
+      )}
     </div>
   );
 }

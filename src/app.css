@@ -6,8 +6,8 @@
    ============================================================ */
 
 @font-face {
-  font-family: 'VT323';
-  src: url('./assets/fonts/VT323-Regular.ttf') format('truetype');
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -21,7 +21,7 @@
   --rule: #d6d6d6;
   --red: #f40604;
   --red-dark: #b90302;
-  --mono: 'DEC Terminal Modern', 'VT323', 'Courier New', ui-monospace, monospace;
+  --font: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
@@ -36,10 +36,10 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--mono);
+  font-family: var(--font);
   font-size: 17px;
   line-height: 1.25;
-  -webkit-font-smoothing: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* --- browser surfaces: built, not assembled --- */
@@ -407,7 +407,7 @@ input:focus, select:focus, textarea:focus {
   --fc-neutral-bg-color: var(--paper);
   --fc-today-bg-color: transparent;
   --fc-list-event-hover-bg-color: var(--ink);
-  font-family: var(--mono);
+  font-family: var(--font);
 }
 
 /* toolbar = title bar */
@@ -442,7 +442,7 @@ input:focus, select:focus, textarea:focus {
   margin: 0;
   height: auto;
   width: auto;
-  font-family: var(--mono);
+  font-family: var(--font);
   font-size: 15px;
   line-height: 1.2;
   text-transform: uppercase;
@@ -659,7 +659,7 @@ input:focus, select:focus, textarea:focus {
 .addModal h2,
 .editModal h2 {
   margin: -24px -24px 18px;
-  padding: 5px 44px 5px 12px;
+  padding: 2px 44px 2px 12px;
   background: var(--ink);
   color: #fff;
   font-size: 20px;
@@ -671,17 +671,17 @@ input:focus, select:focus, textarea:focus {
 
 .modal-close {
   position: absolute;
-  top: 1px;
-  right: 6px;
+  top: 2px;
+  right: 4px;
   z-index: 2;
-  padding: 1px 8px;
-  font-size: 20px;
+  padding: 2px 6px;
+  font-size: 15px;
   font-weight: 400;
   color: #fff;
-  border: #fff 1px solid;
+  border: 1px solid #fff;
   background: var(--ink);
   cursor: pointer;
-  line-height: 1.45;
+  line-height: 1.2;
   user-select: none;
 }
 .modal-close:hover {
@@ -776,30 +776,33 @@ input:focus, select:focus, textarea:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
   margin: -24px -24px 18px;
-  padding: 0 0 0 12px;
+  padding: 2px 4px 2px 12px;
   background: var(--ink);
-  min-height: 30px;
+  min-height: 0;
 }
 .task-detail-header h2 {
   margin: 0;
-  padding: 5px 0;
+  padding: 0;
   background: none;
   color: #fff;
   text-align: left;
 }
 .task-detail-actions {
   display: flex;
-  gap: 6px;
-  padding-right: 44px; /* clears the close control */
+  align-items: center;
+  gap: 4px;
+  padding-right: 0;
 }
 .task-detail-actions button {
   border: 1px solid #fff;
   background: transparent;
   color: #fff;
-  font-size: 20px;
-  padding: 3px 10px;
+  font-size: 15px;
+  padding: 2px 8px;
   letter-spacing: 0.08em;
+  line-height: 1.2;
 }
 .task-detail-actions button:hover:not(:disabled) {
   background: var(--red);
@@ -834,11 +837,20 @@ input:focus, select:focus, textarea:focus {
   flex-direction: column;
   gap: 4px;
 }
+.task-detail-complaint-box {
+  position: relative;
+}
 .task-detail-value--complaint {
+  display: block;
   text-transform: none;
   text-align: left;
   white-space: pre-wrap;
   word-break: break-word;
+  max-height: 120px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  padding-bottom: 28px;
+  padding-right: 18px;
 }
 .task-detail-created-by {
   margin-top: 12px;
@@ -849,11 +861,91 @@ input:focus, select:focus, textarea:focus {
   text-align: right;
 }
 
-.complaint-textarea {
-  min-height: 120px;
-  overflow: hidden;
+.complaint-field {
+  position: relative;
+  margin-bottom: 12px;
+}
+.addModal textarea.complaint-textarea,
+.editModal textarea.complaint-textarea {
+  display: block;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 0;
+  field-sizing: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
   resize: none;
   font-family: inherit;
+  padding-right: 18px;
+  padding-bottom: 32px;
+  scrollbar-width: thin;
+}
+.complaint-expand {
+  position: absolute;
+  right: 16px;
+  bottom: 6px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  text-transform: none;
+  letter-spacing: 0;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.complaint-expand-icon {
+  width: 10px;
+  height: 10px;
+  background:
+    linear-gradient(currentColor, currentColor) 0 0 / 4px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 0 / 2px 4px no-repeat,
+    linear-gradient(currentColor, currentColor) 100% 0 / 4px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) 100% 0 / 2px 4px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 100% / 4px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 100% / 2px 4px no-repeat,
+    linear-gradient(currentColor, currentColor) 100% 100% / 4px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) 100% 100% / 2px 4px no-repeat;
+}
+
+.complaint-expand-backdrop {
+  z-index: 1100;
+}
+.complaint-expand-modal {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  width: min(90vw, 720px);
+  height: min(80vh, 560px);
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.complaint-expand-modal .task-detail-header {
+  flex: 0 0 auto;
+}
+.addModal .complaint-expand-textarea,
+.editModal .complaint-expand-textarea,
+.complaint-expand-textarea {
+  flex: 1;
+  display: block;
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  field-sizing: fixed;
+  overflow-y: scroll;
+  resize: none;
+  font: inherit;
+  font-size: 20px;
+  line-height: 1.35;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  padding: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  scrollbar-width: thin;
 }
 
 /* department chips — pinned colors, square */

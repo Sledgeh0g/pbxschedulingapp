@@ -18,17 +18,17 @@ export default function AddTaskModal({ setEvents, showModal, setShowModal, mapTa
         authorized_estimate: '$0.00',
     });
 
-    async function handleSubmit(e) {
+    async function handleSubmit(e, snapshot = form) {
         e.preventDefault();
         const startedAt = performance.now();
         const requestId = recordDiagnostic('task_create_started', {
-            status: form.status,
-            serviceDate: form.service_date,
-            departments: form.department,
+            status: snapshot.status,
+            serviceDate: snapshot.service_date,
+            departments: snapshot.department,
         });
         const { data: { user } } = await supabase.auth.getUser();
-        const department = form.department.length ? form.department : ['unassigned'];
-        const { authorized_estimate, ...rest } = form;
+        const department = snapshot.department.length ? snapshot.department : ['unassigned'];
+        const { authorized_estimate, ...rest } = snapshot;
         const { data, error } = await supabase
             .from('tasks')
             .insert([{ ...rest, department, authorized_estimate: parseAuthorizedEstimate(authorized_estimate), created_by: user?.email || '' }])

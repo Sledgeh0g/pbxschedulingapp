@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { PRIORITY_LABELS, departmentColors, departmentIcons } from './mapTaskToEvent';
 import { formatAuthorizedEstimate } from './formatAuthorizedEstimate';
+import ComplaintExpandModal, { ComplaintExpandButton } from './ComplaintExpandModal';
 
 const DEPARTMENTS = [
   { value: 'warranty',  label: 'Warranty' },
@@ -27,6 +28,9 @@ export default function TaskForm({
   customerOptions = []
 }) {
   const [showCustomerSuggestions, setShowCustomerSuggestions] = useState(false);
+  const [expandOpen, setExpandOpen] = useState(false);
+  const formElRef = useRef(null);
+  const pendingSnapshotRef = useRef(null);
 
   const handleChange = (field) => (e) => {
     setForm({ ...form, [field]: e.target.value });
@@ -46,6 +50,20 @@ export default function TaskForm({
     setShowCustomerSuggestions(false);
   }
 
+  function handleFormSubmit(e) {
+    const snapshot = pendingSnapshotRef.current ?? form;
+    pendingSnapshotRef.current = null;
+    onSubmit(e, snapshot);
+  }
+
+  function handleExpandSave(text) {
+    const next = { ...form, complaint: text };
+    pendingSnapshotRef.current = next;
+    setForm(next);
+    setExpandOpen(false);
+    formElRef.current?.requestSubmit();
+  }
+
   function toggleDept(value) {
     setForm({
       ...form,
@@ -56,7 +74,7 @@ export default function TaskForm({
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form ref={formElRef} onSubmit={handleFormSubmit}>
       <h2>{title}</h2>
 
       <div className="customer-field">
@@ -109,16 +127,23 @@ export default function TaskForm({
         onChange={handleChange('authorized_estimate')}
         onBlur={(e) => setForm({ ...form, authorized_estimate: formatAuthorizedEstimate(e.target.value) })}
       />
-      <textarea
-        className="complaint-textarea"
-        placeholder="Complaint"
-        value={form.complaint || ''}
-        onChange={handleChange('complaint')}
-        onInput={e => {
-          e.target.style.height = 'auto';
-          e.target.style.height = e.target.scrollHeight + 'px';
-        }}
-      />
+      <div className="complaint-field">
+        <textarea
+          className="complaint-textarea"
+          placeholder="Complaint"
+          rows={5}
+          value={form.complaint || ''}
+          onChange={handleChange('complaint')}
+        />
+        <ComplaintExpandButton onClick={() => setExpandOpen(true)} />
+      </div>
+      {expandOpen && (
+        <ComplaintExpandModal
+          value={form.complaint}
+          onSave={handleExpandSave}
+          onCancel={() => setExpandOpen(false)}
+        />
+      )}
       <select
         value={form.status}
         onChange={handleChange('status')}

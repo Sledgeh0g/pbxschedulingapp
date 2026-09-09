@@ -25,8 +25,8 @@ data-colors-pinned:
     mobile service: "#000000"
     external vendor: "× glyph badge, #4b5563"
 typography:
-  stack: "'DEC Terminal Modern', 'VT323', 'Courier New', ui-monospace, monospace"
-  embedded-face: VT323 Regular (SIL OFL 1.1 — src/assets/fonts/, license in OFL.txt)
+  stack: "'Open Sans', ui-sans-serif, system-ui, sans-serif"
+  embedded-face: Open Sans Regular (SIL OFL 1.1 — src/assets/fonts/, license in OFL.txt)
   base: 17px
   scale:
     data: 15-17px
@@ -107,10 +107,8 @@ mono everywhere) — no concept roll was run; the brief was the authority.
 
 ## Typography
 
-VT323 (OFL 1.1) is embedded at `src/assets/fonts/` with its license. The stack
-leads with `DEC Terminal Modern` so a locally licensed copy takes precedence —
-that face is "free for personal use" (© 2015 Dan Mecklenburg) and is **not**
-bundled; VT323 supplies the same DEC VT320 letterforms for everyone else.
+Open Sans (OFL 1.1) is embedded at `src/assets/fonts/` with its license.
+Fallback is the platform sans-serif stack.
 
 ## Motion
 
@@ -127,5 +125,5 @@ fields. Everything else is instant state change. No entrances, no choreography.
   documented above as brief-pinned.
 - Screenshot review was not possible in this environment (no system browser
   libraries, no sudo); visual verification was code-level. First real-browser
-  check on a workstation should confirm: VT323 loading, today-header red
+  check on a workstation should confirm: Open Sans loading, today-header red
   inversion, ticket rails, legend toggle persistence.
