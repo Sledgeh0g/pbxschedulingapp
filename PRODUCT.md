@@ -49,7 +49,7 @@ Product name in the shop: Schedule. Company: PBX Truck Service (`pbxtruck.ca`). 
 
 ## Evidence on Hand
 
-- Owner notes in `CLAUDE.md` (why the app exists, contract-customer requirement, dispatch heat map).
+- Owner notes in `AGENTS.md` (why the app exists, contract-customer requirement, dispatch heat map).
 - Migration facts in `MIGRATION.md` (old-system CSV, employee email map). Do not invent additional customers, testimonials, or performance claims.
 - Live data lives in Supabase `tasks` / `profiles`; do not fabricate sample work orders as if they were real jobs.
 
