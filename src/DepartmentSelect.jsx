@@ -8,6 +8,7 @@ export default function DepartmentSelect({ selectedDepartment, setSelectedDepart
       <option value="All Departments">All Departments</option>
       <option value="warranty">Warranty</option>
       <option value="new shop">New Shop</option>
+      <option value="new shop 2">New Shop 2</option>
       <option value="old shop">Old Shop</option>
       <option value="wash bay">Wash Bay</option>
       <option value="welding">Welding</option>

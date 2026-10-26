@@ -370,14 +370,14 @@ input:focus, select:focus, textarea:focus {
 .dept-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
 }
 .dept-legend-item {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 13px;
+  gap: 4px;
+  font-size: 11px;
   color: var(--ink);
 }
 .dept-legend-dot {

@@ -110,9 +110,9 @@ department (text[]), created_at, complaint, created_by, authorized_estimate (num
   dispatch-set heat map. Canonical strings/colors: `PRIORITY_LABELS` /
   `priorityColors` / `PRIORITY_ORDER` in `src/mapTaskToEvent.js`.
 - Department (array, a task may have several): `warranty`, `wash bay`,
-  `welding`, `body shop`, `old shop`, `new shop`, `triage`, `mobile service`,
-  `external vendor`. Colors in `departmentColors`; `external vendor` renders as
-  a `×` glyph badge (`departmentIcons`).
+  `welding`, `body shop`, `old shop`, `new shop`, `new shop 2`, `triage`,
+  `mobile service`, `external vendor`. Colors in `departmentColors`;
+  `external vendor` renders as a `×` glyph badge (`departmentIcons`).
 - Contract customers (priority contracts, shown on their own manager view):
   Canada Packers and Trouw — matched case-insensitively by substring in
   `ContractCustomers.jsx` (`CONTRACT_CUSTOMERS = ['canada packers', 'trouw']`).

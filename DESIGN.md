@@ -22,6 +22,7 @@ data-colors-pinned:
     triage: "#ec4899"
     old shop: "#1e3a5f"
     new shop: "#eab308"
+    new shop 2: "#65a30d"
     mobile service: "#000000"
     external vendor: "× glyph badge, #4b5563"
 typography:

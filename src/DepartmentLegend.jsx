@@ -8,6 +8,7 @@ const DEPARTMENTS = [
   { value: 'triage',    label: 'Triage' },
   { value: 'old shop',  label: 'Old Shop' },
   { value: 'new shop',  label: 'New Shop' },
+  { value: 'new shop 2', label: 'New Shop 2' },
   { value: 'mobile service',    label: 'Mobile Serv.' },
   { value: 'external vendor',   label: 'External Vendor' },
 ];

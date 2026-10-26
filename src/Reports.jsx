@@ -12,7 +12,7 @@ import { generateWorkOrderReport } from './generateWorkOrderReport'
 import { createTaskSnapshot, recordDiagnostic, serializeError } from './diagnostics'
 import { formatAuthorizedEstimate } from './formatAuthorizedEstimate'
 
-const DEPARTMENTS = ['warranty', 'wash bay', 'welding', 'body shop', 'old shop', 'new shop', 'triage', 'mobile service']
+const DEPARTMENTS = ['warranty', 'wash bay', 'welding', 'body shop', 'old shop', 'new shop', 'new shop 2', 'triage', 'mobile service']
 
 const columns = [
   { accessorKey: 'customer', header: 'Customer' },
